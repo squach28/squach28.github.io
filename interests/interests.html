@@ -5,11 +5,11 @@
         <title>Sean Quach's Personal Website</title>
 
         
-        <link rel="stylesheet" type="text/css" href="interestsstyling.css">
+        <link rel="stylesheet" type="text/css" href="interests_styling.css">
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
-        <script src="./interestsscript.js" async></script>
+        <script src="./interests_script.js" async></script>
 
     </head>
 
@@ -33,60 +33,50 @@
 
         <div class="flexContainer">        
 
-        <div>
-            <h1 id="header" class="center">Interests</h1>
-        </div>
+            <div>
+                <h1 id="header" class="center">Interests</h1>
+            </div>
 
-        <div class="interestsFlexContainer">
+            <div class="interestsFlexContainer">
 
+                <div class="center">  
+                    <button id="previousButton" onclick="nextSlide(-1)">&#x2190</button>     
+                </div>
 
-        <div class="center">  
-            <button id="previousButton" onclick="nextSlide(-1)">Left</button>     
-        </div>
+                <div class="slide centerSlide">
+                    <div class="container">
+                        <h2>Web Development</h2>
+                        <hr/>
+                        <p>lorem ipsum</p>
+                    </div>
+                </div>
+       
 
-        <div class="slide">
-            <div class="container">
-                <h2>Web Development</h4>
+                <div class="slide">
+                    <div class="container">
+                        <h2>Mobile App Development</h2>
+                        <hr/>
+                       
+                       
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="container">
+                        <h2>UI/UX</h2>
+                        <hr/>
+                    </div>
+                </div>
+
+                <div class="center">
+                    <button id="nextButton" onclick="nextSlide(1)">&#x2192</button>
+                </div>
+
             </div>
         </div>
-
-        <div class="slide">
-            <div class="container">
-                <h2>aaaaa</h4>
-            </div>
-        </div>
-
-        <div class="slide">
-            <div class="container">
-                <h2>bbbb</h4>
-            </div>
-        </div>
-
-        <div class="center">
-            <button id="nextButton" onclick="nextSlide(1)">Right</button>
-        </div>
+        
 
 
-
-<!--         
-        <div class="card">
-            <div class="container">
-                <h2>Mobile Development</h4>
-                <h1>Jeff</h1>
-            </div>
-        </div> -->
-
-
-        <!--
-        <div class="card">
-            <div class="container">
-                <h2>Web Development</h4>
-            </div>
-        </div>
-        -->
-        </div>
-
-    </div>
 
 
     </body>

@@ -1,5 +1,12 @@
+html {
+    height: 100%;
+}
+
 body {
-    background-color: #abd0e9;
+    /*background-color: #abd0e9; */
+    min-height: 100%;
+    background-color: #abe9cd;
+    background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
 }
 
 #navBar {
@@ -54,32 +61,48 @@ body {
     text-align: center;
     margin: auto;
 }
-/*
-#interestsDiv {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translateX(-30%) translateY(-20%);
-} */
 
 .slide {
+    /*
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    height: 350px;
-    width: 350px;
+    height: 24em;
+    width: 18em;
     margin: auto;
     text-align: center;
-    float: none;
+    float: none; */
+    background-color: white;
+    width: 18em;
+    height: 24em;
+    display: -webkit-box;
+    display: ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .slide:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+.centerSlide {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
 .container {
     padding: 2px 16px;
+    position: relative;
 }
 
 .flexContainer {
@@ -92,13 +115,38 @@ body {
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+hr {
+    height: 2px;
+    background-color: #52d2d6;
 }
 
 button {
-    height: 350px;
-    width: 200px;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    border: none;
+    height: 125px;
+    width: 125px;
+    font-size: 60px;
+    color: white;
+    box-shadow: 5px 10px gray;
+    border-radius: 5px;
+    font-weight: bold;
 }
+
+
+button[disabled] {
+    background: gray;
+    border: none;
+    box-shadow: none;
+}
+
+
+
+
+
 
 
 
