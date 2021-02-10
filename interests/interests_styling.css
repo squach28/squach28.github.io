@@ -134,6 +134,7 @@ button {
     box-shadow: 5px 10px gray;
     border-radius: 5px;
     font-weight: bold;
+    outline: none;
 }
 
 
