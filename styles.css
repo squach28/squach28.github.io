@@ -80,6 +80,20 @@ body {
 .lineBreak {
     width: 100%;
     color: black;
+    height: 2px;
+    background-color: black;
+    border: none;
+    transition: background-color 3s, color 3s;
+}
+
+.darkModeLineBreak {
+    width: 100%;
+    color: white;
+    height: 2px;
+    background-color: white;
+    border: none;
+    transition: background-color 3s, color 3s;
+
 }
 
 .sectionTitle {
