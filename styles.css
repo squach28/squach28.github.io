@@ -17,6 +17,10 @@ body {
     transition: background-color 3s, color 3s;
 }
 
+.navBarDarkMode {
+    color: white;
+}
+
 #mainContainer {
     display:flex;
     flex-direction: column;
@@ -50,19 +54,31 @@ body {
     padding: 2px;
     border: 1px solid black;
     border-radius: 3px;
-}
+} 
 
 #title {
     display: flex;
     background-image: url("background.jpeg");
-    color: black;
+    color: white;
     justify-content: center;
-    border: 1px solid green;
     border-radius: 10px;
     
 }
 
+.lineBreak {
+    width: 100%;
+}
 
+.sectionTitle {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#aboutMeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
 #aboutMeContent {
     display: flex;
@@ -72,9 +88,6 @@ body {
 
 #aboutMeDescription {
     display: flex;
-    padding-right: 15px;
-    justify-content: center;
-    align-self: center;
     flex: 1;
     
 }
