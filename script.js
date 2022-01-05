@@ -6,7 +6,7 @@ function toggleDarkMode() {
     var navBar = document.getElementById("navBar");
     // fas fa-moon = dark mode enabled
     // far fa-moon = dark mode disabled
-    if(darkModeIcon.className == "fas fa-moon") {
+    if(darkModeIcon.className == "fas fa-sun") {
         darkModeIcon.className = "far fa-moon"; 
         darkModeIcon.style.border = "1px solid black";
         body.classList.remove("darkMode");
@@ -17,7 +17,7 @@ function toggleDarkMode() {
         }
         
     } else {
-        darkModeIcon.className = "fas fa-moon";
+        darkModeIcon.className = "fas fa-sun";
         darkModeIcon.style.border = "1px solid white";
         body.classList.toggle("darkMode");
         for(let i = 0; i < navBar.children.length; i++) {
