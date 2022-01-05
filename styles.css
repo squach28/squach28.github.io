@@ -1,24 +1,36 @@
 body {
-    background-color: white;
+    background-color: rgb(250, 240, 241);
     color: black;
     animation: fadeIn 3s;
     font-family: 'Be Vietnam Pro', sans-serif;
+    transition: background-color 3s, color 3s;
+    margin: 0;
 }
-
+/*  rgb(147, 236, 159) */
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
 .darkMode {
-    background-color: black;
+    background-color: rgb(33, 33, 33);
     color: white;
-    transition: background-color 3s;
+    transition: background-color 3s, color 3s;
+}
+
+.navBarDarkMode {
+    color: white;
 }
 
 #mainContainer {
-    margin-left: 25%;
-    margin-right: 25%;
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 20px;
+    z-index: 1;
+
 }
 
 #navBar {
@@ -36,6 +48,7 @@ body {
 #navBar > li > a {
     text-decoration: none;
     color: black;
+    transition: color 3s;
 
 }
 
@@ -44,12 +57,86 @@ body {
     padding: 2px;
     border: 1px solid black;
     border-radius: 3px;
+} 
+
+.title {
+    display: flex;
+    background-image: linear-gradient(to right, #fffbd5, #b20a2c);  
+    color: black;
+    justify-content: center;
+    border-radius: 10px;
+
+    
+}
+
+.darkModeTitle {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    color: white;
+}
+
+.lineBreak {
+    width: 100%;
+    color: black;
+    height: 2px;
+    background-color: black;
+    border: none;
+    transition: background-color 3s, color 3s;
+}
+
+.darkModeLineBreak {
+    width: 100%;
+    color: white;
+    height: 2px;
+    background-color: white;
+    border: none;
+    transition: background-color 3s, color 3s;
+
+}
+
+.sectionTitle {
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 #aboutMeContainer {
-
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-#skillsContainer {
+#aboutMeContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+#aboutMeDescription {
+    display: flex;
+    flex: 1;
+    
+}
+
+#portfolio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    flex: 1;
+}
+
+#portfolioPicture {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+    border-radius: 15px;
+}
+
+#portfolioHeader {
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
