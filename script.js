@@ -1,5 +1,5 @@
 const playButton = document.getElementById('play_button')
-console.log(playButton)
+
 playButton.addEventListener('click' ,() => {
     const iconImg = document.getElementById('play_pause_icon')
     const iconPathIntoArr = iconImg.src.split('/')
@@ -8,6 +8,14 @@ playButton.addEventListener('click' ,() => {
         iconImg.src = './assets/icons/pause-solid.svg'
     } else {
         iconImg.src = './assets/icons/play-solid.svg'
-    }
-    
+    } 
+})
+
+const ellipsisIcon = document.getElementById('ellipsis_icon')
+
+ellipsisIcon.addEventListener('click', () => {
+    const container = document.getElementById('container')
+    const moreOverlayContainer = document.getElementById('more_overlay_container')
+    container.classList.add('blur')
+    moreOverlayContainer.style.display = 'block'
 })

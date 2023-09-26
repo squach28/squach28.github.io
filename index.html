@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="container">
+        <div id="container" class="container">
             <img class="portfolio" src="assets/images/portfolio.jpeg" alt="picture of Sean Quach"/>
             <h1 class="header">Sean Quach</h1>
             <p class="sub_header">1,000 monthly listeners</p>    
@@ -19,13 +19,20 @@
                         <a target="_blank" href="https://www.linkedin.com/in/sean-quach/">Connect</a>
                     </button>
                     <img class="icon" src="./assets/icons/share-icon.svg" alt="share icon"/>
-                    <img class="icon" src="./assets/icons/ellipsis-vertical-solid.svg" alt="hi">
+                    <img id="ellipsis_icon" class="icon" src="./assets/icons/ellipsis-vertical-solid.svg" alt="hi">
                 </div>
                 <button id="play_button" class="play_button">
                     <img id="play_pause_icon" class="icon" src="./assets/icons/play-solid.svg" alt="play icon">
                 </button>
             </div>
         </div>  
+        <div id="more_overlay_container" class="more_overlay_container">
+            <div>
+                <p>hi</p>
+                <p>hello</p>
+                <p>Close</p>
+            </div>
+        </div>
     </body>
     <script src="./script.js"></script>
 </html>
