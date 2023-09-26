@@ -9,25 +9,51 @@ body {
     font-family: 'Be Vietnam Pro', sans-serif;
 }
 
-h1 {
+h1, ul, li {
     margin: 0;
     padding: 0;
+    padding-inline-start: 0;
 }
 
 .container {
-    padding: 10em 2em 0 2em;
-    margin-top: 5em;
+    padding: 2em 2em 0 2em;
+    margin-top: 2em;
 }
 
 .portfolio {
     border-radius: 50%;
-    max-width: 500px;
+    max-width: 700px;
+    aspect-ratio: 16/9;
     margin: 0 auto;
     display: block;
 }
 
 .header {
-    font-size: 5rem;
+    margin-top: 0.5em;
+    font-size: 2rem;
     font-weight: bold;
+}
+
+.sub-header {
+    color: rgb(160, 157, 157);
+}
+
+
+.nav-bar {
+    background-color: black;
+    color: white;
+    position: fixed;
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    left: 0;
+    padding: 1em 2em;
+}
+
+.nav-bar-text {
+    color: #B3B3B3;
+    font-size: 1.2rem;
 }
 
