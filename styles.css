@@ -34,12 +34,53 @@ h1, ul, li {
     font-weight: bold;
 }
 
-.sub-header {
+.sub_header {
     color: rgb(160, 157, 157);
 }
 
+.icon_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-.nav-bar {
+.list {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+}
+
+.follow_button {
+    background-color: transparent;
+    border: 1px solid rgb(160, 157, 157);
+    color: white;
+    border-radius: 15px;
+    padding: 0.5em 1em;
+    font-weight: bold;
+}
+
+.icon {
+    max-width: 30px;
+    max-height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+.play_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1BD760;
+    color: black;
+    padding: 1.25em;
+    border: none;
+    color: black;
+    border-radius: 50%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+.nav_bar {
     background-color: black;
     color: white;
     position: fixed;
@@ -52,7 +93,7 @@ h1, ul, li {
     padding: 1em 2em;
 }
 
-.nav-bar-text {
+.nav_bar_text {
     color: #B3B3B3;
     font-size: 1.2rem;
 }

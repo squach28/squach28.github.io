@@ -6,13 +6,24 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;700&display=swap" rel="stylesheet">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <link rel="stylesheet" href="styles.css"
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <div class="container">
             <img class="portfolio" src="assets/images/portfolio.jpeg" alt="picture of Sean Quach"/>
             <h1 class="header">Sean Quach</h1>
-            <p class="sub-header">1,000 monthly listeners</p>    
+            <p class="sub_header">1,000 monthly listeners</p>    
+            <div class="icon_list">
+                <div class="list">
+                    <button class="follow_button">Follow</button>
+                    <img class="icon" src="./assets/icons/share-icon.svg" alt="share icon"/>
+                    <img class="icon" src="./assets/icons/ellipsis-vertical-solid.svg" alt="hi">
+                </div>
+                <button id="play_button" class="play_button">
+                    <img id="play_pause_icon" class="icon" src="./assets/icons/play-solid.svg" alt="play icon">
+                </button>
+            </div>
         </div>        
     </body>
+    <script src="./script.js"></script>
 </html>
