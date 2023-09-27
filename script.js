@@ -100,6 +100,7 @@ for(let experience of experienceEllipsis) {
     const experienceInfo = experiences.find((exp) => exp.role === experience.dataset.role)
     const experienceDiv = document.createElement('div')
 
+    const infoContainer = document.createElement('div')
 
     const companyHeader = document.createElement('h1')
     companyHeader.textContent = experienceInfo.company
@@ -111,6 +112,7 @@ for(let experience of experienceEllipsis) {
     date.textContent = `${experienceInfo.startDate} - ${experienceInfo.endDate}`
 
     const experienceList = document.createElement('ul')
+    experienceList.classList.add('experience_bullets_container')
     for(let bullet of experienceInfo.bullets) {
         const expBullet = document.createElement('li')
         expBullet.textContent = bullet
@@ -126,10 +128,11 @@ for(let experience of experienceEllipsis) {
     })
 
     experienceDiv.classList.add('experience_overlay_container')
-    experienceDiv.appendChild(companyHeader)
-    experienceDiv.appendChild(titleHeader)
-    experienceDiv.appendChild(date)
-    experienceDiv.appendChild(experienceList)
+    infoContainer.appendChild(companyHeader)
+    infoContainer.appendChild(titleHeader)
+    infoContainer.appendChild(date)
+    infoContainer.appendChild(experienceList)
+    experienceDiv.appendChild(infoContainer)
     experienceDiv.appendChild(closeButton)
     experience.addEventListener('click', () => {
         container.classList.add('blur')
