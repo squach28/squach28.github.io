@@ -19,6 +19,7 @@ shareIcon.addEventListener('click', () => {
     }
     navigator.clipboard.writeText(document.URL)
     const modal = document.getElementById('modal')
+    modal.classList.add('modal_transition')
     modal.style.opacity = 1
     timer = setTimeout(() => {
         modal.style.opacity = 0

@@ -162,9 +162,18 @@ ul, li {
     background-color: white;
     color: black;
     text-align: center;
+
+}
+
+.modal_transition {
     transition: opacity 500ms, display 500ms;
 }
 
 .modal_content {
     user-select: none;
+}
+
+.gallery_card {
+    display: flex;
+    flex-direction: column;
 }
