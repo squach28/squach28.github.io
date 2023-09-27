@@ -20,9 +20,14 @@ a {
     text-decoration: none;
 }
 
+ul, li {
+    list-style-type: none;
+}
+
 .container {
     padding: 2em 2em 0 2em;
     margin-top: 2em;
+    position: relative;
 }
 
 .portfolio {
@@ -104,13 +109,43 @@ a {
 }
 
 .more_overlay_container {
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
     display: none;
     z-index: 3;
-    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.more_overlay_container > #close_button {
+    display: flex;
+    font-size: 1.5rem;
+    border: none;
+    color: white;
+    background-color: transparent;
+    font-weight: bold;
 }
 
 .blur {
     filter: blur(8px);
+}
+
+#close_button {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.contact_list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact_list_item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }

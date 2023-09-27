@@ -17,5 +17,14 @@ ellipsisIcon.addEventListener('click', () => {
     const container = document.getElementById('container')
     const moreOverlayContainer = document.getElementById('more_overlay_container')
     container.classList.add('blur')
-    moreOverlayContainer.style.display = 'block'
+    moreOverlayContainer.style.display = 'flex'
+})
+
+const closeButton = document.getElementById('close_button')
+
+closeButton.addEventListener('click', () => {
+    const container = document.getElementById('container')
+    const moreOverlayContainer = document.getElementById('more_overlay_container')
+    container.classList.remove('blur')
+    moreOverlayContainer.style.display = 'none'
 })
