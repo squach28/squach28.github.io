@@ -11,6 +11,21 @@ playButton.addEventListener('click' ,() => {
     } 
 })
 
+const shareIcon = document.getElementById('share_icon')
+let timer;
+shareIcon.addEventListener('click', () => {
+    if(timer) {
+        clearTimeout(timer)
+    }
+    navigator.clipboard.writeText(document.URL)
+    const modal = document.getElementById('modal')
+    modal.style.display = 'block'
+    timer = setTimeout(() => {
+        modal.style.display = 'none'
+    }, 2500)
+
+})
+
 const ellipsisIcon = document.getElementById('ellipsis_icon')
 
 ellipsisIcon.addEventListener('click', () => {
