@@ -25,7 +25,6 @@ ul, li {
 
 .container {
     padding: 2em;
-    margin-top: 2em;
     position: relative;
 }
 
@@ -115,12 +114,17 @@ ul, li {
     bottom: 20px;
     display: none;
     z-index: 3;
-    width: 100%;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.more_overlay_container > #close_button {
+.blur {
+    filter: blur(8px);
+}
+
+.close_button {
+    text-align: center;
+    margin: 0 auto;
     display: flex;
     font-size: 1.5rem;
     border: none;
@@ -129,19 +133,11 @@ ul, li {
     font-weight: bold;
 }
 
-.blur {
-    filter: blur(8px);
-}
-
-#close_button {
-    text-align: center;
-    margin: 0 auto;
-}
-
 .contact_list {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .contact_list_item {
@@ -162,7 +158,6 @@ ul, li {
     background-color: white;
     color: black;
     text-align: center;
-
 }
 
 .modal_transition {
@@ -171,6 +166,7 @@ ul, li {
 
 .modal_content {
     user-select: none;
+    padding: 1em;
 }
 
 .gallery {
@@ -198,10 +194,18 @@ ul, li {
 
 .gallery_card_subheader {
     font-size: 0.75rem;
+    font-style: italic;
 }
 
 .experience_icon {
     background-color: white;
     padding: 0.5em;
     border-radius: 10px;
+}
+
+.experience_overlay_container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
 }
