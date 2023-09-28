@@ -141,6 +141,7 @@ for(let experience of experienceEllipsis) {
     closeButton.classList.add('close_button')
     closeButton.addEventListener('click', () => {
         container.classList.remove('blur')
+        player.style.display = 'flex'
         document.body.removeChild(experienceDiv)
     })
 
@@ -153,6 +154,7 @@ for(let experience of experienceEllipsis) {
     experienceDiv.appendChild(closeButton)
     experience.addEventListener('click', () => {
         container.classList.add('blur')
+        player.style.display = 'none'
         document.body.appendChild(experienceDiv)
     })
 }
@@ -211,6 +213,7 @@ player.addEventListener('click', () => {
     document.body.style.overflow = 'hidden'
     detailedPage.style.display = 'block'
     player.style.display = 'none'
+    detailedPage.style.visiblity = 'visible'
 })
 
 const detailedPage = document.getElementById('detailed_page')
