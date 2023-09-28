@@ -259,8 +259,9 @@ a {
     align-items: center;
     width: 150px;
     height: 150px;
-    background-color: white;
-    color: black;
+    color: white;
+    font-weight: bold;
+    background-image: url('./assets/backgrounds/wordie-background.svg');
 }
 
 .project_description {

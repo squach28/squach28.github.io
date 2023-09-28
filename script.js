@@ -151,6 +151,5 @@ window.addEventListener('scroll', () => {
     let winHeight = window.innerHeight 
     let scrollPercent = scrollTop / (docHeight - winHeight)
     let scrollPercentRounded = Math.round(scrollPercent * 100)
-    console.log(scrollPercentRounded)
     progressBar.style.width = `${scrollPercentRounded}%`
 })
