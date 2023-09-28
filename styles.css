@@ -1,5 +1,4 @@
 body {
-    height: 100vh;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -22,8 +21,8 @@ a {
 
 
 .container {
-    padding: 2em;
     position: relative;
+    margin: 1.5em;
 }
 
 .portfolio {
@@ -233,6 +232,25 @@ a {
 .time_worked {
     font-size: 1.15rem;
     font-weight: bold;
+}
+
+.subheader {
+    margin: 0.75em 0;
+}
+
+.projects_list {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    overflow-x: scroll;
+    flex-wrap: no-wrap;
+    position: relative;
+}
+
+.test_box {
+    width: 200px;
+    height: 150px;
+    background-color: red;
 }
 
 
