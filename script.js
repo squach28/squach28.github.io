@@ -142,7 +142,15 @@ for(let experience of experienceEllipsis) {
         container.classList.add('blur')
         document.body.appendChild(experienceDiv)
     })
-
-
-
 }
+
+const progressBar = document.getElementById('progress_bar')
+window.addEventListener('scroll', () => {
+    let scrollTop = window.scrollY
+    let docHeight = document.body.offsetHeight
+    let winHeight = window.innerHeight 
+    let scrollPercent = scrollTop / (docHeight - winHeight)
+    let scrollPercentRounded = Math.round(scrollPercent * 100)
+    console.log(scrollPercentRounded)
+    progressBar.style.width = `${scrollPercentRounded}%`
+})

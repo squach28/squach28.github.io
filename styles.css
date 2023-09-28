@@ -241,7 +241,7 @@ a {
 .projects_list {
     list-style: none;
     display: flex;
-    gap: 50px;
+    gap: 16px;
     overflow-x: scroll;
     position: relative;
     scrollbar-width: none;
@@ -253,14 +253,78 @@ a {
     scrollbar-width: none;
 }
 
-.test_box {
-    width: 200px;
+.project_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
     height: 150px;
-    background-color: red;
+    background-color: white;
+    color: black;
 }
 
 .project_description {
-    text-align: center;
+    font-size: 1.25rem;
+}
+
+.player {
+    display: flex;
+    position: sticky;
+    bottom: 0.01em;
+    left: 0;
+    width: 97%;
+    background-color: #4F3353;
+    color: white;
+    align-items: center;
+    border-radius: 5px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.player_content {
+    display: flex;
+    padding: 0.5em 1em;
+    gap: 0.5em;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
+.player_content_info {
+    display: flex;
+    gap: 0.4em;
+    justify-content: center;
+    align-items: center;
+}
+
+.player_icon {
+    width: 25px;
+    height: 25px;
+    padding: 0.25em;
+    border-radius: 5px;
+    margin-left: 0.25em;
+    transition: all 0.5 ease-in-out;
+}
+
+#currently_playing_icon {
+    background-color: white;
+}
+
+#progress_bar {
+    position: absolute;
+    width: 0%;
+    border: 1.5px solid white;
+    bottom: 0;
+    left: 0;
+}
+
+#complete_progress_bar {
+    position: absolute;
+    width: 100%;
+    border: 1.5px solid #6B6A6A;
+    bottom: 0;
+    left: 0;
 }
 
 
