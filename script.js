@@ -204,5 +204,20 @@ playerPlayPauseIcon.addEventListener('click', () => {
 })
 
 player.addEventListener('click', () => {
+    console.log('player clicked')
+    const detailedPage = document.getElementById('detailed_page')
+    document.body.style.position = 'relative'
+    container.style.margin = '0'
+    document.body.style.overflow = 'hidden'
+    detailedPage.style.display = 'block'
+    player.style.display = 'none'
+})
 
+const detailedPage = document.getElementById('detailed_page')
+detailedPage.addEventListener('click', () => {
+    document.body.style.position = 'static'
+    container.style.margin = '1.5em'
+    document.body.style.overflow = 'auto'
+    player.style.display = 'flex'
+    detailedPage.style.display = 'none'
 })
