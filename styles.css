@@ -1,4 +1,5 @@
 body {
+    height: 100vh;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -8,7 +9,7 @@ body {
     font-family: 'Be Vietnam Pro', sans-serif;
 }
 
-h1, ul, li, a, p {
+h1, h2, ul, li, a, p {
     margin: 0;
     padding: 0;
     padding-inline-start: 0;
@@ -166,30 +167,32 @@ a {
     padding: 1em;
 }
 
-.gallery {
+.experience_list {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    list-style: none;
+    margin-top: 1.5em;
 }
 
-.gallery_card {
+.experience_card {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.gallery_info {
+.experience_info {
     display: flex;
     gap: 0.75em;
     align-items: center;
 }
 
-.gallery_card_header {
+.experience_card_header {
     font-size: 0.9rem;
     font-weight: bold;
 }
 
-.gallery_card_subheader {
+.experience_card_subheader {
     font-size: 0.75rem;
     font-style: italic;
 }
@@ -217,4 +220,19 @@ a {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
+    padding: 1em;
+    font-size: 1.25rem;
+
 }
+
+.title_header {
+    margin-bottom: 0.5em;
+    font-style: italic;
+}
+
+.time_worked {
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+

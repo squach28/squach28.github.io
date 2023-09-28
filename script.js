@@ -90,7 +90,9 @@ const experiences = [
         startDate: 'June 2019',
         endDate: 'Sept 2019',
         bullets: [
-
+            'Rotated across various positions within the R&D team, gaining skills in scripting and quality assurance',
+            'Performed diagnostics on Advantest SSD testers, such as the MTP3000HVM/2 and MPT3000HES/2',
+            'Automated formatted diagnostic log results utilizing MySQL, Silk Test Workbench, and Visual Basic .NET'
         ]
     }
 ]
@@ -107,9 +109,11 @@ for(let experience of experienceEllipsis) {
 
     const titleHeader = document.createElement('h2')
     titleHeader.textContent = experienceInfo.title
+    titleHeader.classList.add('title_header')
 
-    const date = document.createElement('p')
-    date.textContent = `${experienceInfo.startDate} - ${experienceInfo.endDate}`
+    const timeWorked = document.createElement('p')
+    timeWorked.textContent = `${experienceInfo.startDate} - ${experienceInfo.endDate}`
+    timeWorked.classList.add('time_worked')
 
     const experienceList = document.createElement('ul')
     experienceList.classList.add('experience_bullets_container')
@@ -130,7 +134,7 @@ for(let experience of experienceEllipsis) {
     experienceDiv.classList.add('experience_overlay_container')
     infoContainer.appendChild(companyHeader)
     infoContainer.appendChild(titleHeader)
-    infoContainer.appendChild(date)
+    infoContainer.appendChild(timeWorked)
     infoContainer.appendChild(experienceList)
     experienceDiv.appendChild(infoContainer)
     experienceDiv.appendChild(closeButton)
