@@ -144,6 +144,37 @@ for(let experience of experienceEllipsis) {
     })
 }
 
+const projects = [
+    {
+        name: 'Wordie',
+        backgroundImageUrl: './assets/backgrounds/wordie-background.svg'
+    },
+    {
+        name: 'MotivateMe',
+        backgroundImageUrl: './assets/backgrounds/motivateme-background.svg'
+    }
+]
+const projectsList = document.getElementById('projects_list')
+for(let project of projects) {
+    const projectListItem = document.createElement('li')
+    const projectBox = document.createElement('div')
+    projectBox.classList.add('project_box')
+    projectBox.style.backgroundImage = `url(${project.backgroundImageUrl})`
+
+    const projectDescription = document.createElement('div')
+    projectDescription.classList.add('project_description')
+
+    const projectName = document.createElement('p')
+    projectName.textContent = project.name
+
+    projectDescription.appendChild(projectName)
+    projectBox.appendChild(projectDescription)
+
+    projectListItem.appendChild(projectBox)
+
+    projectsList.appendChild(projectListItem)
+}
+
 const progressBar = document.getElementById('progress_bar')
 window.addEventListener('scroll', () => {
     let scrollTop = window.scrollY

@@ -261,7 +261,7 @@ a {
     height: 150px;
     color: white;
     font-weight: bold;
-    background-image: url('./assets/backgrounds/wordie-background.svg');
+    object-fit: scale-down;
 }
 
 .project_description {
