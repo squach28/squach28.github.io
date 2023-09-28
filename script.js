@@ -1,6 +1,8 @@
 const container = document.getElementById('container')
 var isPlaying = true
 const playButton = document.getElementById('play_button')
+const player = document.getElementById('player')
+
 
 
 const togglePlayPauseButton = () => {
@@ -43,6 +45,8 @@ ellipsisIcon.addEventListener('click', () => {
     const moreOverlayContainer = document.getElementById('more_overlay_container')
     container.classList.add('blur')
     moreOverlayContainer.style.display = 'flex'
+    player.style.display = 'none'
+
 })
 
 const closeButton = document.getElementById('close_more_overlay_button')
@@ -51,6 +55,7 @@ closeButton.addEventListener('click', () => {
     const moreOverlayContainer = document.getElementById('more_overlay_container')
     container.classList.remove('blur')
     moreOverlayContainer.style.display = 'none'
+    player.style.display = 'flex'
 })
 
 const experiences = [
@@ -198,7 +203,6 @@ playerPlayPauseIcon.addEventListener('click', () => {
     togglePlayPauseButton()
 })
 
-const player = document.getElementById('player')
 player.addEventListener('click', () => {
-    
+
 })
