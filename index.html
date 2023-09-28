@@ -40,7 +40,7 @@
                     <img id="ellipsis_icon" class="icon" src="./assets/icons/ellipsis-vertical-solid.svg" alt="ellipsis icon">
                 </div>
                 <button id="play_button" class="play_button">
-                    <img id="play_pause_icon" class="icon" src="./assets/icons/play-solid.svg" alt="play icon">
+                    <img id="play_pause_icon" class="icon" src="./assets/icons/pause-solid.svg" alt="play icon">
                 </button>
             </div>
 
@@ -105,7 +105,7 @@
         </div>  
 
 
-        <div class="player">
+        <div id="player" class="player">
             <div class="player_content">
                 <div class="player_content_info">
                     <img id="currently_playing_icon" class="player_icon" src="./assets/icons/music-solid.svg" alt="music notes icon">
@@ -116,11 +116,15 @@
                 </div>
                 <div>
                     <img class="player_icon" src="./assets/icons/heart-regular.svg" alt="unfilled heart icon">
-                    <img class="player_icon" src="./assets/icons/pause-solid-white.svg" alt="pause icon" />
+                    <img id="player_play_pause_icon" class="player_icon" src="./assets/icons/pause-solid-white.svg" alt="pause icon" />
                 </div>
             </div>
             <div id="complete_progress_bar"></div>
             <div id="progress_bar"></div>
+        </div>
+
+        <div class="detailed_page">
+
         </div>
 
         <div id="modal">

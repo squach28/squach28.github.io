@@ -1,16 +1,24 @@
 const container = document.getElementById('container')
-
+var isPlaying = true
 const playButton = document.getElementById('play_button')
 
-playButton.addEventListener('click' ,() => {
+
+const togglePlayPauseButton = () => {
     const iconImg = document.getElementById('play_pause_icon')
-    const iconPathIntoArr = iconImg.src.split('/')
-    const iconName = iconPathIntoArr[iconPathIntoArr.length - 1]
-    if(iconName === 'play-solid.svg') {
+    const playerPlayPauseIcon = document.getElementById('player_play_pause_icon')
+    isPlaying = !isPlaying
+    if(isPlaying) {
         iconImg.src = './assets/icons/pause-solid.svg'
+        playerPlayPauseIcon.src = './assets/icons/pause-solid-white.svg'
     } else {
         iconImg.src = './assets/icons/play-solid.svg'
+        playerPlayPauseIcon.src = './assets/icons/play-solid-white.svg'
     } 
+
+}
+
+playButton.addEventListener('click' ,() => {
+    togglePlayPauseButton()
 })
 
 const shareIcon = document.getElementById('share_icon')
@@ -183,4 +191,14 @@ window.addEventListener('scroll', () => {
     let scrollPercent = scrollTop / (docHeight - winHeight)
     let scrollPercentRounded = Math.round(scrollPercent * 100)
     progressBar.style.width = `${scrollPercentRounded}%`
+})
+
+const playerPlayPauseIcon = document.getElementById('player_play_pause_icon')
+playerPlayPauseIcon.addEventListener('click', () => {
+    togglePlayPauseButton()
+})
+
+const player = document.getElementById('player')
+player.addEventListener('click', () => {
+    
 })
