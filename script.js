@@ -201,7 +201,8 @@ window.addEventListener('scroll', () => {
 })
 
 const playerPlayPauseIcon = document.getElementById('player_play_pause_icon')
-playerPlayPauseIcon.addEventListener('click', () => {
+playerPlayPauseIcon.addEventListener('click', (e) => {
+    e.stopPropagation()
     togglePlayPauseButton()
 })
 
