@@ -243,14 +243,24 @@ a {
     display: flex;
     gap: 50px;
     overflow-x: scroll;
-    flex-wrap: no-wrap;
     position: relative;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+}
+
+.projects_list::-webkit-scrollbar { 
+    display: none;
+    scrollbar-width: none;
 }
 
 .test_box {
     width: 200px;
     height: 150px;
     background-color: red;
+}
+
+.project_description {
+    text-align: center;
 }
 
 
