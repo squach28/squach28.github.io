@@ -346,6 +346,10 @@ a {
     overflow-y: hidden;
 }
 
+.selected_text {
+    color: #1BD760;
+}
+
 @keyframes expand_and_deflate {
     0% {
         transform: scale(0.75)

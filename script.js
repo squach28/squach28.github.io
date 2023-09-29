@@ -122,12 +122,6 @@ const experiences = [
     }
 ]
 
-// infoContainer.addEventListener('click', () => {
-//     selectedTopic = experienceInfo.company
-//     selectedSubTopic = experienceInfo.role
-//     playerHeader.textContent = selectedTopic
-//     playerSubheader.textContent = selectedSubTopic
-// })
 const experienceList = document.getElementById('experience_list')
 for(let experience of experiences) {
     const expListItem = document.createElement('li')
@@ -166,7 +160,8 @@ for(let experience of experiences) {
     expCard.appendChild(ellipsisIcon)
     expListItem.appendChild(expCard)
 
-    ellipsisIcon.addEventListener('click', () => {
+    ellipsisIcon.addEventListener('click', (e) => {
+        e.stopPropagation()
         const experienceDiv = document.createElement('div')
 
         const infoContainer = document.createElement('div')
@@ -210,6 +205,18 @@ for(let experience of experiences) {
         player.style.display = 'none'
         document.body.appendChild(experienceDiv)
 
+    })
+
+    expCard.addEventListener('click', () => {
+        selectedTopic = experience.company 
+        selectedSubTopic = experience.title 
+        playerHeader.textContent = selectedTopic 
+        playerSubheader.textContent = selectedSubTopic
+        const divElements = document.querySelectorAll('div')
+        for(let element of divElements) {
+            element.classList.remove('selected_text')
+        }
+        expCard.classList.add('selected_text')
     })
 
     experienceList.appendChild(expListItem)
