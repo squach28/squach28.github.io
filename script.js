@@ -2,7 +2,10 @@ const container = document.getElementById('container')
 var isPlaying = true
 const playButton = document.getElementById('play_button')
 const player = document.getElementById('player')
-const selectedTopic = `Sean Quach's Portfolio`
+const playerHeader = document.getElementById('player_header')
+const playerSubheader = document.getElementById('player_subheader')
+var selectedTopic = `Sean Quach's Portfolio`
+var selectedSubTopic = ''
 
 
 
@@ -71,7 +74,9 @@ const experiences = [
             'Develop automation scripts and increase the percentage of test cases automated from 12% to 43%',
             'Analyze manual test cases and determine automation feasibility based on constraints  ',
             'Run regression tests to improve efficiency and reduce resources required for manual testing'
-        ]
+        ],
+        iconUrl: './assets/icons/screwdriver-wrench-solid.svg',
+        iconAlt: 'screwdriver icon'
     },
     {
         role: 'tataSoftwareEngineer',
@@ -83,7 +88,9 @@ const experiences = [
             'Improved the UI of the Kaiser Permanente Member Services Chatbot, designed to guide KP members to the proper resources (React & Bot Framework Web Chat)',
             'Collaborated with UX team to discuss and implemented features, such as file attachment, live chat with an agent, and error handling to enhance user experience',
             'Accelerated development through CI/CD with the Jenkins pipeline to deploy changes into the development environment for testing'
-        ]
+        ],
+        iconUrl: './assets/icons/code-solid.svg',
+        iconAlt: 'web html icon'
     },
     {
         role: 'infiniteOptionsMobileDev',
@@ -95,7 +102,9 @@ const experiences = [
             'Developed a cross platform mobile app for Prep to Your Door, a food delivery service (C# & Xamarin Forms)',
             'Implemented checkout process with Stripe and social login with Facebook and Google',
             'Went through the process of publishing an alpha release onto the Google Play Console for testing'
-        ]
+        ],
+        iconUrl: './assets/icons/mobile-solid.svg',
+        iconAlt: 'mobile phone icon'
     },
     {
         role: 'advantestTechnicalSpecialist',
@@ -107,57 +116,103 @@ const experiences = [
             'Rotated across various positions within the R&D team, gaining skills in scripting and quality assurance',
             'Performed diagnostics on Advantest SSD testers, such as the MTP3000HVM/2 and MPT3000HES/2',
             'Automated formatted diagnostic log results utilizing MySQL, Silk Test Workbench, and Visual Basic .NET'
-        ]
+        ],
+        iconUrl: './assets/icons/microchip-solid.svg',
+        iconAlt: 'microchip icon'
     }
 ]
 
-const experienceEllipsis = document.querySelectorAll('img.experience_ellipsis')
-for(let experience of experienceEllipsis) {
-    const experienceInfo = experiences.find((exp) => exp.role === experience.dataset.role)
-    const experienceDiv = document.createElement('div')
+// infoContainer.addEventListener('click', () => {
+//     selectedTopic = experienceInfo.company
+//     selectedSubTopic = experienceInfo.role
+//     playerHeader.textContent = selectedTopic
+//     playerSubheader.textContent = selectedSubTopic
+// })
+const experienceList = document.getElementById('experience_list')
+for(let experience of experiences) {
+    const expListItem = document.createElement('li')
 
-    const infoContainer = document.createElement('div')
+    const expCard = document.createElement('div')
+    expCard.classList.add('experience_card')
 
-    const companyHeader = document.createElement('h1')
-    companyHeader.textContent = experienceInfo.company
+    const expInfo = document.createElement('div')
+    expInfo.classList.add('experience_info')
+    expCard.appendChild(expInfo)
 
-    const titleHeader = document.createElement('h2')
-    titleHeader.textContent = experienceInfo.title
-    titleHeader.classList.add('title_header')
+    const expIcon = document.createElement('img')
+    expIcon.classList.add('icon', 'experience_icon')
+    expIcon.src = experience.iconUrl
+    expIcon.alt = experience.iconAlt
 
-    const timeWorked = document.createElement('p')
-    timeWorked.textContent = `${experienceInfo.startDate} - ${experienceInfo.endDate}`
-    timeWorked.classList.add('time_worked')
+    const expDetails = document.createElement('div')
+    const expHeader = document.createElement('p')
+    expHeader.classList.add('experience_card_header')
+    expHeader.textContent = experience.company 
+    const expSubHeader = document.createElement('p')
+    expSubHeader.classList.add('experience_card_subheader')
+    expSubHeader.textContent = experience.title 
 
-    const experienceList = document.createElement('ul')
-    experienceList.classList.add('experience_bullets_container')
-    for(let bullet of experienceInfo.bullets) {
-        const expBullet = document.createElement('li')
-        expBullet.textContent = bullet
-        experienceList.appendChild(expBullet)
-    }
+    expDetails.appendChild(expHeader)
+    expDetails.appendChild(expSubHeader)
 
-    const closeButton = document.createElement('button')
-    closeButton.textContent = 'Close'
-    closeButton.classList.add('close_button')
-    closeButton.addEventListener('click', () => {
-        container.classList.remove('blur')
-        player.style.display = 'flex'
-        document.body.removeChild(experienceDiv)
-    })
+    expInfo.appendChild(expIcon)
+    expInfo.appendChild(expDetails)
 
-    experienceDiv.classList.add('experience_overlay_container')
-    infoContainer.appendChild(companyHeader)
-    infoContainer.appendChild(titleHeader)
-    infoContainer.appendChild(timeWorked)
-    infoContainer.appendChild(experienceList)
-    experienceDiv.appendChild(infoContainer)
-    experienceDiv.appendChild(closeButton)
-    experience.addEventListener('click', () => {
+    const ellipsisIcon = document.createElement('img')
+    ellipsisIcon.classList.add('icon', 'experience_ellipsis')
+    ellipsisIcon.src = './assets/icons/ellipsis-vertical-solid.svg'
+    ellipsisIcon.alt = 'ellipsis icon'
+
+    expCard.appendChild(ellipsisIcon)
+    expListItem.appendChild(expCard)
+
+    ellipsisIcon.addEventListener('click', () => {
+        const experienceDiv = document.createElement('div')
+
+        const infoContainer = document.createElement('div')
+    
+        const companyHeader = document.createElement('h1')
+        companyHeader.textContent = experience.company
+    
+        const titleHeader = document.createElement('h2')
+        titleHeader.textContent = experience.title
+        titleHeader.classList.add('title_header')
+    
+        const timeWorked = document.createElement('p')
+        timeWorked.textContent = `${experience.startDate} - ${experience.endDate}`
+        timeWorked.classList.add('time_worked')
+    
+        const experienceList = document.createElement('ul')
+        experienceList.classList.add('experience_bullets_container')
+        for(let bullet of experience.bullets) {
+            const expBullet = document.createElement('li')
+            expBullet.textContent = bullet
+            experienceList.appendChild(expBullet)
+        }
+    
+        const closeButton = document.createElement('button')
+        closeButton.textContent = 'Close'
+        closeButton.classList.add('close_button')
+        closeButton.addEventListener('click', () => {
+            container.classList.remove('blur')
+            player.style.display = 'flex'
+            document.body.removeChild(experienceDiv)
+        })
+    
+        experienceDiv.classList.add('experience_overlay_container')
+        infoContainer.appendChild(companyHeader)
+        infoContainer.appendChild(titleHeader)
+        infoContainer.appendChild(timeWorked)
+        infoContainer.appendChild(experienceList)
+        experienceDiv.appendChild(infoContainer)
+        experienceDiv.appendChild(closeButton)
         container.classList.add('blur')
         player.style.display = 'none'
         document.body.appendChild(experienceDiv)
+
     })
+
+    experienceList.appendChild(expListItem)
 }
 
 const projects = [
