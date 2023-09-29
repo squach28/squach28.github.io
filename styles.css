@@ -351,6 +351,44 @@ a {
     color: #1BD760;
 }
 
+#skills_list {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+    overflow-x: scroll;
+    position: relative;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+}
+
+#skills_list::-webkit-scrollbar { 
+    display: none;
+    scrollbar-width: none;
+}
+
+.skill_list_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75em;
+}
+
+.skill_container {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.skill_icon {
+    width: 50px;
+    height: 50px;
+}
+
 @keyframes expand_and_deflate {
     0% {
         transform: scale(0.75)

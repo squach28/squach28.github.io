@@ -258,6 +258,70 @@ for(let project of projects) {
     projectsList.appendChild(projectListItem)
 }
 
+const skills = [
+    {
+        name: 'HTML',
+        iconUrl: './assets/icons/html5-plain.svg',
+        iconAlt: 'HTML icon'
+    },
+    {
+        name: 'CSS',
+        iconUrl: './assets/icons/css3-plain.svg',
+        iconAlt: 'CSS icon'
+    },
+    {
+        name: 'JavaScript',
+        iconUrl: './assets/icons/javascript-original.svg',
+        iconAlt: 'JavaScript icon'
+    }, 
+    {
+        name: 'React',
+        iconUrl: './assets/icons/react-original.svg',
+        iconAlt: 'React icon'
+    },
+    {
+        name: 'Java',
+        iconUrl: './assets/icons/java-original.svg',
+        iconAlt: 'Java icon'
+    },
+    {
+        name: 'MySQL',
+        iconUrl: './assets/icons/mysql-original.svg',
+        iconAlt: 'MySQL icon'
+    },
+    {
+        name: 'Github',
+        iconUrl: './assets/icons/github-original.svg',
+        iconAlt: 'Github Icon'
+    }
+]
+
+const skillsList = document.getElementById('skills_list')
+
+for(let skill of skills){
+    const skillListItem = document.createElement('li')
+    skillListItem.classList.add('skill_list_item') 
+
+    const skillContainer = document.createElement('div')
+    skillContainer.classList.add('skill_container')
+
+    const skillIcon = document.createElement('img')
+    skillIcon.classList.add('skill_icon')
+    skillIcon.src = skill.iconUrl
+    skillIcon.alt = skill.iconAlt
+
+    const skillName = document.createElement('p')
+    skillName.textContent = skill.name
+
+    skillContainer.appendChild(skillIcon)
+
+    skillListItem.appendChild(skillContainer)
+    skillListItem.appendChild(skillName)
+
+    skillsList.appendChild(skillListItem)
+}
+
+
 const progressBar = document.getElementById('progress_bar')
 window.addEventListener('scroll', () => {
     let scrollTop = window.scrollY
