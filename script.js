@@ -208,6 +208,7 @@ for(let experience of experiences) {
     })
 
     expCard.addEventListener('click', () => {
+        console.log('exp card clicked')
         selectedTopic = experience.company 
         selectedSubTopic = experience.title 
         playerHeader.textContent = selectedTopic 
@@ -217,6 +218,10 @@ for(let experience of experiences) {
             element.classList.remove('selected_text')
         }
         expCard.classList.add('selected_text')
+
+        const currentlyPlayingIcon = document.getElementById('currently_playing_icon')
+        console.log(currentlyPlayingIcon)
+        currentlyPlayingIcon.src = experience.iconUrl
     })
 
     experienceList.appendChild(expListItem)

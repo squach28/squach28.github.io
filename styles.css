@@ -296,9 +296,10 @@ a {
 
 .player_content_info {
     display: flex;
-    gap: 0.4em;
+    gap: 0.7em;
     justify-content: center;
     align-items: center;
+    font-size: 0.8rem;
 }
 
 .player_icon {
