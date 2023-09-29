@@ -2,6 +2,7 @@ const container = document.getElementById('container')
 var isPlaying = true
 const playButton = document.getElementById('play_button')
 const player = document.getElementById('player')
+const selectedTopic = `Sean Quach's Portfolio`
 
 
 
@@ -204,6 +205,15 @@ const playerPlayPauseIcon = document.getElementById('player_play_pause_icon')
 playerPlayPauseIcon.addEventListener('click', (e) => {
     e.stopPropagation()
     togglePlayPauseButton()
+})
+
+const playerHeartIcon = document.getElementById('player_heart_icon')
+playerHeartIcon.addEventListener('click', (e) => {
+    e.stopPropagation()
+    playerHeartIcon.classList.add('player_heart_icon')
+    setTimeout(() => {
+        playerHeartIcon.classList.remove('player_heart_icon')
+    }, 1000)
 })
 
 player.addEventListener('click', () => {
