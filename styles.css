@@ -63,6 +63,7 @@ a {
     border-radius: 15px;
     padding: 0.5em 1em;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .icon {
@@ -70,6 +71,7 @@ a {
     max-height: 30px;
     min-width: 30px;
     min-height: 30px;
+    cursor: pointer;
 }
 
 .play_button {
@@ -311,6 +313,10 @@ a {
     transition: all 0.5 ease-in-out;
 }
 
+#player_header {
+    font-weight: bold;
+}
+
 .player_heart_icon {
     animation: expand_and_deflate 0.5s;
 }
@@ -387,6 +393,30 @@ a {
 .skill_icon {
     width: 50px;
     height: 50px;
+}
+
+@media (min-width: 800px) {
+    .icon_list {
+        flex-direction: row-reverse;
+        justify-content: start;
+        gap: 2em;
+        align-items: center;
+    }
+
+    #experience_list {
+        gap: 0.25em;
+    }
+
+    .experience_card {
+        width: 350px;
+        justify-content: space-between;
+        margin: 0.25em 0;
+        user-select: none;
+    }
+
+    .experience_card:hover {
+        background-color: gray;
+    }
 }
 
 @keyframes expand_and_deflate {

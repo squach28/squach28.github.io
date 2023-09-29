@@ -37,8 +37,10 @@ shareIcon.addEventListener('click', () => {
     const modal = document.getElementById('modal')
     modal.classList.add('modal_transition')
     modal.style.opacity = 1
+    modal.style.zIndex = 100;
     timer = setTimeout(() => {
         modal.style.opacity = 0
+        modal.style.zIndex = 3
     }, 2500)
 
 })
