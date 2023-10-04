@@ -130,7 +130,7 @@ a {
     color: white;
     background-color: transparent;
     font-weight: bold;
-    z-index: 15;
+    z-index: 4;
 }
 
 .contact_list {
@@ -158,7 +158,7 @@ a {
     background-color: white;
     color: black;
     text-align: center;
-    z-index: 2;
+    z-index: 0;
 }
 
 .modal_transition {

@@ -46,10 +46,10 @@ shareIcon.addEventListener('click', () => {
     const modal = document.getElementById('modal')
     modal.classList.add('modal_transition')
     modal.style.opacity = 1
-    modal.style.zIndex = 100;
+    modal.style.zIndex = 5;
     timer = setTimeout(() => {
         modal.style.opacity = 0
-        modal.style.zIndex = 3
+        modal.style.zIndex = 0
     }, 2500)
 
 })
@@ -67,6 +67,7 @@ ellipsisIcon.addEventListener('click', () => {
 const closeButton = document.getElementById('close_more_overlay_button')
 
 closeButton.addEventListener('click', () => {
+    console.log('close button clicked')
     const moreOverlayContainer = document.getElementById('more_overlay_container')
     container.classList.remove('blur')
     moreOverlayContainer.style.display = 'none'
