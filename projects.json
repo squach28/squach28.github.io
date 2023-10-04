@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Wordie",
+        "backgroundImageUrl": "./assets/backgrounds/wordie-background.svg"
+    },
+    {
+        "name": "MotivateMe",
+        "backgroundImageUrl": "./assets/backgrounds/motivateme-background.svg"
+    }
+]
