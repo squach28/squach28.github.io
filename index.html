@@ -2,68 +2,85 @@
 <html>
     <head>
         <title>Sean Quach's Portfolio</title>
-        <link rel="stylesheet" href="styles.css">
-        <script src="https://kit.fontawesome.com/4b3791635f.js" crossorigin="anonymous"></script>
-        <script src="script.js"></script>
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="stylesheet" href="styles.css">
     </head>
-
     <body>
-        <div id="mainContainer">
-            <nav>
-                <div>
-                    <ul id="navBar">
-                        <li><a href="#aboutMeContainer">About Me</a></li>
-                        <li><a href="#projectsContainer">Projects</a></li>
-                        <li><a href="#interestsContainer">Interests</a></li>
-                        <li><i id="darkModeIcon" class="far fa-moon" onclick="toggleDarkMode()"></i></li>
-                    </ul>
+        <div id="more_overlay_container" class="more_overlay_container">
+                <ul class="contact_list">
+                    <li class="contact_list_item">
+                        <img class="icon" src="./assets/icons/envelope-solid.svg" alt="envelope icon">
+                        <a class="contact_list_item_text" href="mailto:squach3443@gmail.com">squach3443@gmail.com</a>
+                    </li>
+                    <li class="contact_list_item">
+                        <img class="icon" src="./assets/icons/linkedin.svg" alt="envelope icon">
+                        <a class="contact_list_item_text" target="_blank" href="https://www.linkedin.com/in/sean-quach/">https://www.linkedin.com/in/sean-quach/</a>
+                    </li>
+                    <li class="contact_list_item">
+                        <img class="icon" src="./assets/icons/square-github.svg" alt="envelope icon">
+                        <a class="contact_list_item_text" target="_blank" href="https://github.com/squach28">https://github.com/squach28</a>
+                    </li>
+                </ul>
+            <button id="close_more_overlay_button"class="close_button">Close</button>
+        </div>
+
+        <div id="container" class="container">
+            <img class="portfolio" src="assets/images/portfolio.jpeg" alt="picture of Sean Quach"/>
+            <h1 class="header">Sean Quach</h1>
+            <p class="sub_header">1,000 monthly listeners</p>    
+            <div class="icon_list">
+                <div class="list">
+                    <button class="follow_button">
+                        <a target="_blank" href="https://www.linkedin.com/in/sean-quach/">Connect</a>
+                    </button>
+                    <img id="share_icon" class="icon" src="./assets/icons/share-icon.svg" alt="share icon"/>
+                    <img id="ellipsis_icon" class="icon" src="./assets/icons/ellipsis-vertical-solid.svg" alt="ellipsis icon">
                 </div>
-            </nav>
-            
-           <div id="title" class="title">
-               <h1>SEAN QUACH</h1>
-           </div>
+                <button id="play_button" class="play_button">
+                    <img id="play_pause_icon" class="icon" src="./assets/icons/pause-solid.svg" alt="play icon">
+                </button>
+            </div>
 
+            <h2 class="subheader">Experience</h2>
+            <ul id="experience_list" class="experience_list"></ul>
 
-            <div id="aboutMeContainer">
-                <div>
-                    <h2 class="sectionTitle">About Me</h1>
-                    <hr class="lineBreak">
-                </div>
+            <h2 class="subheader">Projects</h2>
+            <div class="projects_container">
+                <ul id="projects_list" class="projects_list"></ul>
+            </div>
 
-                <div id="aboutMeContent">
-                    <span id="aboutMeDescription">Hey! I'm Sean, a Software Engineer based in San Jose, CA. My interests in Software Engineering are Mobile and Web Development. The frameworks I have worked with include Angular, Flutter, and Swift. Other interests include User Interface/User Experience (UI/UX) and DevOps. You can catch me in the Bay Area trying out various restaurants and attempting to get Yelp Elite.</span>
-                    <div id="portfolio">
-                        <img id="portfolioPicture" src="portfolioPicture.JPG">
+            <h2 class="subheader">Skills</h2>
+            <ul id="skills_list">
+            </ul>
+        </div>  
+
+        <div id="player" class="player">
+            <div class="player_content">
+                <div class="player_content_info">
+                    <img id="currently_playing_icon" class="player_icon" src="./assets/icons/music-solid.svg" alt="music notes icon">
+                    <div>
+                        <p id="player_header">Sean Quach&apos;s Portfolio</p>
+                        <p id="player_subheader">Macbook Air</p>
                     </div>
                 </div>
-                
+                <div>
+                    <img id="player_heart_icon" class="player_icon" src="./assets/icons/heart-regular.svg" alt="unfilled heart icon">
+                    <img id="player_play_pause_icon" class="player_icon" src="./assets/icons/pause-solid-white.svg" alt="pause icon" />
+                </div>
             </div>
+            <div id="complete_progress_bar"></div>
+            <div id="progress_bar"></div>
+        </div>
 
-            <div id="projectsContainer">
-                <div>
-                    <h2 class="sectionTitle">Projects</h1>
-                    <hr class="lineBreak">
-                </div>
-                <div>
-                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at lacinia tortor. Nullam a elit ultricies, blandit massa id, pretium libero. Suspendisse auctor est eu ipsum egestas lobortis quis ut leo. Etiam pellentesque tincidunt elementum. Morbi non nulla sed enim tincidunt vestibulum. Curabitur venenatis lorem vel tellus porta mollis. Suspendisse in commodo est. Vivamus turpis enim, euismod non feugiat at, venenatis pellentesque diam. Aenean laoreet lacus et malesuada convallis. Praesent vel viverra lectus. Morbi vehicula augue id mauris semper faucibus.</span>
-                </div>
-            </div>
-
-            <div id="interestsContainer">
-                <div>
-                    <h2 class="sectionTitle">Interests</h1>
-                    <hr class="lineBreak">
-                </div>
-                <div>
-                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at lacinia tortor. Nullam a elit ultricies, blandit massa id, pretium libero. Suspendisse auctor est eu ipsum egestas lobortis quis ut leo. Etiam pellentesque tincidunt elementum. Morbi non nulla sed enim tincidunt vestibulum. Curabitur venenatis lorem vel tellus porta mollis. Suspendisse in commodo est. Vivamus turpis enim, euismod non feugiat at, venenatis pellentesque diam. Aenean laoreet lacus et malesuada convallis. Praesent vel viverra lectus. Morbi vehicula augue id mauris semper faucibus.</span>
-                </div>
-            </div>
+        <div id="modal">
+            <p class="modal_content">Link copied to clipboard!</p>
+        </div>
+        <div id="detailed_page">
+            this is the pagesdklfasdfkh
         </div>
     </body>
+    <script src="./script.js"></script>
 </html>
