@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container" class="container">
+        <img class="portfolio" src="assets/images/portfolio.jpeg" alt="picture of Sean Quach"/>
+        <h1 class="header">Sean Quach</h1>
+        <p class="sub_header">1,000 monthly listeners</p>    
+        <div class="icon_list">
+            <div class="list">
+                <button class="follow_button">
+                    <a target="_blank" href="https://www.linkedin.com/in/sean-quach/">Connect</a>
+                </button>
+                <img id="share_icon" class="icon" src="./assets/icons/share-icon.svg" alt="share icon"/>
+                <img id="ellipsis_icon" class="icon" src="./assets/icons/ellipsis-vertical-solid.svg" alt="ellipsis icon">
+            </div>
+            <button id="play_button" class="play_button">
+                <img id="play_pause_icon" class="icon" src="./assets/icons/pause-solid.svg" alt="play icon">
+            </button>
+        </div>
+
+        <h2 class="subheader">Experience</h2>
+        <ul id="experience_list" class="experience_list"></ul>
+
+        <h2 class="subheader">Projects</h2>
+        <div class="projects_container">
+            <ul id="projects_list" class="projects_list"></ul>
+        </div>
+
+        <h2 class="subheader">Skills</h2>
+        <ul id="skills_list">
+        </ul>
+    </div>  
+
+    <div id="player" class="player">
+        <div class="player_content">
+            <div class="player_content_info">
+                <img id="currently_playing_icon" class="player_icon" src="./assets/icons/music-solid.svg" alt="music notes icon">
+                <div>
+                    <p id="player_header">Sean Quach&apos;s Portfolio</p>
+                    <p id="player_subheader">Macbook Air</p>
+                </div>
+            </div>
+            <div>
+                <img id="player_heart_icon" class="player_icon" src="./assets/icons/heart-regular.svg" alt="unfilled heart icon">
+                <img id="player_play_pause_icon" class="player_icon" src="./assets/icons/pause-solid-white.svg" alt="pause icon" />
+            </div>
+        </div>
+        <div id="complete_progress_bar"></div>
+        <div id="progress_bar"></div>
+    </div>
+</body>
+</html>

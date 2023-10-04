@@ -62,8 +62,8 @@
                 <div class="player_content_info">
                     <img id="currently_playing_icon" class="player_icon" src="./assets/icons/music-solid.svg" alt="music notes icon">
                     <div>
-                        <p id="player_header">Sean Quach&apos;s Portfolio</p>
-                        <p id="player_subheader">Macbook Air</p>
+                        <p id="player_header" class="topic_header">Sean Quach&apos;s Portfolio</p>
+                        <p id="player_subheader" class="topic_sub_header">Macbook Air</p>
                     </div>
                 </div>
                 <div>
@@ -76,7 +76,33 @@
         </div>
 
         <div id="detailed_page">
-            this is the pagesdklfasdfkhsdfsdfsdfsdf
+            <div class="detailed_page_container">
+                <div class="detailed_page_header">
+                    <img id="hide_detailed_page_icon" class="icon" src="./assets/icons/angle-down-solid.svg" alt="angle down icon">
+                    <p id="detailed_page_selected_topic" class="topic_header"></p>
+                    <img class="icon" src="./assets/icons/ellipsis-solid.svg" alt="">
+                </div>
+                <img class="detailed_page_icon" width="300" class="detailed_page_art" src="./assets/icons/code-solid.svg" alt="">
+                <div class="detailed_page_details">
+                    <div>
+                        <p class="detailed_page_details_header topic_header"></p>
+                        <p class="detailed_page_details_subheader topic_sub_header"></p>
+                    </div>
+                    <img class="icon" src="./assets/icons/heart-regular.svg" alt="heart icon">
+                </div>
+
+                <div class="progress_bar_container">
+                    <div id="detailed_page_complete_progress_bar"></div>
+                    <div id="detailed_page_progress_bar"></div>
+                </div>
+                <div class="player_icons_container">
+                    <img class="icon" src="./assets/icons/shuffle-solid.svg"  alt="shuffle icon">
+                    <img src="./assets/icons/backward-step-solid.svg" alt="backward step" class="icon">
+                    <img src="./assets/icons/pause-solid.svg" alt="pause icon" class="icon detailed_page_pause_icon">
+                    <img src="./assets/icons/forward-step-solid.svg" alt="forward step icon" class="icon">
+                    <img src="./assets/icons/repeat-solid.svg" alt="repeat icon" class="icon">
+                </div>
+            </div>
         </div>
         <div id="modal">
             <p class="modal_content">Link copied to clipboard!</p>

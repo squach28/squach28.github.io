@@ -4,6 +4,7 @@ const playButton = document.getElementById('play_button')
 const player = document.getElementById('player')
 const playerHeader = document.getElementById('player_header')
 const playerSubheader = document.getElementById('player_subheader')
+const detailedPage = document.getElementById('detailed_page')
 var selectedTopic = `Sean Quach's Portfolio`
 var selectedSubTopic = ''
 
@@ -212,8 +213,14 @@ for(let experience of experiences) {
     expCard.addEventListener('click', () => {
         selectedTopic = experience.company 
         selectedSubTopic = experience.title 
-        playerHeader.textContent = selectedTopic 
-        playerSubheader.textContent = selectedSubTopic
+        const topicHeaders = document.querySelectorAll('.topic_header')
+        const topicSubHeaders = document.querySelectorAll('.topic_sub_header')
+        for(let topicHeader of topicHeaders) {
+            topicHeader.textContent = selectedTopic
+        }
+        for(let topicSubHeader of topicSubHeaders) {
+            topicSubHeader.textContent = selectedSubTopic
+        }
         const divElements = document.querySelectorAll('div')
         for(let element of divElements) {
             element.classList.remove('selected_text')
@@ -233,6 +240,10 @@ fetch('./projects.json')
         const projectsList = document.getElementById('projects_list')
         for(let project of projects) {
             const projectListItem = document.createElement('li')
+            
+            const projectLink = document.createElement('a')
+            projectLink.href = './project.html'
+
             const projectBox = document.createElement('div')
             projectBox.classList.add('project_box')
             projectBox.style.backgroundImage = `url(${project.backgroundImageUrl})`
@@ -246,7 +257,8 @@ fetch('./projects.json')
             projectDescription.appendChild(projectName)
             projectBox.appendChild(projectDescription)
         
-            projectListItem.appendChild(projectBox)
+            projectLink.appendChild(projectBox)
+            projectListItem.appendChild(projectLink)
         
             projectsList.appendChild(projectListItem)
         }
@@ -287,6 +299,7 @@ fetch('./skills.json')
 
 
 const progressBar = document.getElementById('progress_bar')
+const detailedPageProgressBar = document.getElementById('detailed_page_progress_bar')
 window.addEventListener('scroll', () => {
     let scrollTop = window.scrollY
     let docHeight = document.body.offsetHeight
@@ -294,6 +307,8 @@ window.addEventListener('scroll', () => {
     let scrollPercent = scrollTop / (docHeight - winHeight)
     let scrollPercentRounded = Math.round(scrollPercent * 100)
     progressBar.style.width = `${scrollPercentRounded}%`
+    detailedPageProgressBar.style.width = `${scrollPercentRounded}%`
+    
 })
 
 const playerPlayPauseIcon = document.getElementById('player_play_pause_icon')
@@ -312,17 +327,21 @@ playerHeartIcon.addEventListener('click', (e) => {
 })
 
 player.addEventListener('click', () => {
-    const detailedPage = document.getElementById('detailed_page')
     detailedPage.style.visibility = 'visible'
     detailedPage.classList.remove('detailed_page_clicked')
     detailedPage.classList.add('player_clicked')
     player.style.opacity = 0
 })
 
-const detailedPage = document.getElementById('detailed_page')
-detailedPage.addEventListener('click', () => {
+const hideDetailedPageIcon = document.getElementById('hide_detailed_page_icon')
+hideDetailedPageIcon.addEventListener('click', () => {
     detailedPage.classList.remove('player_clicked')
     detailedPage.classList.add('detailed_page_clicked')
     detailedPage.visiblity = 'hidden'
-    player.style.opacity = 1
+    setTimeout(() => {
+        player.style.opacity = 1
+    }, 300)
 })
+
+
+
