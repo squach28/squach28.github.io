@@ -5,10 +5,18 @@ const player = document.getElementById('player')
 const playerHeader = document.getElementById('player_header')
 const playerSubheader = document.getElementById('player_subheader')
 const detailedPage = document.getElementById('detailed_page')
+
 var selectedTopic = `Sean Quach's Portfolio`
-var selectedSubTopic = ''
+var selectedSubTopic = 'Macbook Air'
+const topicHeaders = document.querySelectorAll('.topic_header')
+const topicSubHeaders = document.querySelectorAll('.topic_sub_header')
 
-
+for(let topicHeader of topicHeaders) {
+    topicHeader.textContent = selectedTopic
+}
+for(let topicSubHeader of topicSubHeaders) {
+    topicSubHeader.textContent = selectedSubTopic
+}
 
 const togglePlayPauseButton = () => {
     const iconImg = document.getElementById('play_pause_icon')
@@ -213,8 +221,6 @@ for(let experience of experiences) {
     expCard.addEventListener('click', () => {
         selectedTopic = experience.company 
         selectedSubTopic = experience.title 
-        const topicHeaders = document.querySelectorAll('.topic_header')
-        const topicSubHeaders = document.querySelectorAll('.topic_sub_header')
         for(let topicHeader of topicHeaders) {
             topicHeader.textContent = selectedTopic
         }
