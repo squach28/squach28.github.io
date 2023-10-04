@@ -8,14 +8,19 @@ const detailedPage = document.getElementById('detailed_page')
 
 var selectedTopic = `Sean Quach's Portfolio`
 var selectedSubTopic = 'Macbook Air'
+var selectedTopicImgUrl = './assets/icons/music-solid.svg'
 const topicHeaders = document.querySelectorAll('.topic_header')
 const topicSubHeaders = document.querySelectorAll('.topic_sub_header')
-
+const topicImgs = document.querySelectorAll('.topic_img')
 for(let topicHeader of topicHeaders) {
     topicHeader.textContent = selectedTopic
 }
 for(let topicSubHeader of topicSubHeaders) {
     topicSubHeader.textContent = selectedSubTopic
+}
+
+for(let topicImg of topicImgs) {
+    topicImg.src = selectedTopicImgUrl
 }
 
 const togglePlayPauseButton = () => {
@@ -222,20 +227,23 @@ for(let experience of experiences) {
     expCard.addEventListener('click', () => {
         selectedTopic = experience.company 
         selectedSubTopic = experience.title 
+        selectedTopicImgUrl = experience.iconUrl
         for(let topicHeader of topicHeaders) {
             topicHeader.textContent = selectedTopic
         }
         for(let topicSubHeader of topicSubHeaders) {
             topicSubHeader.textContent = selectedSubTopic
         }
+
+        for(let topicImg of topicImgs) {
+            topicImg.src = selectedTopicImgUrl
+        }        
+
         const divElements = document.querySelectorAll('div')
         for(let element of divElements) {
             element.classList.remove('selected_text')
         }
         expCard.classList.add('selected_text')
-
-        const currentlyPlayingIcon = document.getElementById('currently_playing_icon')
-        currentlyPlayingIcon.src = experience.iconUrl
     })
 
     experienceList.appendChild(expListItem)

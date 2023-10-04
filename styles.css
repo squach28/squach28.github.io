@@ -356,9 +356,10 @@ a {
 
 .detailed_page_container {
     display: flex;
+    height: 100vh;
     flex-direction: column; 
-    margin: 2em;
-    gap: 5em;
+    justify-content: space-around;
+    padding: 0 2em;
 }
 
 .detailed_page_header {
@@ -368,10 +369,11 @@ a {
 }
 
 .detailed_page_icon {
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     background-color: white;
     margin: 0 auto;
+    padding: 5em;
 }
 
 .detailed_page_details {
