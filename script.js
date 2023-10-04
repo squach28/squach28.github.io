@@ -350,21 +350,17 @@ playerHeartIcon.addEventListener('click', (e) => {
 })
 
 player.addEventListener('click', () => {
-    console.log('player clicked')
     const detailedPage = document.getElementById('detailed_page')
-    document.body.style.position = 'relative'
-    container.style.margin = '0'
-    document.body.style.overflow = 'hidden'
-    detailedPage.style.display = 'block'
-    player.style.display = 'none'
-    detailedPage.style.visiblity = 'visible'
+    detailedPage.style.visibility = 'visible'
+    detailedPage.classList.remove('detailed_page_clicked')
+    detailedPage.classList.add('player_clicked')
+    player.style.opacity = 0
 })
 
 const detailedPage = document.getElementById('detailed_page')
 detailedPage.addEventListener('click', () => {
-    document.body.style.position = 'static'
-    container.style.margin = '1.5em'
-    document.body.style.overflow = 'auto'
-    player.style.display = 'flex'
-    detailedPage.style.display = 'none'
+    detailedPage.classList.remove('player_clicked')
+    detailedPage.classList.add('detailed_page_clicked')
+    detailedPage.visiblity = 'hidden'
+    player.style.opacity = 1
 })
