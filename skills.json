@@ -1,0 +1,37 @@
+[
+    {
+        "name": "HTML",
+        "iconUrl": "./assets/icons/html5-plain.svg",
+        "iconAlt": "HTML icon"
+    },
+    {
+        "name": "CSS",
+        "iconUrl": "./assets/icons/css3-plain.svg",
+        "iconAlt": "CSS icon"
+    },
+    {
+        "name": "JavaScript",
+        "iconUrl": "./assets/icons/javascript-original.svg",
+        "iconAlt": "JavaScript icon"
+    }, 
+    {
+        "name": "React",
+        "iconUrl": "./assets/icons/react-original.svg",
+        "iconAlt": "React icon"
+    },
+    {
+        "name": "Java",
+        "iconUrl": "./assets/icons/java-original.svg",
+        "iconAlt": "Java icon"
+    },
+    {
+        "name": "MySQL",
+        "iconUrl": "./assets/icons/mysql-original.svg",
+        "iconAlt": "MySQL icon"
+    },
+    {
+        "name": "Github",
+        "iconUrl": "./assets/icons/github-original.svg",
+        "iconAlt": "Github Icon"
+    }
+]
