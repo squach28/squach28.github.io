@@ -4,10 +4,24 @@ const playButton = document.getElementById('play_button')
 const player = document.getElementById('player')
 const playerHeader = document.getElementById('player_header')
 const playerSubheader = document.getElementById('player_subheader')
+const detailedPage = document.getElementById('detailed_page')
+
 var selectedTopic = `Sean Quach's Portfolio`
-var selectedSubTopic = ''
+var selectedSubTopic = 'Macbook Air'
+var selectedTopicImgUrl = './assets/icons/music-solid.svg'
+const topicHeaders = document.querySelectorAll('.topic_header')
+const topicSubHeaders = document.querySelectorAll('.topic_sub_header')
+const topicImgs = document.querySelectorAll('.topic_img')
+for(let topicHeader of topicHeaders) {
+    topicHeader.textContent = selectedTopic
+}
+for(let topicSubHeader of topicSubHeaders) {
+    topicSubHeader.textContent = selectedSubTopic
+}
 
-
+for(let topicImg of topicImgs) {
+    topicImg.src = selectedTopicImgUrl
+}
 
 const togglePlayPauseButton = () => {
     const iconImg = document.getElementById('play_pause_icon')
@@ -37,10 +51,10 @@ shareIcon.addEventListener('click', () => {
     const modal = document.getElementById('modal')
     modal.classList.add('modal_transition')
     modal.style.opacity = 1
-    modal.style.zIndex = 100;
+    modal.style.zIndex = 5;
     timer = setTimeout(() => {
         modal.style.opacity = 0
-        modal.style.zIndex = 3
+        modal.style.zIndex = 0
     }, 2500)
 
 })
@@ -64,168 +78,121 @@ closeButton.addEventListener('click', () => {
     player.style.display = 'flex'
 })
 
-const experiences = [
-    {
-        role: 'tataAutomation',
-        company: 'Tata Consulancy Services',
-        title: 'Test Automation Lead',   
-        startDate: 'Jan 2023',
-        endDate: 'Present',
-        bullets: [
-            'Work as an Test Automation Lead for Kaiser Permanente Membership Connect, which manages systems of records and ensures that data is accurate (NodeJS & WebDriverIO)',
-            'Develop automation scripts and increase the percentage of test cases automated from 12% to 43%',
-            'Analyze manual test cases and determine automation feasibility based on constraints  ',
-            'Run regression tests to improve efficiency and reduce resources required for manual testing'
-        ],
-        iconUrl: './assets/icons/screwdriver-wrench-solid.svg',
-        iconAlt: 'screwdriver icon'
-    },
-    {
-        role: 'tataSoftwareEngineer',
-        company: 'Tata Consultancy Services',
-        title: 'Software Engineer',
-        startDate: 'June 2021',
-        endDate: 'Jan 2023',
-        bullets: [
-            'Improved the UI of the Kaiser Permanente Member Services Chatbot, designed to guide KP members to the proper resources (React & Bot Framework Web Chat)',
-            'Collaborated with UX team to discuss and implemented features, such as file attachment, live chat with an agent, and error handling to enhance user experience',
-            'Accelerated development through CI/CD with the Jenkins pipeline to deploy changes into the development environment for testing'
-        ],
-        iconUrl: './assets/icons/code-solid.svg',
-        iconAlt: 'web html icon'
-    },
-    {
-        role: 'infiniteOptionsMobileDev',
-        company: 'Infinite Options LLC',
-        title: 'Software Development Intern',
-        startDate: 'May 2020',
-        endDate: 'Aug 2020',
-        bullets: [
-            'Developed a cross platform mobile app for Prep to Your Door, a food delivery service (C# & Xamarin Forms)',
-            'Implemented checkout process with Stripe and social login with Facebook and Google',
-            'Went through the process of publishing an alpha release onto the Google Play Console for testing'
-        ],
-        iconUrl: './assets/icons/mobile-solid.svg',
-        iconAlt: 'mobile phone icon'
-    },
-    {
-        role: 'advantestTechnicalSpecialist',
-        company: 'Advantest America Inc.',
-        title: 'Technical Specialist',
-        startDate: 'June 2019',
-        endDate: 'Sept 2019',
-        bullets: [
-            'Rotated across various positions within the R&D team, gaining skills in scripting and quality assurance',
-            'Performed diagnostics on Advantest SSD testers, such as the MTP3000HVM/2 and MPT3000HES/2',
-            'Automated formatted diagnostic log results utilizing MySQL, Silk Test Workbench, and Visual Basic .NET'
-        ],
-        iconUrl: './assets/icons/microchip-solid.svg',
-        iconAlt: 'microchip icon'
-    }
-]
-
-const experienceList = document.getElementById('experience_list')
-for(let experience of experiences) {
-    const expListItem = document.createElement('li')
-
-    const expCard = document.createElement('div')
-    expCard.classList.add('experience_card')
-
-    const expInfo = document.createElement('div')
-    expInfo.classList.add('experience_info')
-    expCard.appendChild(expInfo)
-
-    const expIcon = document.createElement('img')
-    expIcon.classList.add('icon', 'experience_icon')
-    expIcon.src = experience.iconUrl
-    expIcon.alt = experience.iconAlt
-
-    const expDetails = document.createElement('div')
-    const expHeader = document.createElement('p')
-    expHeader.classList.add('experience_card_header')
-    expHeader.textContent = experience.company 
-    const expSubHeader = document.createElement('p')
-    expSubHeader.classList.add('experience_card_subheader')
-    expSubHeader.textContent = experience.title 
-
-    expDetails.appendChild(expHeader)
-    expDetails.appendChild(expSubHeader)
-
-    expInfo.appendChild(expIcon)
-    expInfo.appendChild(expDetails)
-
-    const ellipsisIcon = document.createElement('img')
-    ellipsisIcon.classList.add('icon', 'experience_ellipsis')
-    ellipsisIcon.src = './assets/icons/ellipsis-vertical-solid.svg'
-    ellipsisIcon.alt = 'ellipsis icon'
-
-    expCard.appendChild(ellipsisIcon)
-    expListItem.appendChild(expCard)
-
-    ellipsisIcon.addEventListener('click', (e) => {
-        e.stopPropagation()
-        const experienceDiv = document.createElement('div')
-
-        const infoContainer = document.createElement('div')
-    
-        const companyHeader = document.createElement('h1')
-        companyHeader.textContent = experience.company
-    
-        const titleHeader = document.createElement('h2')
-        titleHeader.textContent = experience.title
-        titleHeader.classList.add('title_header')
-    
-        const timeWorked = document.createElement('p')
-        timeWorked.textContent = `${experience.startDate} - ${experience.endDate}`
-        timeWorked.classList.add('time_worked')
-    
-        const experienceList = document.createElement('ul')
-        experienceList.classList.add('experience_bullets_container')
-        for(let bullet of experience.bullets) {
-            const expBullet = document.createElement('li')
-            expBullet.textContent = bullet
-            experienceList.appendChild(expBullet)
+fetch('./experiences.json')
+    .then(res => res.json())
+    .then(experiences => {
+        const experienceList = document.getElementById('experience_list')
+        for(let experience of experiences) {
+            const expListItem = document.createElement('li')
+        
+            const expCard = document.createElement('div')
+            expCard.classList.add('experience_card')
+        
+            const expInfo = document.createElement('div')
+            expInfo.classList.add('experience_info')
+            expCard.appendChild(expInfo)
+        
+            const expIcon = document.createElement('img')
+            expIcon.classList.add('icon', 'experience_icon')
+            expIcon.src = experience.iconUrl
+            expIcon.alt = experience.iconAlt
+        
+            const expDetails = document.createElement('div')
+            const expHeader = document.createElement('p')
+            expHeader.classList.add('experience_card_header')
+            expHeader.textContent = experience.company 
+            const expSubHeader = document.createElement('p')
+            expSubHeader.classList.add('experience_card_subheader')
+            expSubHeader.textContent = experience.title 
+        
+            expDetails.appendChild(expHeader)
+            expDetails.appendChild(expSubHeader)
+        
+            expInfo.appendChild(expIcon)
+            expInfo.appendChild(expDetails)
+        
+            const ellipsisIcon = document.createElement('img')
+            ellipsisIcon.classList.add('icon', 'experience_ellipsis')
+            ellipsisIcon.src = './assets/icons/ellipsis-vertical-solid.svg'
+            ellipsisIcon.alt = 'ellipsis icon'
+        
+            expCard.appendChild(ellipsisIcon)
+            expListItem.appendChild(expCard)
+        
+            ellipsisIcon.addEventListener('click', (e) => {
+                e.stopPropagation()
+                const experienceDiv = document.createElement('div')
+        
+                const infoContainer = document.createElement('div')
+            
+                const companyHeader = document.createElement('h1')
+                companyHeader.textContent = experience.company
+            
+                const titleHeader = document.createElement('h2')
+                titleHeader.textContent = experience.title
+                titleHeader.classList.add('title_header')
+            
+                const timeWorked = document.createElement('p')
+                timeWorked.textContent = `${experience.startDate} - ${experience.endDate}`
+                timeWorked.classList.add('time_worked')
+            
+                const experienceList = document.createElement('ul')
+                experienceList.classList.add('experience_bullets_container')
+                for(let bullet of experience.bullets) {
+                    const expBullet = document.createElement('li')
+                    expBullet.textContent = bullet
+                    experienceList.appendChild(expBullet)
+                }
+            
+                const closeButton = document.createElement('button')
+                closeButton.textContent = 'Close'
+                closeButton.classList.add('close_button')
+                closeButton.addEventListener('click', () => {
+                    container.classList.remove('blur')
+                    player.style.display = 'flex'
+                    document.body.removeChild(experienceDiv)
+                })
+            
+                experienceDiv.classList.add('experience_overlay_container')
+                infoContainer.appendChild(companyHeader)
+                infoContainer.appendChild(titleHeader)
+                infoContainer.appendChild(timeWorked)
+                infoContainer.appendChild(experienceList)
+                experienceDiv.appendChild(infoContainer)
+                experienceDiv.appendChild(closeButton)
+                container.classList.add('blur')
+                player.style.display = 'none'
+                document.body.appendChild(experienceDiv)
+        
+            })
+        
+            expCard.addEventListener('click', () => {
+                selectedTopic = experience.company 
+                selectedSubTopic = experience.title 
+                selectedTopicImgUrl = experience.iconUrl
+                for(let topicHeader of topicHeaders) {
+                    topicHeader.textContent = selectedTopic
+                }
+                for(let topicSubHeader of topicSubHeaders) {
+                    topicSubHeader.textContent = selectedSubTopic
+                }
+        
+                for(let topicImg of topicImgs) {
+                    topicImg.src = selectedTopicImgUrl
+                }        
+        
+                const divElements = document.querySelectorAll('div')
+                for(let element of divElements) {
+                    element.classList.remove('selected_text')
+                }
+                expCard.classList.add('selected_text')
+            })
+        
+            experienceList.appendChild(expListItem)
         }
-    
-        const closeButton = document.createElement('button')
-        closeButton.textContent = 'Close'
-        closeButton.classList.add('close_button')
-        closeButton.addEventListener('click', () => {
-            container.classList.remove('blur')
-            player.style.display = 'flex'
-            document.body.removeChild(experienceDiv)
-        })
-    
-        experienceDiv.classList.add('experience_overlay_container')
-        infoContainer.appendChild(companyHeader)
-        infoContainer.appendChild(titleHeader)
-        infoContainer.appendChild(timeWorked)
-        infoContainer.appendChild(experienceList)
-        experienceDiv.appendChild(infoContainer)
-        experienceDiv.appendChild(closeButton)
-        container.classList.add('blur')
-        player.style.display = 'none'
-        document.body.appendChild(experienceDiv)
-
     })
 
-    expCard.addEventListener('click', () => {
-        selectedTopic = experience.company 
-        selectedSubTopic = experience.title 
-        playerHeader.textContent = selectedTopic 
-        playerSubheader.textContent = selectedSubTopic
-        const divElements = document.querySelectorAll('div')
-        for(let element of divElements) {
-            element.classList.remove('selected_text')
-        }
-        expCard.classList.add('selected_text')
 
-        const currentlyPlayingIcon = document.getElementById('currently_playing_icon')
-        currentlyPlayingIcon.src = experience.iconUrl
-    })
-
-    experienceList.appendChild(expListItem)
-}
 
 fetch('./projects.json')
     .then(res => res.json())
@@ -233,6 +200,10 @@ fetch('./projects.json')
         const projectsList = document.getElementById('projects_list')
         for(let project of projects) {
             const projectListItem = document.createElement('li')
+            
+            const projectLink = document.createElement('a')
+            projectLink.href = `./project/project.html?project=${project.name}`
+
             const projectBox = document.createElement('div')
             projectBox.classList.add('project_box')
             projectBox.style.backgroundImage = `url(${project.backgroundImageUrl})`
@@ -246,7 +217,8 @@ fetch('./projects.json')
             projectDescription.appendChild(projectName)
             projectBox.appendChild(projectDescription)
         
-            projectListItem.appendChild(projectBox)
+            projectLink.appendChild(projectBox)
+            projectListItem.appendChild(projectLink)
         
             projectsList.appendChild(projectListItem)
         }
@@ -287,6 +259,7 @@ fetch('./skills.json')
 
 
 const progressBar = document.getElementById('progress_bar')
+const detailedPageProgressBar = document.getElementById('detailed_page_progress_bar')
 window.addEventListener('scroll', () => {
     let scrollTop = window.scrollY
     let docHeight = document.body.offsetHeight
@@ -294,6 +267,8 @@ window.addEventListener('scroll', () => {
     let scrollPercent = scrollTop / (docHeight - winHeight)
     let scrollPercentRounded = Math.round(scrollPercent * 100)
     progressBar.style.width = `${scrollPercentRounded}%`
+    detailedPageProgressBar.style.width = `${scrollPercentRounded}%`
+    
 })
 
 const playerPlayPauseIcon = document.getElementById('player_play_pause_icon')
@@ -312,17 +287,21 @@ playerHeartIcon.addEventListener('click', (e) => {
 })
 
 player.addEventListener('click', () => {
-    const detailedPage = document.getElementById('detailed_page')
     detailedPage.style.visibility = 'visible'
     detailedPage.classList.remove('detailed_page_clicked')
     detailedPage.classList.add('player_clicked')
     player.style.opacity = 0
 })
 
-const detailedPage = document.getElementById('detailed_page')
-detailedPage.addEventListener('click', () => {
+const hideDetailedPageIcon = document.getElementById('hide_detailed_page_icon')
+hideDetailedPageIcon.addEventListener('click', () => {
     detailedPage.classList.remove('player_clicked')
     detailedPage.classList.add('detailed_page_clicked')
     detailedPage.visiblity = 'hidden'
-    player.style.opacity = 1
+    setTimeout(() => {
+        player.style.opacity = 1
+    }, 300)
 })
+
+
+

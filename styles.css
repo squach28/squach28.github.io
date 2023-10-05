@@ -130,7 +130,7 @@ a {
     color: white;
     background-color: transparent;
     font-weight: bold;
-    z-index: 15;
+    z-index: 4;
 }
 
 .contact_list {
@@ -158,7 +158,7 @@ a {
     background-color: white;
     color: black;
     text-align: center;
-    z-index: 2;
+    z-index: 0;
 }
 
 .modal_transition {
@@ -271,7 +271,7 @@ a {
     font-size: 1.25rem;
 }
 
-.player {
+.player { 
     display: flex;
     position: sticky;
     bottom: 0.01em;
@@ -351,11 +351,80 @@ a {
     left: 0;
     bottom: -100vh;
     z-index: 0;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
+.detailed_page_container {
+    display: flex;
+    height: 100vh;
+    flex-direction: column; 
+    justify-content: space-around;
+    padding: 0 2em;
+}
+
+.detailed_page_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detailed_page_icon {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 5em;
+}
+
+.detailed_page_details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detailed_page_details_header {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.detailed_page_details_subheader {
+    color: rgb(199, 195, 195);
+}
+
+.progress_bar_container {
+    width: 100%;
+    position: relative;
+}
+
+.player_icons_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detailed_page_pause_icon {
+    background-color: white;
+    padding: 1em;
+    border-radius: 100%;
+}
+
+#detailed_page_progress_bar {
+    position: absolute;
+    width: 0%;
+    border: 3px solid white;
+    border-radius: 2px;
+}
+
+#detailed_page_complete_progress_bar {
+    position: absolute;
+    width: 100%;
+    border: 3px solid #6B6A6A;
+    border-radius: 2px;
+}
+
+
 .player_clicked {
-    animation: slide_in 0.5s ease-in;
+    animation: slide_in 0.25s ease-in;
     transform: translateY(-100vh);
     z-index: 20;
 }

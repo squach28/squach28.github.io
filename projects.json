@@ -1,10 +1,27 @@
 [
     {
         "name": "Wordie",
-        "backgroundImageUrl": "./assets/backgrounds/wordie-background.svg"
+        "backgroundImageUrl": "/assets/backgrounds/wordie-background.svg",
+        "bullets": [
+            "Programmed a web game where players guess a randomly selected six letter word (Angular)",          
+            "Created the backend to generate a new word everyday and verify players’ guesses (NodeJS)",           
+            "Utilized Firebase Firestore as a database, Firestore Functions for API calls, and Firebase Hosting to deploy the website"
+        ],
+        "developer": "Sean Quach",
+        "githubLink": "https://github.com/squach28/wordie",
+        "projectLink": "https://wordie-e7fe2.web.app/"
     },
     {
         "name": "MotivateMe",
-        "backgroundImageUrl": "./assets/backgrounds/motivateme-background.svg"
+        "backgroundImageUrl": "/assets/backgrounds/motivateme-background.svg",
+        "bullets": [
+            "Built a mobile application to motivate users to complete goals by taking photos of their progress and emphasizing their growth  (Flutter/SQL)",
+            "Developed the home page of the app, which would display the user’s goals for the day and allow users to mark them as complete by taking a photo",
+            "Implemented CRUD functionality and user authentication with AWS Amplify and Relational DB",
+            "Designed and improved paper/high-fidelity prototypes based on 3 rounds of user feedback (Adobe XD)"        
+        ],
+        "developer": "Sean Quach",
+        "githubLink": "https://github.com/squach28/MotivateMe_Mobile_Application",
+        "projectLink": ""
     }
 ]

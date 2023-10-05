@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="project_styles.css"></link>
+</head>
+<body>
+    <div class="nav_bar">
+        <a href="../index.html"><img class="icon" src="../assets/icons/arrow-left-solid.svg" alt="arrow pointing left"></a>
+    </div>
+
+    <div id="container" class="container">
+        <div id="project_icon">
+            <p class="project_name"></p>
+        </div>
+
+        <div id="project_details_container">
+            <h1 class="project_name"></h1>
+            <div class="project_developer_container">
+                <img class="portfolio_img" src="../assets/images/portfolio.jpeg" alt="">
+                <a href="../">
+                    <p id="developer_name"></p>
+                </a>
+            </div>
+            <div class="date_details_container">
+                <p>Feb 2022 - April 2022</p>
+            </div>
+        </div>
+
+        <div class="actions_container">
+            <div class="icons_container">
+                <img src="../assets/icons/heart-regular.svg" alt="heart icon" class="icon">
+                <a target="_blank" id="project_link" href="/"><img src="../assets/icons/arrow-up-right-from-square-solid.svg" alt="share icon" class="icon"></a>
+                <a target="_blank" id="github_link" href="/"><img src="../assets/icons/github.svg" alt="github icon" class="icon"></a>
+            </div>
+            <button id="play_button" class="play_button">
+                <img id="play_pause_icon" class="icon" src="../assets/icons/pause-solid.svg" alt="play icon">
+            </button>
+        </div>
+        <ul id="project_bullets_list"></ul>
+    </div>
+    <script src="./project_script.js"></script>
+</body>
+</html>
