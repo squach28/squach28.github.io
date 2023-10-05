@@ -1,7 +1,12 @@
 [
     {
         "name": "Wordie",
-        "backgroundImageUrl": "./assets/backgrounds/wordie-background.svg"
+        "backgroundImageUrl": "./assets/backgrounds/wordie-background.svg",
+        "bullets": [
+            "Programmed a web game where players guess a randomly selected six letter word (Angular)",          
+            "Created the backend to generate a new word everyday and verify players’ guesses (NodeJS)",           
+            "Utilized Firebase Firestore as a database, Firestore Functions for API calls, and Firebase Hosting to deploy the website"
+        ]
     },
     {
         "name": "MotivateMe",
