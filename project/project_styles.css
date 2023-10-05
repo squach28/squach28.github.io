@@ -110,3 +110,41 @@ a {
     gap: 1em;
     padding: 1em;
 }
+
+#tools_list {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+    overflow-x: scroll;
+    position: relative;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+}
+
+#tools_list::-webkit-scrollbar { 
+    display: none;
+    scrollbar-width: none;
+}
+
+.tool_list_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75em;
+}
+
+.tool_container {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.tool_icon {
+    width: 50px;
+    height: 50px;
+}

@@ -1,37 +1,52 @@
 [
     {
         "name": "HTML",
-        "iconUrl": "./assets/icons/skills/html5-plain.svg",
+        "iconUrl": "/assets/icons/skills/html5-plain.svg",
         "iconAlt": "HTML icon"
     },
     {
         "name": "CSS",
-        "iconUrl": "./assets/icons/skills/css3-plain.svg",
+        "iconUrl": "/assets/icons/skills/css3-plain.svg",
         "iconAlt": "CSS icon"
     },
     {
         "name": "JavaScript",
-        "iconUrl": "./assets/icons/skills/javascript-original.svg",
+        "iconUrl": "/assets/icons/skills/javascript-original.svg",
         "iconAlt": "JavaScript icon"
     }, 
     {
         "name": "React",
-        "iconUrl": "./assets/icons/skills/react-original.svg",
+        "iconUrl": "/assets/icons/skills/react-original.svg",
         "iconAlt": "React icon"
     },
     {
         "name": "Java",
-        "iconUrl": "./assets/icons/skills/java-original.svg",
+        "iconUrl": "/assets/icons/skills/java-original.svg",
         "iconAlt": "Java icon"
     },
     {
-        "name": "MySQL",
-        "iconUrl": "./assets/icons/skills/mysql-original.svg",
+        "name": "SQL/MySQL",
+        "iconUrl": "/assets/icons/skills/mysql-original.svg",
         "iconAlt": "MySQL icon"
     },
     {
         "name": "Github",
-        "iconUrl": "./assets/icons/skills/github-original.svg",
+        "iconUrl": "/assets/icons/skills/github-original.svg",
         "iconAlt": "Github Icon"
+    },
+    {
+        "name": "Angular",
+        "iconUrl": "/assets/icons/skills/angularjs-original.svg",
+        "iconAlt": "Angular Icon"
+    },
+    {
+        "name": "Firebase",
+        "iconUrl": "/assets/icons/skills/firebase-plain.svg",
+        "iconAlt": "Firebase Icon"
+    },
+    {
+        "name": "Flutter",
+        "iconUrl": "/assets/icons/skills/flutter-original.svg",
+        "iconAlt": "Flutter Icon"
     }
 ]
