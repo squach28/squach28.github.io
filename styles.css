@@ -349,14 +349,14 @@ a {
     color: white;
     position: fixed;
     left: 0;
-    bottom: -100vh;
+    bottom: -100%;
     z-index: 0;
     overflow: hidden;
 }
 
 .detailed_page_container {
     display: flex;
-    height: 100vh;
+    height: 100%;
     flex-direction: column; 
     justify-content: space-around;
     padding: 0 2em;
@@ -515,9 +515,9 @@ a {
 
 @keyframes slide_in {
     0% {
-        transform: translateY(0);
+        transform: translateY(0%);
     } 100% {
-        transform: translateY(-100vh);
+        transform: translateY(-100%);
     }
 }
 
