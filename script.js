@@ -72,7 +72,6 @@ ellipsisIcon.addEventListener('click', () => {
 const closeButton = document.getElementById('close_more_overlay_button')
 
 closeButton.addEventListener('click', () => {
-    console.log('close button clicked')
     const moreOverlayContainer = document.getElementById('more_overlay_container')
     container.classList.remove('blur')
     moreOverlayContainer.style.display = 'none'
