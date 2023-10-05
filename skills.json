@@ -63,5 +63,10 @@
         "name": "Dart",
         "iconUrl": "/assets/icons/skills/dart-original.svg",
         "iconAlt" :"Dart Icon"
+    },
+    {
+        "name": "Adobe XD",
+        "iconUrl": "/assets/icons/skills/xd-plain.svg",
+        "iconAlt": "Adobe XD Icon"
     }
 ]

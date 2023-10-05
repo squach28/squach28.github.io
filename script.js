@@ -12,6 +12,7 @@ var selectedTopicImgUrl = '/assets/icons/player/music-solid.svg'
 const topicHeaders = document.querySelectorAll('.topic_header')
 const topicSubHeaders = document.querySelectorAll('.topic_sub_header')
 const topicImgs = document.querySelectorAll('.topic_img')
+
 for(let topicHeader of topicHeaders) {
     topicHeader.textContent = selectedTopic
 }
