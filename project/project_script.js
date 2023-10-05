@@ -22,7 +22,11 @@ fetch('../projects.json')
         dateDetails.textContent = `${projectData.startDate} - ${projectData.endDate}`
 
         const projectLink = document.getElementById('project_link')
-        projectLink.href = projectData.projectLink
+        if(projectData.projectLink === '') {
+            projectLink.style.display = 'none'
+        } else {
+            projectLink.href = projectData.projectLink
+        }
 
         const githubLink = document.getElementById('github_link')
         githubLink.href = projectData.githubLink
