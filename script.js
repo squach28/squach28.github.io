@@ -229,9 +229,10 @@ fetch('./skills.json')
     .then(res => res.json())
     .then(skills => {
         const skillsList = document.getElementById('skills_list')
-        const currentSkills = [ 'HTML', 'CSS', 'JavaScript', 'React', 'Java', 'SQL/MySQL', 'Github'] 
-        for(let skill of skills){
-            if(currentSkills.includes(skill.name)) {
+        const currentSkills = [ 'HTML', 'CSS', 'JavaScript', 'NodeJS', 'React', 'Java', 'SQL/MySQL', 'Github'] 
+        for(let currentSkill of currentSkills) {
+            const skill = skills.find((skill => skill.name === currentSkill))
+            if(skill) {
                 const skillListItem = document.createElement('li')
                 skillListItem.classList.add('skill_list_item') 
             
@@ -255,9 +256,6 @@ fetch('./skills.json')
             }
         }
     })
-
-
-
 
 
 const progressBar = document.getElementById('progress_bar')
