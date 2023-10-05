@@ -2,6 +2,8 @@
     {
         "name": "Wordie",
         "backgroundImageUrl": "/assets/backgrounds/wordie-background.svg",
+        "startDate": "Feb 2022",
+        "endDate": "Apr 2022",
         "bullets": [
             "Programmed a web game where players guess a randomly selected six letter word (Angular)",          
             "Created the backend to generate a new word everyday and verify players’ guesses (NodeJS)",           
@@ -14,6 +16,8 @@
     {
         "name": "MotivateMe",
         "backgroundImageUrl": "/assets/backgrounds/motivateme-background.svg",
+        "startDate": "Aug 2020",
+        "endDate": "May 2021",
         "bullets": [
             "Built a mobile application to motivate users to complete goals by taking photos of their progress and emphasizing their growth  (Flutter/SQL)",
             "Developed the home page of the app, which would display the user’s goals for the day and allow users to mark them as complete by taking a photo",

@@ -16,6 +16,9 @@ fetch('../projects.json')
         const developerName = document.getElementById('developer_name')
         developerName.textContent = projectData.developer
 
+        const dateDetails = document.getElementById('date_details')
+        dateDetails.textContent = `${projectData.startDate} - ${projectData.endDate}`
+
         const projectLink = document.getElementById('project_link')
         projectLink.href = projectData.projectLink
 
