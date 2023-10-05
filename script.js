@@ -8,7 +8,7 @@ const detailedPage = document.getElementById('detailed_page')
 
 var selectedTopic = `Sean Quach's Portfolio`
 var selectedSubTopic = 'Macbook Air'
-var selectedTopicImgUrl = './assets/icons/music-solid.svg'
+var selectedTopicImgUrl = '/assets/icons/player/music-solid.svg'
 const topicHeaders = document.querySelectorAll('.topic_header')
 const topicSubHeaders = document.querySelectorAll('.topic_sub_header')
 const topicImgs = document.querySelectorAll('.topic_img')
@@ -28,11 +28,11 @@ const togglePlayPauseButton = () => {
     const playerPlayPauseIcon = document.getElementById('player_play_pause_icon')
     isPlaying = !isPlaying
     if(isPlaying) {
-        iconImg.src = './assets/icons/pause-solid.svg'
-        playerPlayPauseIcon.src = './assets/icons/pause-solid-white.svg'
+        iconImg.src = '/assets/icons/player/pause-solid.svg'
+        playerPlayPauseIcon.src = '/assets/icons/player/pause-solid-white.svg'
     } else {
-        iconImg.src = './assets/icons/play-solid.svg'
-        playerPlayPauseIcon.src = './assets/icons/play-solid-white.svg'
+        iconImg.src = '/assets/icons/player/play-solid.svg'
+        playerPlayPauseIcon.src = '/assets/icons/player/play-solid-white.svg'
     } 
 
 }
