@@ -229,28 +229,30 @@ fetch('./skills.json')
     .then(res => res.json())
     .then(skills => {
         const skillsList = document.getElementById('skills_list')
-
+        const currentSkills = [ 'HTML', 'CSS', 'JavaScript', 'React', 'Java', 'SQL/MySQL', 'Github'] 
         for(let skill of skills){
-            const skillListItem = document.createElement('li')
-            skillListItem.classList.add('skill_list_item') 
-        
-            const skillContainer = document.createElement('div')
-            skillContainer.classList.add('skill_container')
-        
-            const skillIcon = document.createElement('img')
-            skillIcon.classList.add('skill_icon')
-            skillIcon.src = skill.iconUrl
-            skillIcon.alt = skill.iconAlt
-        
-            const skillName = document.createElement('p')
-            skillName.textContent = skill.name
-        
-            skillContainer.appendChild(skillIcon)
-        
-            skillListItem.appendChild(skillContainer)
-            skillListItem.appendChild(skillName)
-        
-            skillsList.appendChild(skillListItem)
+            if(currentSkills.includes(skill.name)) {
+                const skillListItem = document.createElement('li')
+                skillListItem.classList.add('skill_list_item') 
+            
+                const skillContainer = document.createElement('div')
+                skillContainer.classList.add('skill_container')
+            
+                const skillIcon = document.createElement('img')
+                skillIcon.classList.add('skill_icon')
+                skillIcon.src = skill.iconUrl
+                skillIcon.alt = skill.iconAlt
+            
+                const skillName = document.createElement('p')
+                skillName.textContent = skill.name
+            
+                skillContainer.appendChild(skillIcon)
+            
+                skillListItem.appendChild(skillContainer)
+                skillListItem.appendChild(skillName)
+            
+                skillsList.appendChild(skillListItem)
+            }
         }
     })
 
