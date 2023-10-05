@@ -8,7 +8,7 @@ const detailedPage = document.getElementById('detailed_page')
 
 var selectedTopic = `Sean Quach's Portfolio`
 var selectedSubTopic = 'Macbook Air'
-var selectedTopicImgUrl = './assets/icons/music-solid.svg'
+var selectedTopicImgUrl = '/assets/icons/player/music-solid.svg'
 const topicHeaders = document.querySelectorAll('.topic_header')
 const topicSubHeaders = document.querySelectorAll('.topic_sub_header')
 const topicImgs = document.querySelectorAll('.topic_img')
@@ -28,11 +28,11 @@ const togglePlayPauseButton = () => {
     const playerPlayPauseIcon = document.getElementById('player_play_pause_icon')
     isPlaying = !isPlaying
     if(isPlaying) {
-        iconImg.src = './assets/icons/pause-solid.svg'
-        playerPlayPauseIcon.src = './assets/icons/pause-solid-white.svg'
+        iconImg.src = '/assets/icons/player/pause-solid.svg'
+        playerPlayPauseIcon.src = '/assets/icons/player/pause-solid-white.svg'
     } else {
-        iconImg.src = './assets/icons/play-solid.svg'
-        playerPlayPauseIcon.src = './assets/icons/play-solid-white.svg'
+        iconImg.src = '/assets/icons/player/play-solid.svg'
+        playerPlayPauseIcon.src = '/assets/icons/player/play-solid-white.svg'
     } 
 
 }
@@ -229,33 +229,33 @@ fetch('./skills.json')
     .then(res => res.json())
     .then(skills => {
         const skillsList = document.getElementById('skills_list')
-
-        for(let skill of skills){
-            const skillListItem = document.createElement('li')
-            skillListItem.classList.add('skill_list_item') 
-        
-            const skillContainer = document.createElement('div')
-            skillContainer.classList.add('skill_container')
-        
-            const skillIcon = document.createElement('img')
-            skillIcon.classList.add('skill_icon')
-            skillIcon.src = skill.iconUrl
-            skillIcon.alt = skill.iconAlt
-        
-            const skillName = document.createElement('p')
-            skillName.textContent = skill.name
-        
-            skillContainer.appendChild(skillIcon)
-        
-            skillListItem.appendChild(skillContainer)
-            skillListItem.appendChild(skillName)
-        
-            skillsList.appendChild(skillListItem)
+        const currentSkills = [ 'HTML', 'CSS', 'JavaScript', 'NodeJS', 'React', 'Java', 'SQL/MySQL', 'Github'] 
+        for(let currentSkill of currentSkills) {
+            const skill = skills.find((skill => skill.name === currentSkill))
+            if(skill) {
+                const skillListItem = document.createElement('li')
+                skillListItem.classList.add('skill_list_item') 
+            
+                const skillContainer = document.createElement('div')
+                skillContainer.classList.add('skill_container')
+            
+                const skillIcon = document.createElement('img')
+                skillIcon.classList.add('skill_icon')
+                skillIcon.src = skill.iconUrl
+                skillIcon.alt = skill.iconAlt
+            
+                const skillName = document.createElement('p')
+                skillName.textContent = skill.name
+            
+                skillContainer.appendChild(skillIcon)
+            
+                skillListItem.appendChild(skillContainer)
+                skillListItem.appendChild(skillName)
+            
+                skillsList.appendChild(skillListItem)
+            }
         }
     })
-
-
-
 
 
 const progressBar = document.getElementById('progress_bar')
