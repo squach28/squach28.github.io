@@ -1,5 +1,7 @@
 const project = new URLSearchParams(window.location.search).get('project')
 
+document.title = `Sean Quach's Portfolio - ${project}`
+
 fetch('../projects.json')
     .then(res => res.json())
     .then(data => {
