@@ -6,7 +6,6 @@ body {
     background-repeat: no-repeat;
     color: white;
     font-family: 'Be Vietnam Pro', sans-serif;
-    height: 100vh;
 }
 
 h1, h2, ul, li, a, p {
@@ -51,12 +50,11 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('../assets/backgrounds/motivateme-background.svg');
     object-fit: contain;
     margin: 0 auto;
 }
 
-.project_name {
+#project_name {
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -67,7 +65,7 @@ a {
     gap: 0.25em;
 }
 
-.project_owner_container {
+.project_developer_container {
     display: flex;
     align-items: center;
     gap: 0.5em;
@@ -102,4 +100,11 @@ a {
     color: black;
     border-radius: 50%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#project_bullets_list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
 }

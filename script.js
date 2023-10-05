@@ -202,7 +202,7 @@ fetch('./projects.json')
             const projectListItem = document.createElement('li')
             
             const projectLink = document.createElement('a')
-            projectLink.href = './project/project.html'
+            projectLink.href = `./project/project.html?project=${project.name}`
 
             const projectBox = document.createElement('div')
             projectBox.classList.add('project_box')
