@@ -53,5 +53,15 @@
         "name": "NodeJS",
         "iconUrl": "/assets/icons/skills/nodejs-original.svg",
         "iconAlt": "NodeJS Icon"
+    },
+    {
+        "name": "AWS",
+        "iconUrl": "/assets/icons/skills/aws-original.svg",
+        "iconAlt": "AWS Icon"
+    },
+    {
+        "name": "Dart",
+        "iconUrl": "/assets/icons/skills/dart-original.svg",
+        "iconAlt" :"Dart Icon"
     }
 ]

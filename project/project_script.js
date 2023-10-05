@@ -31,5 +31,39 @@ fetch('../projects.json')
             bulletListItem.textContent = bullet
             projectBulletsList.appendChild(bulletListItem)
         }
+
+        fetch('../skills.json')
+            .then(res => res.json())
+            .then(skills => {
+                const skillsList = document.getElementById('tools_list')
+                const tools = projectData.tools
+                for(let tool of tools) {
+                    const skill = skills.find((skill => skill.name === tool))
+                    if(skill) {
+                        const skillListItem = document.createElement('li')
+                        skillListItem.classList.add('tool_list_item') 
+                    
+                        const skillContainer = document.createElement('div')
+                        skillContainer.classList.add('tool_container')
+                    
+                        const skillIcon = document.createElement('img')
+                        skillIcon.classList.add('tool_icon')
+                        skillIcon.src = skill.iconUrl
+                        skillIcon.alt = skill.iconAlt
+                    
+                        const skillName = document.createElement('p')
+                        skillName.textContent = skill.name
+                    
+                        skillContainer.appendChild(skillIcon)
+                    
+                        skillListItem.appendChild(skillContainer)
+                        skillListItem.appendChild(skillName)
+                    
+                        skillsList.appendChild(skillListItem)
+                    }
+                }
+            })
     })
+
+    
 

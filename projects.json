@@ -10,7 +10,9 @@
             "Utilized Firebase Firestore as a database, Firestore Functions for API calls, and Firebase Hosting to deploy the website"
         ],
         "tools": [
-            
+            "Angular",
+            "NodeJS",
+            "Firebase"
         ],
         "developer": "Sean Quach",
         "githubLink": "https://github.com/squach28/wordie",
@@ -26,6 +28,12 @@
             "Developed the home page of the app, which would display the user's goals for the day and allow users to mark them as complete by taking a photo",
             "Implemented CRUD functionality and user authentication with AWS Amplify and Relational DB",
             "Designed and improved paper/high-fidelity prototypes based on 3 rounds of user feedback (Adobe XD)"        
+        ],
+        "tools": [
+            "Dart",
+            "Flutter",
+            "SQL/MySQL",
+            "AWS"
         ],
         "developer": "Sean Quach",
         "githubLink": "https://github.com/squach28/MotivateMe_Mobile_Application",
