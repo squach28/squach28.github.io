@@ -1,4 +1,5 @@
 const container = document.getElementById('container')
+var scrollingAllowed = true
 var isPlaying = true
 const playButton = document.getElementById('play_button')
 const player = document.getElementById('player')
@@ -36,6 +37,17 @@ const togglePlayPauseButton = () => {
         playerPlayPauseIcon.src = '/assets/icons/player/play-solid-white.svg'
     } 
 
+}
+
+const toggleScrolling = () => {
+    scrollingAllowed = !scrollingAllowed
+    console.log('scrolling allowed', scrollingAllowed)
+
+    if(scrollingAllowed) {
+        document.body.style.overflow = 'scroll'
+    } else {
+        document.body.style.overflow = 'hidden'
+    }
 }
 
 playButton.addEventListener('click' ,() => {
@@ -268,7 +280,7 @@ window.addEventListener('scroll', () => {
     let scrollPercent = scrollTop / (docHeight - winHeight)
     let scrollPercentRounded = Math.round(scrollPercent * 100)
     progressBar.style.width = `${scrollPercentRounded}%`
-    detailedPageProgressBar.style.width = `${scrollPercentRounded}%`
+    detailedPageProgressBar.style.width = scrollPercentRounded > 100 ? '100%' : `${scrollPercentRounded}%`
     
 })
 
@@ -288,6 +300,7 @@ playerHeartIcon.addEventListener('click', (e) => {
 })
 
 player.addEventListener('click', () => {
+    toggleScrolling()
     detailedPage.style.visibility = 'visible'
     detailedPage.classList.remove('detailed_page_clicked')
     detailedPage.classList.add('player_clicked')
@@ -302,6 +315,7 @@ hideDetailedPageIcon.addEventListener('click', () => {
     setTimeout(() => {
         player.style.opacity = 1
     }, 300)
+    toggleScrolling()
 })
 
 
