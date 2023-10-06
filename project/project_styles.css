@@ -35,14 +35,25 @@ a {
     cursor: pointer;
 }
 
-.nav_bar {
+#nav_bar {
     width: 100%;
     position: fixed;
+    display: flex;
+    gap: 1.5em;
+    align-items: center;
     background-color: transparent;
     top: 0;
     left: 0;
     z-index: 2;
     padding: 0.75em;
+}
+
+#arrow-icon {
+    opacity: 1;
+}
+
+#nav_bar_project_name {
+    display: none;
 }
 
 #project_icon {
@@ -54,6 +65,7 @@ a {
     align-items: center;
     object-fit: contain;
     margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .project_name {

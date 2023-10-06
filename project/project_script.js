@@ -1,6 +1,23 @@
 const project = new URLSearchParams(window.location.search).get('project')
+const navBar = document.getElementById('nav_bar')
+const navBarProjectName = document.getElementById('nav_bar_project_name')
 
 document.title = `Sean Quach's Portfolio - ${project}`
+
+window.addEventListener('scroll', () => {
+    let scrollTop = window.scrollY
+    let docHeight = document.body.offsetHeight
+    let winHeight = window.innerHeight 
+    let scrollPercent = scrollTop / (docHeight - winHeight)
+    let scrollPercentRounded = Math.round(scrollPercent * 100)
+    const opacity = scrollPercentRounded / 100
+    if(opacity >= 0.75) {
+        navBarProjectName.style.display = 'flex'
+    } else {
+        navBarProjectName.style.display = 'none'
+    }
+    navBar.style.backgroundColor = `rgba(0, 0, 0, ${opacity}`
+})
 
 fetch('../projects.json')
     .then(res => res.json())
@@ -22,7 +39,11 @@ fetch('../projects.json')
         dateDetails.textContent = `${projectData.startDate} - ${projectData.endDate}`
 
         const projectLink = document.getElementById('project_link')
-        projectLink.href = projectData.projectLink
+        if(projectData.projectLink === '') {
+            projectLink.style.display = 'none'
+        } else {
+            projectLink.href = projectData.projectLink
+        }
 
         const githubLink = document.getElementById('github_link')
         githubLink.href = projectData.githubLink
