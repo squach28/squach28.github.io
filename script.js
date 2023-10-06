@@ -41,8 +41,9 @@ const togglePlayPauseButton = () => {
 
 const toggleScrolling = () => {
     scrollingAllowed = !scrollingAllowed
+
     if(scrollingAllowed) {
-        document.body.style.overflow = 'scroll'
+        document.body.style.overflow = 'auto'
     } else {
         document.body.style.overflow = 'hidden'
     }
