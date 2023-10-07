@@ -26,16 +26,25 @@ for(let topicImg of topicImgs) {
 }
 
 const togglePlayPauseButton = () => {
-    const iconImg = document.getElementById('play_pause_icon')
-    const playerPlayPauseIcon = document.getElementById('player_play_pause_icon')
+    const playPauseButtons = document.querySelectorAll('.play_pause')
     isPlaying = !isPlaying
-    if(isPlaying) {
-        iconImg.src = '/assets/icons/player/pause-solid.svg'
-        playerPlayPauseIcon.src = '/assets/icons/player/pause-solid-white.svg'
-    } else {
-        iconImg.src = '/assets/icons/player/play-solid.svg'
-        playerPlayPauseIcon.src = '/assets/icons/player/play-solid-white.svg'
-    } 
+    for(let playPauseButton of playPauseButtons) {
+        console.log(playPauseButton.classList)
+        if(isPlaying) {
+            if(playPauseButton.classList.contains('mobile')) {
+                playPauseButton.src= '/assets/icons/player/pause-solid-white.svg'
+            } else {
+                playPauseButton.src = '/assets/icons/player/pause-solid.svg'
+            }
+        } else {
+            if(playPauseButton.classList.contains('mobile')) {
+                playPauseButton.src = '/assets/icons/player/play-solid-white.svg'
+            } else {
+                playPauseButton.src = '/assets/icons/player/play-solid.svg'
+            }
+        } 
+    }
+
 
 }
 
@@ -283,20 +292,25 @@ window.addEventListener('scroll', () => {
     
 })
 
-// const playerPlayPauseIcon = document.getElementById('player_play_pause_icon')
-// playerPlayPauseIcon.addEventListener('click', (e) => {
-//     e.stopPropagation()
-//     togglePlayPauseButton()
-// })
+const playPauseButtons = document.querySelectorAll('.play_pause')
+for(let playPauseButton of playPauseButtons) {
+    playPauseButton.addEventListener('click', (e) => {
+        e.stopPropagation()
+        togglePlayPauseButton()
+    })
+}
 
-// const playerHeartIcon = document.getElementById('player_heart_icon')
-// playerHeartIcon.addEventListener('click', (e) => {
-//     e.stopPropagation()
-//     playerHeartIcon.classList.add('player_heart_icon')
-//     setTimeout(() => {
-//         playerHeartIcon.classList.remove('player_heart_icon')
-//     }, 1000)
-// })
+
+
+
+const playerHeartIcon = document.getElementById('player_heart_icon')
+playerHeartIcon.addEventListener('click', (e) => {
+    e.stopPropagation()
+    playerHeartIcon.classList.add('player_heart_icon')
+    setTimeout(() => {
+        playerHeartIcon.classList.remove('player_heart_icon')
+    }, 1000)
+})
 
 player.addEventListener('click', () => {
     toggleScrolling()
