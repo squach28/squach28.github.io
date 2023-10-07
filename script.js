@@ -283,20 +283,20 @@ window.addEventListener('scroll', () => {
     
 })
 
-const playerPlayPauseIcon = document.getElementById('player_play_pause_icon')
-playerPlayPauseIcon.addEventListener('click', (e) => {
-    e.stopPropagation()
-    togglePlayPauseButton()
-})
+// const playerPlayPauseIcon = document.getElementById('player_play_pause_icon')
+// playerPlayPauseIcon.addEventListener('click', (e) => {
+//     e.stopPropagation()
+//     togglePlayPauseButton()
+// })
 
-const playerHeartIcon = document.getElementById('player_heart_icon')
-playerHeartIcon.addEventListener('click', (e) => {
-    e.stopPropagation()
-    playerHeartIcon.classList.add('player_heart_icon')
-    setTimeout(() => {
-        playerHeartIcon.classList.remove('player_heart_icon')
-    }, 1000)
-})
+// const playerHeartIcon = document.getElementById('player_heart_icon')
+// playerHeartIcon.addEventListener('click', (e) => {
+//     e.stopPropagation()
+//     playerHeartIcon.classList.add('player_heart_icon')
+//     setTimeout(() => {
+//         playerHeartIcon.classList.remove('player_heart_icon')
+//     }, 1000)
+// })
 
 player.addEventListener('click', () => {
     toggleScrolling()

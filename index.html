@@ -28,9 +28,11 @@
         </div>
 
         <div id="container" class="container">
-            <img class="portfolio" src="assets/images/portfolio.jpeg" alt="picture of Sean Quach"/>
-            <h1 class="header">Sean Quach</h1>
-            <p class="sub_header">1,000 monthly listeners</p>    
+            <div class="portfolio_container">
+                <img id="portfolio" src="assets/images/portfolio.jpeg" alt="picture of Sean Quach"/>
+                <h1 class="header">Sean Quach</h1>
+                <p class="sub_header">1,000 monthly listeners</p>
+            </div>
             <div class="icon_list">
                 <div class="list">
                     <button class="follow_button">
@@ -55,8 +57,10 @@
                 </div>
             </div>
 
-            <h2 class="subheader">Skills</h2>
-            <ul id="skills_list"></ul>
+            <div class="skills_container">
+                <h2 class="subheader">Skills</h2>
+                <ul id="skills_list"></ul>
+            </div>
         </div>  
 
         <div id="player" class="player">
@@ -68,7 +72,18 @@
                         <p id="player_subheader" class="topic_sub_header">Macbook Air</p>
                     </div>
                 </div>
-                <div>
+                <div class="player_icons_container">
+                    <img class="icon" src="/assets/icons/player/shuffle-solid.svg"  alt="shuffle icon">
+                    <img src="/assets/icons/player/backward-step-solid.svg" alt="backward step" class="icon">
+                    <img src="/assets/icons/player/pause-solid.svg" alt="pause icon" class="icon detailed_page_pause_icon">
+                    <img src="/assets/icons/player/forward-step-solid.svg" alt="forward step icon" class="icon">
+                    <img src="/assets/icons/player/repeat-solid.svg" alt="repeat icon" class="icon">
+                </div>
+                <div class="player_desktop_icons_container">
+                    <p>hi</p>
+                    <p>hi</p>
+                </div>
+                <div class="mobile_player_icons">
                     <img id="player_heart_icon" class="player_icon" src="/assets/icons/heart-regular.svg" alt="unfilled heart icon">
                     <img id="player_play_pause_icon" class="player_icon" src="/assets/icons/player/pause-solid-white.svg" alt="pause icon" />
                 </div>

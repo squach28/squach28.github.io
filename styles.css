@@ -25,7 +25,7 @@ a {
     margin: 1.5em;
 }
 
-.portfolio {
+#portfolio {
     border-radius: 50%;
     max-width: 700px;
     aspect-ratio: 16/9;
@@ -321,6 +321,14 @@ a {
     animation: expand_and_deflate 0.5s;
 }
 
+.player_content > .player_icons_container {
+    display: none;
+}
+
+.player_desktop_icons_container {
+    display: none;
+}
+
 #currently_playing_icon {
     background-color: white;
 }
@@ -478,11 +486,45 @@ a {
 }
 
 @media (min-width: 800px) {
+    /* margin of 0 will make everything spread out on sides */
+    .container {
+        margin: 0;
+    }
+
+    .portfolio_container {
+        padding: 1em 0;
+        background-image: url('./assets/backgrounds/portfolio-background.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #portfolio {
+        border-radius: 10px;
+        max-width: 700px;
+        margin: 2em auto;
+        display: block;
+        text-align: center;
+    }
+
+    .header {
+        padding: 0 1em;
+    }
+
+    .sub_header {
+        padding: 0 2em;
+    }
+
+    .icon {
+        width: 2em;
+        height: 2em;
+    }
+
     .icon_list {
         flex-direction: row-reverse;
         justify-content: start;
         gap: 2em;
         align-items: center;
+        padding: 1em;
     }
 
     #experience_list {
@@ -496,6 +538,7 @@ a {
     }
 
     .experience_container {
+        padding: 2em;
         flex: 1;
     }
 
@@ -504,6 +547,7 @@ a {
         flex-direction: column;
         flex: 1;
         flex-wrap: wrap;
+        padding: 2em;
     }
 
     .projects_container > #projects_list {
@@ -519,6 +563,35 @@ a {
     .experience_card:hover {
         background-color: gray;
     }
+
+    .skills_container {
+        padding: 2em;
+    }
+
+    #player {
+        width: 100%;
+        padding: 1em 0 ;
+        background-color: black;
+    } 
+
+    #currently_playing_icon {
+        width: 2.5em;
+        height: 2.5em;
+    }
+
+    .mobile_player_icons {
+        display: none;
+    }
+
+    .player_content > .player_icons_container {
+        display: flex;
+        gap: 1.5em;
+    }
+
+    .player_desktop_icons_container {
+        display: flex;
+    }
+
 }
 
 @keyframes expand_and_deflate {
