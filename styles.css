@@ -492,26 +492,35 @@ a {
     }
 
     .portfolio_container {
-        padding: 1em 0;
+        display: flex;
+        width: 100%;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        align-items: center;
         background-image: url('./assets/backgrounds/portfolio-background.svg');
         background-repeat: no-repeat;
         background-size: cover;
+        padding: 2em 0;
     }
 
     #portfolio {
+        width: 10em;
+        height: 10em;
         border-radius: 10px;
-        max-width: 700px;
-        margin: 2em auto;
-        display: block;
-        text-align: center;
+        margin: 0;
+    }
+
+    .header_details {
+        display: flex;
+        flex-direction: column;
     }
 
     .header {
-        padding: 0 1em;
+        font-size: 5rem;
     }
 
     .sub_header {
-        padding: 0 2em;
+        font-size: 1rem;
     }
 
     .icon {
