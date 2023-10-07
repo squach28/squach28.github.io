@@ -581,6 +581,14 @@ a {
         background-color: gray;
     }
 
+    .company_header {
+        font-size: 3rem;
+    }
+
+    .title_header {
+        font-size: 2rem;
+    }
+
     .exp_bullet {
         font-size: 1.5rem;
     }

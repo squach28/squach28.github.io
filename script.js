@@ -147,6 +147,7 @@ fetch('./experiences.json')
                 const infoContainer = document.createElement('div')
             
                 const companyHeader = document.createElement('h1')
+                companyHeader.classList.add('company_header')
                 companyHeader.textContent = experience.company
             
                 const titleHeader = document.createElement('h2')
