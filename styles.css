@@ -321,7 +321,7 @@ a {
     animation: expand_and_deflate 0.5s;
 }
 
-.player_content > .player_icons_container {
+.player_content > .desktop_player_icons_container {
     display: none;
 }
 
@@ -404,7 +404,7 @@ a {
     position: relative;
 }
 
-.player_icons_container {
+.desktop_player_icons_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -583,22 +583,30 @@ a {
         background-color: black;
     } 
 
+    .player_content_info {
+        flex: 1;
+        justify-content: start;
+    }
+
     #currently_playing_icon {
         width: 2.5em;
         height: 2.5em;
     }
 
+
     .mobile_player_icons {
         display: none;
     }
 
-    .player_content > .player_icons_container {
+    .player_content > .desktop_player_icons_container {
         display: flex;
         gap: 1.5em;
     }
 
     .player_desktop_icons_container {
         display: flex;
+        flex: 1;
+        justify-content: end;
     }
 
 }
