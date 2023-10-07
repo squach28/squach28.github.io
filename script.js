@@ -161,6 +161,7 @@ fetch('./experiences.json')
                 experienceList.classList.add('experience_bullets_container')
                 for(let bullet of experience.bullets) {
                     const expBullet = document.createElement('li')
+                    expBullet.classList.add('exp_bullet')
                     expBullet.textContent = bullet
                     experienceList.appendChild(expBullet)
                 }

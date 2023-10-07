@@ -132,10 +132,14 @@ a {
     display: flex;
     font-size: 1.5rem;
     border: none;
+    background-color: red;
     color: white;
-    background-color: transparent;
     font-weight: bold;
     z-index: 4;
+}
+
+.close_button:hover {
+    cursor: pointer;
 }
 
 .contact_list {
@@ -575,6 +579,10 @@ a {
 
     .experience_card:hover {
         background-color: gray;
+    }
+
+    .exp_bullet {
+        font-size: 1.5rem;
     }
 
     .skills_container {
