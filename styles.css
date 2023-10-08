@@ -280,6 +280,14 @@ a {
     font-size: 1.25rem;
 }
 
+#desktop_player {
+    display: none;
+}
+
+#mobile_player {
+    display: flex;
+}
+
 .player { 
     display: flex;
     position: sticky;
@@ -597,11 +605,16 @@ a {
         padding: 2em;
     }
 
-    #player {
+    #mobile_player {
+        display: none;
+    }
+
+    #desktop_player {
         width: 100%;
         padding: 1em 0 ;
         background-color: black;
-    } 
+        display: flex;
+    }
 
     .player_content_info {
         flex: 1;

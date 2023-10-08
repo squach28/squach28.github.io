@@ -2,7 +2,7 @@ const container = document.getElementById('container')
 var scrollingAllowed = true
 var isPlaying = true
 const playButton = document.getElementById('play_button')
-const player = document.getElementById('player')
+const mobilePlayer = document.getElementById('mobile_player')
 const playerHeader = document.getElementById('player_header')
 const playerSubheader = document.getElementById('player_subheader')
 const detailedPage = document.getElementById('detailed_page')
@@ -86,7 +86,7 @@ ellipsisIcon.addEventListener('click', () => {
     const moreOverlayContainer = document.getElementById('more_overlay_container')
     container.classList.add('blur')
     moreOverlayContainer.style.display = 'flex'
-    player.style.display = 'none'
+    mobilePlayer.style.display = 'none'
 
 })
 
@@ -96,7 +96,7 @@ closeButton.addEventListener('click', () => {
     const moreOverlayContainer = document.getElementById('more_overlay_container')
     container.classList.remove('blur')
     moreOverlayContainer.style.display = 'none'
-    player.style.display = 'flex'
+    mobilePlayer.style.display = 'flex'
 })
 
 fetch('./experiences.json')
@@ -172,7 +172,7 @@ fetch('./experiences.json')
                 closeButton.classList.add('close_button')
                 closeButton.addEventListener('click', () => {
                     container.classList.remove('blur')
-                    player.style.display = 'flex'
+                    mobilePlayer.style.display = 'flex'
                     document.body.removeChild(experienceDiv)
                 })
             
@@ -184,7 +184,7 @@ fetch('./experiences.json')
                 experienceDiv.appendChild(infoContainer)
                 experienceDiv.appendChild(closeButton)
                 container.classList.add('blur')
-                player.style.display = 'none'
+                mobilePlayer.style.display = 'none'
                 document.body.appendChild(experienceDiv)
         
             })
@@ -314,12 +314,12 @@ playerHeartIcon.addEventListener('click', (e) => {
     }, 1000)
 })
 
-player.addEventListener('click', () => {
+mobilePlayer.addEventListener('click', () => {
     toggleScrolling()
     detailedPage.style.visibility = 'visible'
     detailedPage.classList.remove('detailed_page_clicked')
     detailedPage.classList.add('player_clicked')
-    player.style.opacity = 0
+    mobilePlayer.style.opacity = 0
 })
 
 const hideDetailedPageIcon = document.getElementById('hide_detailed_page_icon')
@@ -328,7 +328,7 @@ hideDetailedPageIcon.addEventListener('click', () => {
     detailedPage.classList.add('detailed_page_clicked')
     detailedPage.visiblity = 'hidden'
     setTimeout(() => {
-        player.style.opacity = 1
+        mobilePlayer.style.opacity = 1
     }, 300)
     toggleScrolling()
 })
