@@ -3,10 +3,10 @@ var scrollingAllowed = true
 var isPlaying = true
 const playButton = document.getElementById('play_button')
 const mobilePlayer = document.getElementById('mobile_player')
+const desktopPlayer = document.getElementById('desktop_player')
 const playerHeader = document.getElementById('player_header')
 const playerSubheader = document.getElementById('player_subheader')
 const detailedPage = document.getElementById('detailed_page')
-
 var selectedTopic = `Sean Quach's Portfolio`
 var selectedSubTopic = 'Macbook Air'
 var selectedTopicImgUrl = '/assets/icons/player/music-solid.svg'
@@ -81,12 +81,18 @@ shareIcon.addEventListener('click', () => {
 })
 
 const ellipsisIcon = document.getElementById('ellipsis_icon')
-
 ellipsisIcon.addEventListener('click', () => {
     const moreOverlayContainer = document.getElementById('more_overlay_container')
+    const toggleMobilePlayer = window.getComputedStyle(mobilePlayer).getPropertyValue('display') === 'none' ? false : true
     container.classList.add('blur')
     moreOverlayContainer.style.display = 'flex'
-    mobilePlayer.style.display = 'none'
+    console.log(mobilePlayer.style.display)
+    console.log(toggleMobilePlayer)
+    if(toggleMobilePlayer) {
+        mobilePlayer.style.display = 'none'
+    } else {
+        desktopPlayer.style.display = 'none'
+    }
 
 })
 
@@ -94,9 +100,14 @@ const closeButton = document.getElementById('close_more_overlay_button')
 
 closeButton.addEventListener('click', () => {
     const moreOverlayContainer = document.getElementById('more_overlay_container')
+    const toggleMobilePlayer = window.getComputedStyle(mobilePlayer).getPropertyValue('display') === 'none' ? false : true
     container.classList.remove('blur')
     moreOverlayContainer.style.display = 'none'
-    mobilePlayer.style.display = 'flex'
+    if(toggleMobilePlayer) {
+        mobilePlayer.style.display = 'flex'
+    } else {
+        desktopPlayer.style.display = 'flex'
+    }
 })
 
 fetch('./experiences.json')

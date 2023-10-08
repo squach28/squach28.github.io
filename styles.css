@@ -132,7 +132,7 @@ a {
     display: flex;
     font-size: 1.5rem;
     border: none;
-    background-color: red;
+    background-color: transparent;
     color: white;
     font-weight: bold;
     z-index: 4;
@@ -191,6 +191,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    user-select: none;
 }
 
 .experience_info {
@@ -582,7 +583,6 @@ a {
     .experience_card {
         justify-content: space-between;
         margin: 0.25em 0;
-        user-select: none;
     }
 
     .experience_card:hover {
