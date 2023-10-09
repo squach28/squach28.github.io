@@ -385,7 +385,8 @@ a {
     height: 100vh;
     flex-direction: column; 
     justify-content: space-around;
-    padding: 0 2em;
+    padding: 0em 2em;
+    margin: 1.5em 0;
 }
 
 .detailed_page_header {

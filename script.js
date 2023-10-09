@@ -295,6 +295,13 @@ fetch('./skills.json')
         }
     })
 
+const aboutText = document.getElementById('about')
+fetch('./about.json')
+    .then(res => res.json())
+    .then(about => {
+        aboutText.textContent = about.content
+    })
+
 
 const progressBar = document.getElementById('progress_bar')
 const detailedPageProgressBar = document.getElementById('detailed_page_progress_bar')
