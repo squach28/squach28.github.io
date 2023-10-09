@@ -1,3 +1,7 @@
+:root {
+    --spotify-green: #1BD760;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -48,11 +52,11 @@ textarea:focus {
 #contact_form_submit {
     border: none;
     padding: 0.5em 1em;
-    background-color: green;
+    background-color: var(--spotify-green);
     color: white;
     font-weight: bold;
     font-size: 1.2rem;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .container {
@@ -118,7 +122,7 @@ textarea:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1BD760;
+    background-color: var(--spotify-green);
     color: black;
     padding: 1.25em;
     border: none;
@@ -693,6 +697,20 @@ textarea:focus {
         width: 100%;
         text-align: center;
         justify-content: center;
+    }
+
+    .about_contact_container {
+        display: flex;
+        padding: 2em 2em;
+        gap: 5em;
+    }
+
+    .about_container {
+        flex: 1;
+    }
+
+    .contact_me_container {
+        flex: 1;
     }
 
 }
