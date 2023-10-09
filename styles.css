@@ -639,6 +639,7 @@ a {
 
     .player_desktop_icons_container {
         display: flex;
+        gap: 1em;
         flex: 1;
         justify-content: end;
     }

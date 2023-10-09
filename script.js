@@ -324,9 +324,6 @@ for(let playPauseButton of playPauseButtons) {
     })
 }
 
-
-
-
 const playerHeartIcon = document.getElementById('player_heart_icon')
 playerHeartIcon.addEventListener('click', (e) => {
     e.stopPropagation()
@@ -342,6 +339,19 @@ mobilePlayer.addEventListener('click', () => {
     detailedPage.classList.remove('detailed_page_clicked')
     detailedPage.classList.add('player_clicked')
     mobilePlayer.style.opacity = 0
+})
+
+const volumeSlider = document.getElementById('volume_slider')
+const volumeSliderIcon = document.getElementById('volume_slider_icon')
+volumeSlider.addEventListener('input', (e) => {
+    const volumeSliderValue = parseInt(e.target.value)
+    if(volumeSliderValue === 0) {
+        volumeSliderIcon.src = '/assets/icons/player/volume-xmark-solid.svg'
+    } else if(volumeSliderValue > 0 && volumeSliderValue < 75) {
+        volumeSliderIcon.src = '/assets/icons/player/volume-low-solid.svg'
+    } else {
+        volumeSliderIcon.src = '/assets/icons/player/volume-high-solid.svg'
+    }
 })
 
 const hideDetailedPageIcon = document.getElementById('hide_detailed_page_icon')
