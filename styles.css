@@ -19,6 +19,41 @@ a {
     text-decoration: none;
 }
 
+input[type="text"], input[type="email"] {
+    border-radius: 15px;
+    border: 2px solid rgb(80, 80, 80);
+    outline: none;
+    padding: 1em;
+    background-color: rgb(226, 225, 225);
+}
+
+input[type="text"]:focus, input[type="email"]:focus {
+    background-color: white;
+}
+
+textarea {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    resize: none;
+    border-radius: 15px;
+    border: 2px solid rgb(80, 80, 80);
+    outline: none;
+    padding: 1em;
+    background-color: rgb(221, 221, 221);
+}
+
+textarea:focus {
+    background-color: white;
+}
+
+#contact_form_submit {
+    border: none;
+    padding: 0.5em 1em;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 15px;
+}
 
 .container {
     position: relative;
@@ -279,6 +314,12 @@ a {
 
 .project_description {
     font-size: 1.25rem;
+}
+
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
 #desktop_player {
