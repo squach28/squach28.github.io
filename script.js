@@ -15,6 +15,8 @@ const topicHeaders = document.querySelectorAll('.topic_header')
 const topicSubHeaders = document.querySelectorAll('.topic_sub_header')
 const topicImgs = document.querySelectorAll('.topic_img')
 
+const GITHUB_API_URL = 'https://vq6ln4ww6b3u2iwtfj3cchr52i0oqjzx.lambda-url.us-east-1.on.aws/'
+
 for(let topicHeader of topicHeaders) {
     topicHeader.textContent = selectedTopic
 }
@@ -105,6 +107,14 @@ closeButton.addEventListener('click', () => {
         desktopPlayer.style.display = 'flex'
     }
 })
+
+const followersSubHeader = document.getElementById('github_followers')
+fetch(GITHUB_API_URL)
+    .then(res => res.json())
+    .then(data => {
+        const numOfFollowers = data.followers
+        followersSubHeader.textContent = `${numOfFollowers} Github followers`
+    })
 
 fetch('./experiences.json')
     .then(res => res.json())
