@@ -1,3 +1,7 @@
+:root {
+    --spotify-green: #1BD760;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -19,13 +23,53 @@ a {
     text-decoration: none;
 }
 
+input[type="text"], input[type="email"] {
+    border-radius: 15px;
+    border: 2px solid rgb(80, 80, 80);
+    outline: none;
+    padding: 1em;
+    background-color: rgb(226, 225, 225);
+}
+
+input[type="text"]:focus, input[type="email"]:focus {
+    background-color: white;
+}
+
+textarea {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    resize: none;
+    border-radius: 15px;
+    border: 2px solid rgb(80, 80, 80);
+    outline: none;
+    padding: 1em;
+    background-color: rgb(221, 221, 221);
+}
+
+textarea:focus {
+    background-color: white;
+}
+
+#contact_form_submit {
+    border: none;
+    padding: 0.5em 1em;
+    background-color: var(--spotify-green);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    margin-top: 0.5em;
+}
+
+#contact_form_submit:hover {
+    cursor: pointer;
+}
 
 .container {
     position: relative;
     margin: 1.5em;
 }
 
-.portfolio {
+#portfolio {
     border-radius: 50%;
     max-width: 700px;
     aspect-ratio: 16/9;
@@ -56,7 +100,7 @@ a {
     gap: 1em;
 }
 
-.follow_button {
+.connect_button {
     background-color: transparent;
     border: 1px solid rgb(160, 157, 157);
     color: white;
@@ -64,6 +108,11 @@ a {
     padding: 0.5em 1em;
     font-weight: bold;
     cursor: pointer;
+}
+
+.connect_button:hover {
+    transform: scale(1.1);
+    border: 1px solid white;
 }
 
 .icon {
@@ -78,7 +127,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1BD760;
+    background-color: var(--spotify-green);
     color: black;
     padding: 1.25em;
     border: none;
@@ -127,10 +176,14 @@ a {
     display: flex;
     font-size: 1.5rem;
     border: none;
-    color: white;
     background-color: transparent;
+    color: white;
     font-weight: bold;
     z-index: 4;
+}
+
+.close_button:hover {
+    cursor: pointer;
 }
 
 .contact_list {
@@ -182,6 +235,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    user-select: none;
 }
 
 .experience_info {
@@ -260,8 +314,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 150px;
+    width: 9em;
+    height: 9em;
     color: white;
     font-weight: bold;
     object-fit: scale-down;
@@ -269,6 +323,20 @@ a {
 
 .project_description {
     font-size: 1.25rem;
+}
+
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#desktop_player {
+    display: none;
+}
+
+#mobile_player {
+    display: flex;
 }
 
 .player { 
@@ -321,6 +389,14 @@ a {
     animation: expand_and_deflate 0.5s;
 }
 
+.player_content > .player_icons_container {
+    display: none;
+}
+
+.player_desktop_icons_container {
+    display: none;
+}
+
 #currently_playing_icon {
     background-color: white;
 }
@@ -359,7 +435,8 @@ a {
     height: 100vh;
     flex-direction: column; 
     justify-content: space-around;
-    padding: 0 2em;
+    padding: 0em 2em;
+    margin: 1em 0;
 }
 
 .detailed_page_header {
@@ -476,29 +553,171 @@ a {
     width: 50px;
     height: 50px;
 }
-
+/* Media Query for Desktop Devices */
 @media (min-width: 800px) {
+    .container {
+        margin: 0;
+    }
+
+    .portfolio_container {
+        display: flex;
+        width: 100%;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        align-items: center;
+        background-image: url('./assets/backgrounds/portfolio-background.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 2em 0;
+    }
+
+    #portfolio {
+        width: 10em;
+        height: 10em;
+        border-radius: 10px;
+        margin: 0;
+    }
+
+    .header_details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        font-size: 5rem;
+    }
+
+    .sub_header {
+        font-size: 1rem;
+    }
+
+    .icon {
+        width: 2em;
+        height: 2em;
+    }
+
     .icon_list {
         flex-direction: row-reverse;
         justify-content: start;
         gap: 2em;
         align-items: center;
+        padding: 2em;
     }
 
     #experience_list {
         gap: 0.25em;
     }
 
+    .experience_projects_container {
+        width: 100%;
+        display: flex;
+        gap: 4em;
+    }
+
+    .experience_container {
+        padding: 2em;
+        flex: 1;
+    }
+
+    .projects_container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        flex-wrap: wrap;
+        padding: 2em;
+    }
+
+    .projects_container > #projects_list {
+        flex: 1;
+    }
+
     .experience_card {
-        width: 350px;
         justify-content: space-between;
         margin: 0.25em 0;
-        user-select: none;
     }
 
     .experience_card:hover {
         background-color: gray;
     }
+
+    .company_header {
+        font-size: 3rem;
+    }
+
+    .title_header {
+        font-size: 2rem;
+    }
+
+    .exp_bullet {
+        font-size: 1.5rem;
+    }
+
+    .skills_container {
+        padding: 2em;
+    }
+
+    #mobile_player {
+        display: none;
+    }
+
+    #desktop_player {
+        width: 100%;
+        padding: 1em 0 ;
+        background-color: black;
+        display: flex;
+    }
+
+    .player_content_info {
+        flex: 1;
+        justify-content: start;
+    }
+
+    #currently_playing_icon {
+        width: 2.5em;
+        height: 2.5em;
+    }
+
+
+    .mobile_player_icons {
+        display: none;
+    }
+
+    .player_content > .player_icons_container {
+        display: flex;
+        gap: 1.5em;
+    }
+
+    .player_desktop_icons_container {
+        display: flex;
+        gap: 1em;
+        flex: 1;
+        justify-content: end;
+    }
+
+    .more_overlay_container {
+        width: 100%;
+    }
+
+    .close_button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .about_contact_container {
+        display: flex;
+        padding: 2em 2em;
+        gap: 5em;
+    }
+
+    .about_container {
+        flex: 1;
+    }
+
+    .contact_me_container {
+        flex: 1;
+    }
+
 }
 
 @keyframes expand_and_deflate {

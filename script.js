@@ -2,17 +2,20 @@ const container = document.getElementById('container')
 var scrollingAllowed = true
 var isPlaying = true
 const playButton = document.getElementById('play_button')
-const player = document.getElementById('player')
+const mobilePlayer = document.getElementById('mobile_player')
+const desktopPlayer = document.getElementById('desktop_player')
+const toggleMobilePlayer = window.getComputedStyle(mobilePlayer).getPropertyValue('display') === 'none' ? false : true
 const playerHeader = document.getElementById('player_header')
 const playerSubheader = document.getElementById('player_subheader')
 const detailedPage = document.getElementById('detailed_page')
-
 var selectedTopic = `Sean Quach's Portfolio`
 var selectedSubTopic = 'Macbook Air'
 var selectedTopicImgUrl = '/assets/icons/player/music-solid.svg'
 const topicHeaders = document.querySelectorAll('.topic_header')
 const topicSubHeaders = document.querySelectorAll('.topic_sub_header')
 const topicImgs = document.querySelectorAll('.topic_img')
+
+const GITHUB_API_URL = 'https://vq6ln4ww6b3u2iwtfj3cchr52i0oqjzx.lambda-url.us-east-1.on.aws/'
 
 for(let topicHeader of topicHeaders) {
     topicHeader.textContent = selectedTopic
@@ -26,16 +29,24 @@ for(let topicImg of topicImgs) {
 }
 
 const togglePlayPauseButton = () => {
-    const iconImg = document.getElementById('play_pause_icon')
-    const playerPlayPauseIcon = document.getElementById('player_play_pause_icon')
+    const playPauseButtons = document.querySelectorAll('.play_pause')
     isPlaying = !isPlaying
-    if(isPlaying) {
-        iconImg.src = '/assets/icons/player/pause-solid.svg'
-        playerPlayPauseIcon.src = '/assets/icons/player/pause-solid-white.svg'
-    } else {
-        iconImg.src = '/assets/icons/player/play-solid.svg'
-        playerPlayPauseIcon.src = '/assets/icons/player/play-solid-white.svg'
-    } 
+    for(let playPauseButton of playPauseButtons) {
+        if(isPlaying) {
+            if(playPauseButton.classList.contains('mobile')) {
+                playPauseButton.src= '/assets/icons/player/pause-solid-white.svg'
+            } else {
+                playPauseButton.src = '/assets/icons/player/pause-solid.svg'
+            }
+        } else {
+            if(playPauseButton.classList.contains('mobile')) {
+                playPauseButton.src = '/assets/icons/player/play-solid-white.svg'
+            } else {
+                playPauseButton.src = '/assets/icons/player/play-solid.svg'
+            }
+        } 
+    }
+
 
 }
 
@@ -72,12 +83,15 @@ shareIcon.addEventListener('click', () => {
 })
 
 const ellipsisIcon = document.getElementById('ellipsis_icon')
-
 ellipsisIcon.addEventListener('click', () => {
     const moreOverlayContainer = document.getElementById('more_overlay_container')
     container.classList.add('blur')
     moreOverlayContainer.style.display = 'flex'
-    player.style.display = 'none'
+    if(toggleMobilePlayer) {
+        mobilePlayer.style.display = 'none'
+    } else {
+        desktopPlayer.style.display = 'none'
+    }
 
 })
 
@@ -87,8 +101,20 @@ closeButton.addEventListener('click', () => {
     const moreOverlayContainer = document.getElementById('more_overlay_container')
     container.classList.remove('blur')
     moreOverlayContainer.style.display = 'none'
-    player.style.display = 'flex'
+    if(toggleMobilePlayer) {
+        mobilePlayer.style.display = 'flex'
+    } else {
+        desktopPlayer.style.display = 'flex'
+    }
 })
+
+const followersSubHeader = document.getElementById('github_followers')
+fetch(GITHUB_API_URL)
+    .then(res => res.json())
+    .then(data => {
+        const numOfFollowers = data.followers
+        followersSubHeader.textContent = `${numOfFollowers} Github followers`
+    })
 
 fetch('./experiences.json')
     .then(res => res.json())
@@ -138,6 +164,7 @@ fetch('./experiences.json')
                 const infoContainer = document.createElement('div')
             
                 const companyHeader = document.createElement('h1')
+                companyHeader.classList.add('company_header')
                 companyHeader.textContent = experience.company
             
                 const titleHeader = document.createElement('h2')
@@ -152,6 +179,7 @@ fetch('./experiences.json')
                 experienceList.classList.add('experience_bullets_container')
                 for(let bullet of experience.bullets) {
                     const expBullet = document.createElement('li')
+                    expBullet.classList.add('exp_bullet')
                     expBullet.textContent = bullet
                     experienceList.appendChild(expBullet)
                 }
@@ -161,7 +189,11 @@ fetch('./experiences.json')
                 closeButton.classList.add('close_button')
                 closeButton.addEventListener('click', () => {
                     container.classList.remove('blur')
-                    player.style.display = 'flex'
+                    if(toggleMobilePlayer) {
+                        mobilePlayer.style.display = 'flex'
+                    } else {
+                        desktopPlayer.style.display = 'flex'
+                    }
                     document.body.removeChild(experienceDiv)
                 })
             
@@ -173,7 +205,11 @@ fetch('./experiences.json')
                 experienceDiv.appendChild(infoContainer)
                 experienceDiv.appendChild(closeButton)
                 container.classList.add('blur')
-                player.style.display = 'none'
+                if(toggleMobilePlayer) {
+                    mobilePlayer.style.display = 'none'
+                } else {
+                    desktopPlayer.style.display = 'none'
+                }
                 document.body.appendChild(experienceDiv)
         
             })
@@ -269,6 +305,13 @@ fetch('./skills.json')
         }
     })
 
+const aboutText = document.getElementById('about')
+fetch('./about.json')
+    .then(res => res.json())
+    .then(about => {
+        aboutText.textContent = about.content
+    })
+
 
 const progressBar = document.getElementById('progress_bar')
 const detailedPageProgressBar = document.getElementById('detailed_page_progress_bar')
@@ -283,11 +326,13 @@ window.addEventListener('scroll', () => {
     
 })
 
-const playerPlayPauseIcon = document.getElementById('player_play_pause_icon')
-playerPlayPauseIcon.addEventListener('click', (e) => {
-    e.stopPropagation()
-    togglePlayPauseButton()
-})
+const playPauseButtons = document.querySelectorAll('.play_pause')
+for(let playPauseButton of playPauseButtons) {
+    playPauseButton.addEventListener('click', (e) => {
+        e.stopPropagation()
+        togglePlayPauseButton()
+    })
+}
 
 const playerHeartIcon = document.getElementById('player_heart_icon')
 playerHeartIcon.addEventListener('click', (e) => {
@@ -298,12 +343,25 @@ playerHeartIcon.addEventListener('click', (e) => {
     }, 1000)
 })
 
-player.addEventListener('click', () => {
+mobilePlayer.addEventListener('click', () => {
     toggleScrolling()
     detailedPage.style.visibility = 'visible'
     detailedPage.classList.remove('detailed_page_clicked')
     detailedPage.classList.add('player_clicked')
-    player.style.opacity = 0
+    mobilePlayer.style.opacity = 0
+})
+
+const volumeSlider = document.getElementById('volume_slider')
+const volumeSliderIcon = document.getElementById('volume_slider_icon')
+volumeSlider.addEventListener('input', (e) => {
+    const volumeSliderValue = parseInt(e.target.value)
+    if(volumeSliderValue === 0) {
+        volumeSliderIcon.src = '/assets/icons/player/volume-xmark-solid.svg'
+    } else if(volumeSliderValue > 0 && volumeSliderValue < 75) {
+        volumeSliderIcon.src = '/assets/icons/player/volume-low-solid.svg'
+    } else {
+        volumeSliderIcon.src = '/assets/icons/player/volume-high-solid.svg'
+    }
 })
 
 const hideDetailedPageIcon = document.getElementById('hide_detailed_page_icon')
@@ -312,7 +370,7 @@ hideDetailedPageIcon.addEventListener('click', () => {
     detailedPage.classList.add('detailed_page_clicked')
     detailedPage.visiblity = 'hidden'
     setTimeout(() => {
-        player.style.opacity = 1
+        mobilePlayer.style.opacity = 1
     }, 300)
     toggleScrolling()
 })
