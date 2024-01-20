@@ -44,13 +44,26 @@ header {
 
 .title {
     font-size: 2.5rem;
+    opacity: 0;
+    filter: blur(4px);
+    animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
 .subtitle {
-    background: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    width: 0;    
+    max-width: 225px;
+    background: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
+    margin: auto 0;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 1.5rem;
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    animation: typing 2s steps(40, end) 1s forwards, blink-caret 1.2s step-end infinite 1s;
 }
 
 .socials_container {
@@ -75,4 +88,25 @@ header {
 .social_button_icon {
     width: 25px;
     height: 25px;
+}
+
+@keyframes fade-in {
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0%
+    } 
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
 }
