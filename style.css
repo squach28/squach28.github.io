@@ -1,7 +1,8 @@
 html {
     min-height: 100vh;
     color: white;
-    background: #1a1c26;
+    background: #1e202e;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 h1, h2, p, ul, li, body {
@@ -9,14 +10,69 @@ h1, h2, p, ul, li, body {
     margin: 0;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 nav {
-    padding: 1em;
+    padding: 1em 0.5em;
     background: #16161f;
 }
 
 nav > ul {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     list-style-type: none;
+}
+
+nav > ul > li {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.hamburger_icon {
+    width: 25px;
+    height: 25px;
+}
+
+header {
+    padding: 0 3em;
+    margin: 1em 0;
+}
+
+.title {
+    font-size: 2.5rem;
+}
+
+.subtitle {
+    background: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+}
+
+.socials_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.social_button {
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: 1.25rem;
+    background-color: rgb(64, 64, 64);
+    padding: 0.5em 0.75em;
+    border-radius: 1em;
     
+}
+
+.social_button_icon {
+    width: 25px;
+    height: 25px;
 }
