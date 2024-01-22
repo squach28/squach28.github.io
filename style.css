@@ -109,12 +109,34 @@ header, article {
     flex-direction: column;
     gap: 0.25rem;
     font-size: 0.75rem;
-    margin: 1em 0;
+    margin: 1.75em 0;
+}
+
+.time_period {
+    font-size: 1rem;
 }
 
 .experience_title {
     font-size: 0.75rem;
     font-weight: bold;
+}
+
+.experience_summary {
+    font-size: 0.7rem;
+    line-height: 1rem;
+}
+
+.tools_list {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+}
+
+.tool_list_item {
+    background: green;
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px;
 }
 
 @keyframes fade-in {

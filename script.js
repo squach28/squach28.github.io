@@ -23,6 +23,7 @@ const renderExperience = (experience) => {
     section.classList.add("experience_section")
 
     const time_period_element = document.createElement("p")
+    time_period_element.classList.add("time_period")
     time_period_element.textContent = experience.start_date + " - " + experience.end_date
 
     const experience_title_element = document.createElement("p")
@@ -30,11 +31,22 @@ const renderExperience = (experience) => {
     experience_title_element.textContent = experience.title + " - " + experience.company
 
     const summary_element = document.createElement("p")
+    summary_element.classList.add("experience_summary")
     summary_element.textContent = experience.summary
+
+    const tools_list = document.createElement("div")
+    tools_list.classList.add("tools_list")
+    for(let tool of experience.tools) {
+        const tool_list_element = document.createElement("p")
+        tool_list_element.classList.add("tool_list_item")
+        tool_list_element.textContent = tool
+        tools_list.appendChild(tool_list_element)
+    }
 
     section.append(time_period_element)
     section.append(experience_title_element)
     section.append(summary_element)
+    section.append(tools_list)
 
     return section
 
