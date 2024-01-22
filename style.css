@@ -32,6 +32,15 @@ nav > ul > li {
     font-weight: bold;
 }
 
+nav > ul > li:nth-child(1) {
+    animation: drop-into-place 2s forwards;
+}
+
+nav > ul > li:nth-child(2) {
+    transform: translateY(-150%);
+    animation: drop-into-place ease-in-out 2s 1.5s forwards;
+}
+
 .hamburger_icon {
     width: 25px;
     height: 25px;
@@ -46,7 +55,7 @@ header {
     font-size: 2.5rem;
     opacity: 0;
     filter: blur(4px);
-    animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    animation: fade-in 0.8s 3s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
 .subtitle {
@@ -63,7 +72,7 @@ header {
     overflow: hidden;
     border-right: .15em solid orange;
     white-space: nowrap;
-    animation: typing 2s steps(40, end) 1s forwards, blink-caret 1.2s step-end infinite 1s;
+    animation: typing 2s steps(40, end) 3.5s forwards, blink-caret 1.2s step-end infinite 1s;
 }
 
 .socials_container {
@@ -82,7 +91,12 @@ header {
     background-color: rgb(64, 64, 64);
     padding: 0.5em 0.75em;
     border-radius: 1em;
-    
+}
+
+.social_button:hover {
+    background: #ffffff;
+    color: black;
+    transform: scale(105%);
 }
 
 .social_button_icon {
@@ -109,4 +123,16 @@ header {
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: orange }
+}
+
+@keyframes drop-into-place {
+    0% {
+        transform: translateY(-100%)
+    } 40% {
+        transform: translateY(5px)
+    } 60% {
+        transform: translateY(-5px)
+    } 100% {
+        transform: translateY(0)
+    }
 }
