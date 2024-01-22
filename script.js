@@ -4,20 +4,6 @@ const fetchFile = async (filename) => {
     return data
 }
 
-const renderExperienceSection = async () => {
-    const experience_container = document.getElementById("experience_container")
-    const experience_header = document.createElement("h2")
-    experience_header.textContent = "Experience"
-    experience_container.appendChild(experience_header)
-    const EXPERIENCE_JSON_PATH = "./assets/experience/experience.json"
-    const experiences = await fetchFile(EXPERIENCE_JSON_PATH)
-
-    for(let experience of experiences) {
-        const experience_element = renderExperience(experience)
-        experience_container.appendChild(experience_element)
-    }
-}
-
 const renderExperience = (experience) => {
     const section = document.createElement('section')
     section.classList.add("experience_section")
@@ -49,7 +35,34 @@ const renderExperience = (experience) => {
     section.append(tools_list)
 
     return section
+}
+
+const renderExperienceSection = async () => {
+    const experience_container = document.getElementById("experience_container")
+    const experience_header = document.createElement("h2")
+    experience_header.textContent = "Experience"
+    experience_container.appendChild(experience_header)
+    const EXPERIENCE_JSON_PATH = "./assets/experience/experience.json"
+    const experiences = await fetchFile(EXPERIENCE_JSON_PATH)
+
+    for(let experience of experiences) {
+        const experience_element = renderExperience(experience)
+        experience_container.appendChild(experience_element)
+    }
+}
+
+const renderProject = async () => {
 
 }
 
+const renderProjectSection = async () => {
+    const projects_container = document.getElementById("projects_container")
+    const projects_header = document.createElement("h2")
+    console.log(projects_container)
+    projects_header.textContent = "Projects"
+    projects_container.appendChild(projects_header)
+}
+
+
 renderExperienceSection()
+renderProjectSection()
