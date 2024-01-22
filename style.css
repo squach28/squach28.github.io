@@ -46,13 +46,8 @@ nav > ul > li:nth-child(2) {
     height: 25px;
 }
 
-header {
-    padding: 0 3em;
-    margin: 1em 0;
-}
-
-article {
-    padding: 0 3em;
+header, article {
+    padding: 0 2em;
     margin: 1em 0;
 }
 
@@ -107,6 +102,19 @@ article {
 .social_button_icon {
     width: 25px;
     height: 25px;
+}
+
+.experience_section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    margin: 1em 0;
+}
+
+.experience_title {
+    font-size: 0.75rem;
+    font-weight: bold;
 }
 
 @keyframes fade-in {
