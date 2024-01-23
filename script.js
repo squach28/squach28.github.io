@@ -71,6 +71,7 @@ const createProjectElement = (project) => {
     project_name_element.textContent = project.name
 
     const summary_element = document.createElement("p")
+    summary_element.classList.add("section_summary")
     summary_element.textContent = project.summary
 
     const tools_list = document.createElement("div")
@@ -118,7 +119,7 @@ const renderSkillsCards = async () => {
         skill_img.height = 35
         skill_img.src = skill.img_url
         skill_img.alt = skill.name
-        console.log(skill.name)
+
         const skill_card_name = document.createElement("p")
         skill_card_name.classList.add("skill_name")
         skill_card_name.textContent = skill.name
