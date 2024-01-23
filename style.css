@@ -3,6 +3,7 @@ html {
     color: white;
     background: #1e202e;
     font-family: 'Be Vietnam Pro', sans-serif;
+    scroll-behavior: smooth;
 }
 
 h1, h2, p, ul, li, body {
@@ -25,6 +26,7 @@ nav > ul {
     justify-content: space-between;
     align-items: center;
     list-style-type: none;
+    padding: 0.5em 1em;
 }
 
 nav > ul > li {
@@ -37,13 +39,29 @@ nav > ul > li:nth-child(1) {
 }
 
 nav > ul > li:nth-child(2) {
-    transform: translateY(-150%);
+    transform: translateY(-250%);
     animation: drop-into-place ease-in-out 2s 1.5s forwards;
 }
 
 .hamburger_icon {
     width: 25px;
     height: 25px;
+}
+
+.mobile_nav {
+    display: block;
+    
+}
+
+.extended_nav {
+    display: none;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.25rem;
+}
+
+.extended_nav > li:hover {
+    font-weight: bold;
 }
 
 header, article {
@@ -153,6 +171,29 @@ header, article {
         padding: 0 6em;
     }
 
+    .mobile_nav {
+        display: none;
+    }
+
+    .extended_nav {
+        display: flex;
+    }
+
+    .extended_nav > li:nth-child(1) {
+        transform: translateY(-250%);
+        animation: drop-into-place 2s 2s forwards;
+    }
+
+    .extended_nav > li:nth-child(2) {
+        transform: translateY(-250%);
+        animation: drop-into-place 2s 2.5s forwards;
+    }
+
+    .extended_nav > li:nth-child(3) {
+        transform: translateY(-250%);
+        animation: drop-into-place 2s 3s forwards;
+    }
+
     .social_button {
         max-width: 50%;
         display: flex;
@@ -165,13 +206,16 @@ header, article {
     } 
 
     .social_button:hover {
-        background: #ffffff;
-        color: black;
-        transform: scaleY(125%);
+        background: #b8b8b8;
     }
 
     .social_button_name {
         display: block;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin: 1em 0 0.5em 0;
     }
 
     .time_period {
@@ -195,7 +239,11 @@ header, article {
 
 @media screen and (min-width: 1000px) {
     header, article {
-        padding: 0 18em;
+        padding: 0 20em;
+    }
+
+    h2 {
+        font-size: 2.5rem;
     }
 
     .time_period {
@@ -246,7 +294,7 @@ header, article {
 
 @keyframes drop-into-place {
     0% {
-        transform: translateY(-100%)
+        transform: translateY(-250%)
     } 40% {
         transform: translateY(5px)
     } 60% {
