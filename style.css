@@ -105,11 +105,15 @@ header, article {
 }
 
 .experience_section {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
     font-size: 0.75rem;
     margin: 1.75em 0;
+    opacity: 0;
+    animation: fade-in 2s forwards;
 }
 
 .time_period {
@@ -137,6 +141,15 @@ header, article {
     background: green;
     padding: 0.5rem 0.75rem;
     border-radius: 20px;
+}
+
+.skill_card {
+    display: flex;
+    flex-direction: column;
+    background: gray;    
+    align-items: center;
+    padding: 1em;
+    border-radius: 15px;
 }
 
 @keyframes fade-in {
