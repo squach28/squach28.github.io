@@ -1,0 +1,24 @@
+[
+    {
+        "name": "South Bay Synergy/Strava Discord Integration",
+        "title": "Full Stack Developer",
+        "start_date": "Nov 2023",
+        "end_date": "Present",
+        "summary": "Built a Discord bot to track Strava activities and statistics for South Bay Synergy, a dragon boat club of 30+ members. Deployed a website for users to view Strava activities, leaderboards, and profiles; deployed a backend to integrate with Strava API.",
+        "tools": ["NodeJS", "Express", "MongoDB", "React", "Typescript", "TailwindCSS", "AWS ECS", "Docker"]
+    },
+    {
+        "name": "Wordie",
+        "start_date": "Feb 2022",
+        "end_date": "April 2022",
+        "summary": "Developed a web game where players guess the daily randomly generated six letter word.",
+        "tools": ["NodeJS", "Firebase", "Angular"]
+    },
+    {
+        "name": "MotivateMe",
+        "start_date": "Aug 2020",
+        "end_date": "May 2021",
+        "summary": "Collaborated with a team of 4 to build a cross platform mobile application that would motivate users to complete their goals by taking photos of their progress and highlight their accomplishments.",
+        "tools": ["Flutter", "AWS", "SQL"]
+    }
+]

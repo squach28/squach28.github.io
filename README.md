@@ -1,1 +1,1 @@
-# Personal Portfolio for Sean Quach
+# Sean Quach's Portfolio

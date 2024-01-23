@@ -1,0 +1,38 @@
+[
+    {
+        "name": "HTML",
+        "img_url": "./assets/skills/icons/html5-plain.svg"
+    },
+    {
+        "name": "CSS",
+        "img_url": "./assets/skills/icons/css3-plain.svg"
+    },
+    {
+        "name": "JavaScript",
+        "img_url": "./assets/skills/icons/javascript-original.svg"
+    },
+    {
+        "name": "TypeScript",
+        "img_url": "./assets/skills/icons/typescript-plain.svg"
+    },
+    {
+        "name": "React",
+        "img_url": "./assets/skills/icons/react-original.svg"
+    },
+    {
+        "name": "NodeJS",
+        "img_url": "./assets/skills/icons/nodejs-original.svg"
+    },
+    {
+        "name": "Express",
+        "img_url": "./assets/skills/icons/express-original.svg"
+    },
+    {
+        "name": "Java",
+        "img_url": "./assets/skills/icons/java-original.svg"
+    },
+    {
+        "name": "SQL",
+        "img_url": "./assets/skills/icons/mysql-original.svg"
+    }
+]

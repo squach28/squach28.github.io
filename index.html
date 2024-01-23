@@ -1,172 +1,55 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Sean Quach's Portfolio</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;700&display=swap" rel="stylesheet">
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div id="more_overlay_container" class="more_overlay_container">
-                <ul class="contact_list">
-                    <li class="contact_list_item">
-                        <img class="icon" src="/assets/icons/envelope-solid.svg" alt="envelope icon">
-                        <a class="contact_list_item_text" href="mailto:squach3443@gmail.com">squach3443@gmail.com</a>
-                    </li>
-                    <li class="contact_list_item">
-                        <img class="icon" src="/assets/icons/linkedin.svg" alt="envelope icon">
-                        <a class="contact_list_item_text" target="_blank" href="https://www.linkedin.com/in/sean-quach/">https://www.linkedin.com/in/sean-quach/</a>
-                    </li>
-                    <li class="contact_list_item">
-                        <img class="icon" src="/assets/icons/square-github.svg" alt="envelope icon">
-                        <a class="contact_list_item_text" target="_blank" href="https://github.com/squach28">https://github.com/squach28</a>
-                    </li>
-                </ul>
-            <button id="close_more_overlay_button" class="close_button">Close</button>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sean Quach's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Sean Quach</a></li>
+            <li class="mobile_nav"><img class="hamburger_icon" src="./assets/icons/bars-solid.svg" alt="hamburger icon"></li>
+            <div class="extended_nav">
+                <li><a href="#experience_container">Experience</a></li>
+                <li><a href="#projects_container">Projects</a></li>
+                <li><a href="#skills_container">Skills</a></li>
+            </div>
+        </ul>
+    </nav>
+    <header>
+        <h1 class="title">Hi, I'm Sean!</h1>
+        <p class="subtitle typewriter">Software Engineer</p>
+        <div class="socials_container">
+            <a href="https://www.linkedin.com/in/sean-quach/" target="_blank" class="social_button">
+                <img class="social_button_icon" src="./assets/icons/linkedin.svg" alt="LinkedIn icon">
+                <p class="social_button_name">LinkedIn</p>
+            </a>
+            <a class="social_button" href="https://github.com/squach28" target="_blank"">
+                <img class="social_button_icon" src="./assets/icons/square-github.svg" alt="Github icon">
+                <p class="social_button_name">Github</p>
+            </a>
+            <a class="social_button" href="mailto:squach3443@gmail.com">
+                <img class="social_button_icon" src="./assets/icons/envelope-solid.svg" alt="Mail icon">
+                <p class="social_button_name">Email</p>
+            </a>
         </div>
+    </header>
 
-        <div id="container" class="container">
-            <div class="portfolio_container">
-                <img id="portfolio" src="assets/images/portfolio.jpeg" alt="picture of Sean Quach"/>
-                <div class="header_details">
-                    <h1 class="header">Sean Quach</h1>
-                    <p id="github_followers" class="sub_header">... Github followers</p>
-                </div>
-            </div>
-            <div class="icon_list">
-                <div class="list">
-                    <button class="connect_button">
-                        <a target="_blank" href="https://www.linkedin.com/in/sean-quach/">Connect</a>
-                    </button>
-                    <img id="share_icon" class="icon" src="/assets/icons/share-icon.svg" alt="share icon"/>
-                    <img id="ellipsis_icon" class="icon" src="/assets/icons/ellipsis-vertical-solid.svg" alt="ellipsis icon">
-                </div>
-                <button id="play_button" class="play_button">
-                    <img id="play_pause_icon" class="icon play_pause" src="/assets/icons/player/pause-solid.svg" alt="play icon">
-                </button>
-            </div>
-
-            <div class="experience_projects_container">
-                <div class="experience_container">
-                    <h2 class="subheader">Experience</h2>
-                    <ul id="experience_list" class="experience_list"></ul>
-                </div>
-                <div class="projects_container">
-                    <h2 class="subheader">Projects</h2>
-                    <ul id="projects_list" class="projects_list"></ul>
-                </div>
-            </div>
-
-            <div class="skills_container">
-                <h2 class="subheader">Skills</h2>
-                <ul id="skills_list"></ul>
-            </div>
-
-            <div class="about_contact_container">
-                <div class="about_container">
-                    <h2 class="subheader">About</h2>
-                    <p id="about"></p>
-                </div>
-                <div class="contact_me_container">
-                    <h2 class="subheader">Contact Me</h2>
-                    <form class="contact_form" action="">
-                        <div>
-                            <label for="name">Name</label>
-                        </div>
-                        <input id="name" type="text" autocomplete="name" />
-                        <label for="email">Email</label>
-                        <input id="email" type="email" autocomplete="email" />
-                        <label for="subject">Subject</label>
-                        <input id="subject" type="text" />
-                        <label for="message">Message</label>
-                        <textarea name="" id="message" cols="30" rows="10"></textarea>
-                        <button id="contact_form_submit">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>  
-
-        <div id="mobile_player" class="player">
-            <div class="player_content">
-                <div class="player_content_info">
-                    <img id="currently_playing_icon" class="player_icon topic_img" src="/assets/icons/player/music-solid.svg" alt="music notes icon">
-                    <div>
-                        <p id="player_header" class="topic_header">Sean Quach&apos;s Portfolio</p>
-                        <p id="player_subheader" class="topic_sub_header">Macbook Air</p>
-                    </div>
-                </div>
-                <div class="mobile_player_icons">
-                    <img id="player_heart_icon" class="player_icon" src="/assets/icons/heart-regular.svg" alt="unfilled heart icon">
-                    <img id="player_play_pause_icon" class="mobile player_icon play_pause" src="/assets/icons/player/pause-solid-white.svg" alt="pause icon" />
-                </div>
-            </div>
-            <div id="complete_progress_bar"></div>
-            <div id="progress_bar"></div>
-        </div>
-
-        <div id="desktop_player" class="player">
-            <div class="player_content">
-                <div class="player_content_info">
-                    <img id="currently_playing_icon" class="player_icon topic_img" src="/assets/icons/player/music-solid.svg" alt="music notes icon">
-                    <div>
-                        <p id="player_header" class="topic_header">Sean Quach&apos;s Portfolio</p>
-                        <p id="player_subheader" class="topic_sub_header">Macbook Air</p>
-                    </div>
-                </div>
-                <div class="player_icons_container">
-                    <img class="icon" src="/assets/icons/player/shuffle-solid.svg"  alt="shuffle icon">
-                    <img src="/assets/icons/player/backward-step-solid.svg" alt="backward step" class="icon">
-                    <img src="/assets/icons/player/pause-solid.svg" alt="pause icon" class="icon detailed_page_pause_icon play_pause">
-                    <img src="/assets/icons/player/forward-step-solid.svg" alt="forward step icon" class="icon">
-                    <img src="/assets/icons/player/repeat-solid.svg" alt="repeat icon" class="icon">
-                </div>
-                <div class="desktop_progress">
-
-                </div>
-                <div class="player_desktop_icons_container">
-                    <img id="volume_slider_icon" class="icon" src="assets/icons/player/volume-low-solid.svg" alt="low volume icon">
-                    <input id="volume_slider" type="range" min="0" max="100" value="50">
-                </div>
-            </div>
-            <div id="complete_progress_bar"></div>
-            <div id="progress_bar"></div>
-        </div>
-
-        <div id="detailed_page">
-            <div class="detailed_page_container">
-                <div class="detailed_page_header">
-                    <img id="hide_detailed_page_icon" class="icon" src="/assets/icons/angle-down-solid.svg" alt="angle down icon">
-                    <p id="detailed_page_selected_topic" class="topic_header"></p>
-                    <img class="icon" src="/assets/icons/ellipsis-solid.svg" alt="">
-                </div>
-                <img class="detailed_page_icon topic_img" src="/assets/icons/code-solid.svg" alt="">
-                <div class="detailed_page_details">
-                    <div>
-                        <p class="detailed_page_details_header topic_header"></p>
-                        <p class="detailed_page_details_subheader topic_sub_header"></p>
-                    </div>
-                    <img class="icon" src="/assets/icons/heart-regular.svg" alt="heart icon">
-                </div>
-
-                <div class="progress_bar_container">
-                    <div id="detailed_page_complete_progress_bar"></div>
-                    <div id="detailed_page_progress_bar"></div>
-                </div>
-                <div class="player_icons_container">
-                    <img class="icon" src="/assets/icons/player/shuffle-solid.svg"  alt="shuffle icon">
-                    <img src="/assets/icons/player/backward-step-solid.svg" alt="backward step" class="icon">
-                    <img src="/assets/icons/player/pause-solid.svg" alt="pause icon" class="icon detailed_page_pause_icon play_pause">
-                    <img src="/assets/icons/player/forward-step-solid.svg" alt="forward step icon" class="icon">
-                    <img src="/assets/icons/player/repeat-solid.svg" alt="repeat icon" class="icon">
-                </div>
-            </div>
-        </div>
-        <div id="modal">
-            <p class="modal_content">Link copied to clipboard!</p>
-        </div>
-
-    </body>
-    <script src="./script.js" type="module" ></script>
+    <main>
+        <article id="experience_container">
+        </article>
+        <article id="projects_container">
+        </article>
+        <article id="skills_container">
+            <h2>Skills</h2>
+            <div id="skills_cards_container"></div>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
 </html>

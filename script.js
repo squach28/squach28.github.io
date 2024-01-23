@@ -1,379 +1,136 @@
-const container = document.getElementById('container')
-var scrollingAllowed = true
-var isPlaying = true
-const playButton = document.getElementById('play_button')
-const mobilePlayer = document.getElementById('mobile_player')
-const desktopPlayer = document.getElementById('desktop_player')
-const toggleMobilePlayer = window.getComputedStyle(mobilePlayer).getPropertyValue('display') === 'none' ? false : true
-const playerHeader = document.getElementById('player_header')
-const playerSubheader = document.getElementById('player_subheader')
-const detailedPage = document.getElementById('detailed_page')
-var selectedTopic = `Sean Quach's Portfolio`
-var selectedSubTopic = 'Macbook Air'
-var selectedTopicImgUrl = '/assets/icons/player/music-solid.svg'
-const topicHeaders = document.querySelectorAll('.topic_header')
-const topicSubHeaders = document.querySelectorAll('.topic_sub_header')
-const topicImgs = document.querySelectorAll('.topic_img')
-
-const GITHUB_API_URL = 'https://vq6ln4ww6b3u2iwtfj3cchr52i0oqjzx.lambda-url.us-east-1.on.aws/'
-
-for(let topicHeader of topicHeaders) {
-    topicHeader.textContent = selectedTopic
-}
-for(let topicSubHeader of topicSubHeaders) {
-    topicSubHeader.textContent = selectedSubTopic
-}
-
-for(let topicImg of topicImgs) {
-    topicImg.src = selectedTopicImgUrl
-}
-
-const togglePlayPauseButton = () => {
-    const playPauseButtons = document.querySelectorAll('.play_pause')
-    isPlaying = !isPlaying
-    for(let playPauseButton of playPauseButtons) {
-        if(isPlaying) {
-            if(playPauseButton.classList.contains('mobile')) {
-                playPauseButton.src= '/assets/icons/player/pause-solid-white.svg'
-            } else {
-                playPauseButton.src = '/assets/icons/player/pause-solid.svg'
-            }
-        } else {
-            if(playPauseButton.classList.contains('mobile')) {
-                playPauseButton.src = '/assets/icons/player/play-solid-white.svg'
-            } else {
-                playPauseButton.src = '/assets/icons/player/play-solid.svg'
-            }
-        } 
+const fetchFile = async (filename) => {
+    try {
+        const res = await fetch(filename, {
+            mode: "no-cors"
+        })
+        const data = await res.json()
+        return data
+    } catch(e) {
+        console.log(e)
     }
-
 
 }
 
-const toggleScrolling = () => {
-    scrollingAllowed = !scrollingAllowed
+const createExperienceElement = (experience) => {
+    const section = document.createElement('section')
+    section.classList.add("section")
 
-    if(scrollingAllowed) {
-        document.body.style.overflow = 'auto'
-    } else {
-        document.body.style.overflow = 'hidden'
+    const time_period_element = document.createElement("p")
+    time_period_element.classList.add("time_period")
+    time_period_element.textContent = experience.start_date + " - " + experience.end_date
+
+    const experience_title_element = document.createElement("p")
+    experience_title_element.classList.add("section_title")
+    experience_title_element.textContent = experience.title + " - " + experience.company
+
+    const summary_element = document.createElement("p")
+    summary_element.classList.add("section_summary")
+    summary_element.textContent = experience.summary
+
+    const tools_list = document.createElement("div")
+    tools_list.classList.add("tools_list")
+    for(let tool of experience.tools) {
+        const tool_list_element = document.createElement("p")
+        tool_list_element.classList.add("tool_list_item")
+        tool_list_element.textContent = tool
+        tools_list.appendChild(tool_list_element)
+    }
+
+    section.append(time_period_element)
+    section.append(experience_title_element)
+    section.append(summary_element)
+    section.append(tools_list)
+
+    return section
+}
+
+const renderExperienceSection = async () => {
+    const EXPERIENCE_JSON_PATH = "./assets/experience/experience.json"
+    const experiences = await fetchFile(EXPERIENCE_JSON_PATH)
+    const experience_container = document.getElementById("experience_container")
+    const experience_header = document.createElement("h2")
+    experience_header.textContent = "Experience"
+    experience_container.appendChild(experience_header)
+
+    for(let experience of experiences) {
+        const experience_element = createExperienceElement(experience)
+        experience_container.appendChild(experience_element)
     }
 }
 
-playButton.addEventListener('click' ,() => {
-    togglePlayPauseButton()
-})
+const createProjectElement = (project) => {
+    const section = document.createElement("section")
+    section.classList.add("section")
 
-const shareIcon = document.getElementById('share_icon')
-let timer;
-shareIcon.addEventListener('click', () => {
-    if(timer) {
-        clearTimeout(timer)
-    }
-    navigator.clipboard.writeText(document.URL)
-    const modal = document.getElementById('modal')
-    modal.classList.add('modal_transition')
-    modal.style.opacity = 1
-    modal.style.zIndex = 5;
-    timer = setTimeout(() => {
-        modal.style.opacity = 0
-        modal.style.zIndex = 0
-    }, 2500)
+    const time_period_element = document.createElement("p")
+    time_period_element.classList.add("time_period")
+    time_period_element.textContent = project.start_date + " - " + project.end_date
 
-})
+    const project_name_element = document.createElement("p")
+    project_name_element.classList.add("section_title")
+    project_name_element.textContent = project.name
 
-const ellipsisIcon = document.getElementById('ellipsis_icon')
-ellipsisIcon.addEventListener('click', () => {
-    const moreOverlayContainer = document.getElementById('more_overlay_container')
-    container.classList.add('blur')
-    moreOverlayContainer.style.display = 'flex'
-    if(toggleMobilePlayer) {
-        mobilePlayer.style.display = 'none'
-    } else {
-        desktopPlayer.style.display = 'none'
+    const summary_element = document.createElement("p")
+    summary_element.classList.add("section_summary")
+    summary_element.textContent = project.summary
+
+    const tools_list = document.createElement("div")
+    tools_list.classList.add("tools_list")
+    for(let tool of project.tools) {
+        const tool_list_element = document.createElement("p")
+        tool_list_element.classList.add("tool_list_item")
+        tool_list_element.textContent = tool
+        tools_list.appendChild(tool_list_element)
     }
 
-})
+    section.appendChild(time_period_element)
+    section.appendChild(project_name_element)
+    section.appendChild(summary_element)
+    section.append(tools_list)
 
-const closeButton = document.getElementById('close_more_overlay_button')
+    return section
+}
 
-closeButton.addEventListener('click', () => {
-    const moreOverlayContainer = document.getElementById('more_overlay_container')
-    container.classList.remove('blur')
-    moreOverlayContainer.style.display = 'none'
-    if(toggleMobilePlayer) {
-        mobilePlayer.style.display = 'flex'
-    } else {
-        desktopPlayer.style.display = 'flex'
-    }
-})
-
-const followersSubHeader = document.getElementById('github_followers')
-fetch(GITHUB_API_URL)
-    .then(res => res.json())
-    .then(data => {
-        const numOfFollowers = data.followers
-        followersSubHeader.textContent = `${numOfFollowers} Github followers`
-    })
-
-fetch('./experiences.json')
-    .then(res => res.json())
-    .then(experiences => {
-        const experienceList = document.getElementById('experience_list')
-        for(let experience of experiences) {
-            const expListItem = document.createElement('li')
-        
-            const expCard = document.createElement('div')
-            expCard.classList.add('experience_card')
-        
-            const expInfo = document.createElement('div')
-            expInfo.classList.add('experience_info')
-            expCard.appendChild(expInfo)
-        
-            const expIcon = document.createElement('img')
-            expIcon.classList.add('icon', 'experience_icon')
-            expIcon.src = experience.iconUrl
-            expIcon.alt = experience.iconAlt
-        
-            const expDetails = document.createElement('div')
-            const expHeader = document.createElement('p')
-            expHeader.classList.add('experience_card_header')
-            expHeader.textContent = experience.company 
-            const expSubHeader = document.createElement('p')
-            expSubHeader.classList.add('experience_card_subheader')
-            expSubHeader.textContent = experience.title 
-        
-            expDetails.appendChild(expHeader)
-            expDetails.appendChild(expSubHeader)
-        
-            expInfo.appendChild(expIcon)
-            expInfo.appendChild(expDetails)
-        
-            const ellipsisIcon = document.createElement('img')
-            ellipsisIcon.classList.add('icon', 'experience_ellipsis')
-            ellipsisIcon.src = './assets/icons/ellipsis-vertical-solid.svg'
-            ellipsisIcon.alt = 'ellipsis icon'
-        
-            expCard.appendChild(ellipsisIcon)
-            expListItem.appendChild(expCard)
-        
-            ellipsisIcon.addEventListener('click', (e) => {
-                e.stopPropagation()
-                const experienceDiv = document.createElement('div')
-        
-                const infoContainer = document.createElement('div')
-            
-                const companyHeader = document.createElement('h1')
-                companyHeader.classList.add('company_header')
-                companyHeader.textContent = experience.company
-            
-                const titleHeader = document.createElement('h2')
-                titleHeader.textContent = experience.title
-                titleHeader.classList.add('title_header')
-            
-                const timeWorked = document.createElement('p')
-                timeWorked.textContent = `${experience.startDate} - ${experience.endDate}`
-                timeWorked.classList.add('time_worked')
-            
-                const experienceList = document.createElement('ul')
-                experienceList.classList.add('experience_bullets_container')
-                for(let bullet of experience.bullets) {
-                    const expBullet = document.createElement('li')
-                    expBullet.classList.add('exp_bullet')
-                    expBullet.textContent = bullet
-                    experienceList.appendChild(expBullet)
-                }
-            
-                const closeButton = document.createElement('button')
-                closeButton.textContent = 'Close'
-                closeButton.classList.add('close_button')
-                closeButton.addEventListener('click', () => {
-                    container.classList.remove('blur')
-                    if(toggleMobilePlayer) {
-                        mobilePlayer.style.display = 'flex'
-                    } else {
-                        desktopPlayer.style.display = 'flex'
-                    }
-                    document.body.removeChild(experienceDiv)
-                })
-            
-                experienceDiv.classList.add('experience_overlay_container')
-                infoContainer.appendChild(companyHeader)
-                infoContainer.appendChild(titleHeader)
-                infoContainer.appendChild(timeWorked)
-                infoContainer.appendChild(experienceList)
-                experienceDiv.appendChild(infoContainer)
-                experienceDiv.appendChild(closeButton)
-                container.classList.add('blur')
-                if(toggleMobilePlayer) {
-                    mobilePlayer.style.display = 'none'
-                } else {
-                    desktopPlayer.style.display = 'none'
-                }
-                document.body.appendChild(experienceDiv)
-        
-            })
-        
-            expCard.addEventListener('click', () => {
-                selectedTopic = experience.company 
-                selectedSubTopic = experience.title 
-                selectedTopicImgUrl = experience.iconUrl
-                for(let topicHeader of topicHeaders) {
-                    topicHeader.textContent = selectedTopic
-                }
-                for(let topicSubHeader of topicSubHeaders) {
-                    topicSubHeader.textContent = selectedSubTopic
-                }
-        
-                for(let topicImg of topicImgs) {
-                    topicImg.src = selectedTopicImgUrl
-                }        
-        
-                const divElements = document.querySelectorAll('div')
-                for(let element of divElements) {
-                    element.classList.remove('selected_text')
-                }
-                expCard.classList.add('selected_text')
-            })
-        
-            experienceList.appendChild(expListItem)
-        }
-    })
-
-
-
-fetch('./projects.json')
-    .then(res => res.json())
-    .then(projects => {
-        const projectsList = document.getElementById('projects_list')
-        for(let project of projects) {
-            const projectListItem = document.createElement('li')
-            
-            const projectLink = document.createElement('a')
-            projectLink.href = `./project/project.html?project=${project.name}`
-
-            const projectBox = document.createElement('div')
-            projectBox.classList.add('project_box')
-            projectBox.style.backgroundImage = `url(${project.backgroundImageUrl})`
-        
-            const projectDescription = document.createElement('div')
-            projectDescription.classList.add('project_description')
-        
-            const projectName = document.createElement('p')
-            projectName.textContent = project.name
-        
-            projectDescription.appendChild(projectName)
-            projectBox.appendChild(projectDescription)
-        
-            projectLink.appendChild(projectBox)
-            projectListItem.appendChild(projectLink)
-        
-            projectsList.appendChild(projectListItem)
-        }
-    })
-
-
-fetch('./skills.json')
-    .then(res => res.json())
-    .then(skills => {
-        const skillsList = document.getElementById('skills_list')
-        const currentSkills = [ 'HTML', 'CSS', 'JavaScript', 'NodeJS', 'React', 'Java', 'SQL/MySQL', 'Github'] 
-        for(let currentSkill of currentSkills) {
-            const skill = skills.find((skill => skill.name === currentSkill))
-            if(skill) {
-                const skillListItem = document.createElement('li')
-                skillListItem.classList.add('skill_list_item') 
-            
-                const skillContainer = document.createElement('div')
-                skillContainer.classList.add('skill_container')
-            
-                const skillIcon = document.createElement('img')
-                skillIcon.classList.add('skill_icon')
-                skillIcon.src = skill.iconUrl
-                skillIcon.alt = skill.iconAlt
-            
-                const skillName = document.createElement('p')
-                skillName.textContent = skill.name
-            
-                skillContainer.appendChild(skillIcon)
-            
-                skillListItem.appendChild(skillContainer)
-                skillListItem.appendChild(skillName)
-            
-                skillsList.appendChild(skillListItem)
-            }
-        }
-    })
-
-const aboutText = document.getElementById('about')
-fetch('./about.json')
-    .then(res => res.json())
-    .then(about => {
-        aboutText.textContent = about.content
-    })
-
-
-const progressBar = document.getElementById('progress_bar')
-const detailedPageProgressBar = document.getElementById('detailed_page_progress_bar')
-window.addEventListener('scroll', () => {
-    let scrollTop = window.scrollY
-    let docHeight = document.body.offsetHeight
-    let winHeight = window.innerHeight 
-    let scrollPercent = scrollTop / (docHeight - winHeight)
-    let scrollPercentRounded = Math.round(scrollPercent * 100)
-    progressBar.style.width = `${scrollPercentRounded}%`
-    detailedPageProgressBar.style.width = scrollPercentRounded > 100 ? '100%' : `${scrollPercentRounded}%`
+const renderProjectSection = async () => {
+    const PROJECTS_JSON_PATH = "./assets/projects/projects.json"
+    const projects = await fetchFile(PROJECTS_JSON_PATH)
+    const projects_container = document.getElementById("projects_container")
+    const projects_header = document.createElement("h2")
+    projects_header.textContent = "Projects"
+    projects_container.appendChild(projects_header)
     
-})
-
-const playPauseButtons = document.querySelectorAll('.play_pause')
-for(let playPauseButton of playPauseButtons) {
-    playPauseButton.addEventListener('click', (e) => {
-        e.stopPropagation()
-        togglePlayPauseButton()
-    })
+    for(let project of projects) {
+        const project_element = createProjectElement(project)
+        projects_container.appendChild(project_element)
+    }
 }
 
-const playerHeartIcon = document.getElementById('player_heart_icon')
-playerHeartIcon.addEventListener('click', (e) => {
-    e.stopPropagation()
-    playerHeartIcon.classList.add('player_heart_icon')
-    setTimeout(() => {
-        playerHeartIcon.classList.remove('player_heart_icon')
-    }, 1000)
-})
+const renderSkillsCards = async () => {
+    const SKILLS_JSON_PATH = "./assets/skills/skills.json"
+    const skills = await fetchFile(SKILLS_JSON_PATH)
+    const skills_list_container = document.getElementById("skills_cards_container")
 
-mobilePlayer.addEventListener('click', () => {
-    toggleScrolling()
-    detailedPage.style.visibility = 'visible'
-    detailedPage.classList.remove('detailed_page_clicked')
-    detailedPage.classList.add('player_clicked')
-    mobilePlayer.style.opacity = 0
-})
+    for(let skill of skills) {
+        const skill_card = document.createElement("div")
+        skill_card.classList.add("skill_card")
 
-const volumeSlider = document.getElementById('volume_slider')
-const volumeSliderIcon = document.getElementById('volume_slider_icon')
-volumeSlider.addEventListener('input', (e) => {
-    const volumeSliderValue = parseInt(e.target.value)
-    if(volumeSliderValue === 0) {
-        volumeSliderIcon.src = '/assets/icons/player/volume-xmark-solid.svg'
-    } else if(volumeSliderValue > 0 && volumeSliderValue < 75) {
-        volumeSliderIcon.src = '/assets/icons/player/volume-low-solid.svg'
-    } else {
-        volumeSliderIcon.src = '/assets/icons/player/volume-high-solid.svg'
+        const skill_img = document.createElement("img")
+        skill_img.width = 35
+        skill_img.height = 35
+        skill_img.src = skill.img_url
+        skill_img.alt = skill.name
+
+        const skill_card_name = document.createElement("p")
+        skill_card_name.classList.add("skill_name")
+        skill_card_name.textContent = skill.name
+
+        skill_card.appendChild(skill_img)
+        skill_card.appendChild(skill_card_name)
+        skills_list_container.appendChild(skill_card)
     }
-})
-
-const hideDetailedPageIcon = document.getElementById('hide_detailed_page_icon')
-hideDetailedPageIcon.addEventListener('click', () => {
-    detailedPage.classList.remove('player_clicked')
-    detailedPage.classList.add('detailed_page_clicked')
-    detailedPage.visiblity = 'hidden'
-    setTimeout(() => {
-        mobilePlayer.style.opacity = 1
-    }, 300)
-    toggleScrolling()
-})
+}
 
 
-
+renderExperienceSection()
+renderProjectSection()
+renderSkillsCards()
