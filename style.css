@@ -81,26 +81,13 @@ header, article {
     margin-top: 1em;
 }
 
-/* .social_button {
-    max-width: 50%;
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    font-size: 1.25rem;
-    background-color: rgb(64, 64, 64);
-    padding: 0.5em 0.75em;
-    border-radius: 1em;
-} */
-
-/* .social_button:hover {
-    background: #ffffff;
-    color: black;
-    transform: scaleY(125%);
-} */
-
 .social_button_icon {
     width: 30px;
     height: 30px;
+}
+
+.social_button_name {
+    display: none;
 }
 
 .section {
@@ -164,7 +151,31 @@ header, article {
 }
 
 @media screen and (min-width: 600px) {
+    header, article {
+        padding: 0 6em;
+        margin: 1em 0;
+    }
 
+    .social_button {
+        max-width: 50%;
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        font-size: 1.25rem;
+        background-color: rgb(64, 64, 64);
+        padding: 0.5em 0.75em;
+        border-radius: 1em;
+    } 
+
+    .social_button:hover {
+        background: #ffffff;
+        color: black;
+        transform: scaleY(125%);
+    }
+
+    .social_button_name {
+        display: block;
+    }
 }
 
 @keyframes fade-in {
