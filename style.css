@@ -145,10 +145,26 @@ header, article {
 .skill_card {
     display: flex;
     flex-direction: column;
-    background: gray;    
+    gap: 1em;
+    background: rgb(57, 57, 57);    
     align-items: center;
     padding: 1em;
     border-radius: 15px;
+}
+
+.skill_name {
+    font-weight: bold;
+}
+
+#skills_cards_container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1em;
+    margin: 1em 0;
+}
+
+@media screen and (min-width: 600px) {
+
 }
 
 @keyframes fade-in {

@@ -1,10 +1,17 @@
 const fetchFile = async (filename) => {
-    const res = await fetch(filename)
-    const data = await res.json()
-    return data
+    try {
+        const res = await fetch(filename, {
+            mode: "no-cors"
+        })
+        const data = await res.json()
+        return data
+    } catch(e) {
+        console.log(e)
+    }
+
 }
 
-const renderExperience = (experience) => {
+const createExperienceElement = (experience) => {
     const section = document.createElement('section')
     section.classList.add("section")
 
@@ -46,12 +53,12 @@ const renderExperienceSection = async () => {
     experience_container.appendChild(experience_header)
 
     for(let experience of experiences) {
-        const experience_element = renderExperience(experience)
+        const experience_element = createExperienceElement(experience)
         experience_container.appendChild(experience_element)
     }
 }
 
-const renderProject = (project) => {
+const createProjectElement = (project) => {
     const section = document.createElement("section")
     section.classList.add("section")
 
@@ -92,11 +99,37 @@ const renderProjectSection = async () => {
     projects_container.appendChild(projects_header)
     
     for(let project of projects) {
-        const project_element = renderProject(project)
+        const project_element = createProjectElement(project)
         projects_container.appendChild(project_element)
+    }
+}
+
+const renderSkillsCards = async () => {
+    const SKILLS_JSON_PATH = "./assets/skills/skills.json"
+    const skills = await fetchFile(SKILLS_JSON_PATH)
+    const skills_list_container = document.getElementById("skills_cards_container")
+
+    for(let skill of skills) {
+        const skill_card = document.createElement("div")
+        skill_card.classList.add("skill_card")
+
+        const skill_img = document.createElement("img")
+        skill_img.width = 35
+        skill_img.height = 35
+        skill_img.src = skill.img_url
+        skill_img.alt = skill.name
+        console.log(skill.name)
+        const skill_card_name = document.createElement("p")
+        skill_card_name.classList.add("skill_name")
+        skill_card_name.textContent = skill.name
+
+        skill_card.appendChild(skill_img)
+        skill_card.appendChild(skill_card_name)
+        skills_list_container.appendChild(skill_card)
     }
 }
 
 
 renderExperienceSection()
 renderProjectSection()
+renderSkillsCards()
