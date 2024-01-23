@@ -113,10 +113,13 @@ header, article {
     flex-direction: column;
     gap: 0.25rem;
     font-size: 0.75rem;
-    padding: 1.25em;
-    margin: 1.75em 0;
+    padding: 1.25rem;
+    margin: 1.75rem 0;
+}
+
+#experience_container {
     opacity: 0;
-    animation: fade-in 2s forwards;
+    animation: fade-in 3s 4s forwards;
 }
 
 .time_period {
@@ -154,6 +157,11 @@ header, article {
     align-items: center;
     padding: 1em;
     border-radius: 15px;
+    cursor: pointer;
+}
+
+.skill_card:hover {
+    background: gray;
 }
 
 .skill_name {
