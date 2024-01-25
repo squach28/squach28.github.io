@@ -99,6 +99,21 @@ header, article {
     margin-top: 1em;
 }
 
+.socials_container > a:nth-child(1) {
+    opacity: 0;
+    animation: grow 2s 3.5s forwards;
+}
+
+.socials_container > a:nth-child(2) {
+    opacity: 0;
+    animation: grow 2s 3.75s forwards;
+}
+
+.socials_container > a:nth-child(3) {
+    opacity: 0;
+    animation: grow 2s 4s forwards;
+}
+
 .social_button_icon {
     width: 30px;
     height: 30px;
@@ -106,6 +121,10 @@ header, article {
 
 .social_button_name {
     display: none;
+}
+
+.fade-in {
+    animation: fade-in 3s 4s forwards;
 }
 
 .section {
@@ -117,7 +136,7 @@ header, article {
     margin: 1.75rem 0;
 }
 
-#experience_container {
+#experience_container, #projects_container, #skills_cards_container {
     opacity: 0;
     animation: fade-in 3s 4s forwards;
 }
@@ -147,6 +166,10 @@ header, article {
     background: green;
     padding: 0.5rem 0.75rem;
     border-radius: 20px;
+}
+
+.skills_header {
+    opacity: 0;
 }
 
 .skill_card {
@@ -325,5 +348,15 @@ header, article {
         transform: scale(0);
     } 100% {
         transform: scale(150%);
+    }
+}
+
+@keyframes grow {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    } to {
+        transform: scale(1);
+        opacity: 1
     }
 }
