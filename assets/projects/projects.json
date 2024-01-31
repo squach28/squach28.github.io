@@ -11,14 +11,14 @@
         "name": "Wordie",
         "start_date": "Feb 2022",
         "end_date": "April 2022",
-        "summary": "Developed a web game where players guess the daily randomly generated six letter word.",
+        "summary": "Developed a web game where players guess the daily randomly generated six letter word. Integrated the Merriam-Webster dictionary API to store six-letter words and validate guessed words.",
         "tools": ["NodeJS", "Firebase", "Angular"]
     },
     {
         "name": "MotivateMe",
         "start_date": "Aug 2020",
         "end_date": "May 2021",
-        "summary": "Collaborated with a team of 4 to build a cross platform mobile application that would motivate users to complete their goals by taking photos of their progress and highlight their accomplishments.",
+        "summary": "Collaborated with a team of 4 to build a cross platform mobile application that would motivate users to complete their goals by taking photos of their progress and highlight their accomplishments. Organized the UI/UX design of the mobile app, developing prototypes and getting user feedback. Worked on major features like authentication, goal setting, and weekly goal summary.",
         "tools": ["Flutter", "AWS", "SQL"]
     }
 ]
