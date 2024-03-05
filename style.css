@@ -4,6 +4,12 @@ html {
     background: #1e202e;
     font-family: 'Be Vietnam Pro', sans-serif;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
 }
 
 h1, h2, p, ul, li, body {
@@ -41,6 +47,30 @@ nav > ul > li:nth-child(1) {
 nav > ul > li:nth-child(2) {
     transform: translateY(-250%);
     animation: drop-into-place ease-in-out 2s 1.5s forwards;
+}
+
+.mobile_nav_bar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: black;
+    color: white;
+    top: 0;
+    right: 0;
+    transform: translateX(125%);
+    list-style-type: none;
+    z-index: 5;
+    padding: 1rem .75rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.mobile_nav_close {
+    display: block;
+    margin-left: auto;
 }
 
 .hamburger_icon {
@@ -323,6 +353,22 @@ header, article {
     } 
     to {
         width: 100%;
+    }
+}
+
+@keyframes slide-from-right {
+    0% {
+        transform: translateX(100%);
+    } 100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-to-right {
+    0% {
+        transform: translateX(0);
+    } 100% {
+        transform: translateX(125%);
     }
 }
 
