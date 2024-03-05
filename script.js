@@ -11,6 +11,23 @@ const fetchFile = async (filename) => {
 
 }
 
+const onMobileNavClick = () => {
+    const mobile_nav_bar = document.getElementById('mobile_nav_bar')
+    mobile_nav_bar.style.animation = 'slide-from-right 0.5s 0s forwards'
+}
+
+const onMobileNavItemClick = () => {
+    const mobile_nav_bar = document.getElementById('mobile_nav_bar')
+    mobile_nav_bar.style.animation = 'slide-to-right 0.5s 0s forwards'
+}
+
+const mobile_nav_icon = document.getElementById('mobile_nav')
+mobile_nav_icon.addEventListener('click', onMobileNavClick)
+const mobile_nav_bar = document.getElementById('mobile_nav_bar')
+for(const child of mobile_nav_bar.children) {
+    child.addEventListener('click', onMobileNavItemClick)
+}
+
 const createExperienceElement = (experience) => {
     const section = document.createElement('section')
     section.classList.add("section")
