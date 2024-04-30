@@ -3,7 +3,7 @@
         "name": "South Bay Synergy/Strava Discord Integration",
         "title": "Full Stack Developer",
         "start_date": "Nov 2023",
-        "end_date": "Present",
+        "end_date": "Jan 2024",
         "summary": "Built a Discord bot to track Strava activities and statistics for South Bay Synergy, a dragon boat club of 30+ members. Deployed a website for users to view Strava activities, leaderboards, and profiles; deployed a backend to integrate with Strava API.",
         "tools": ["NodeJS", "Express", "MongoDB", "React", "Typescript", "TailwindCSS", "AWS ECS", "Docker"]
     },
