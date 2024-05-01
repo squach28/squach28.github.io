@@ -4,6 +4,7 @@ html {
     background: #1e202e;
     font-family: 'Be Vietnam Pro', sans-serif;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -229,6 +230,11 @@ header, article {
 }
 
 @media screen and (min-width: 600px) {
+
+    html {
+        overflow-x: visible;
+    }
+
     header, article {
         padding: 0 6em;
     }
