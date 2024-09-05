@@ -1,35 +1,42 @@
 [
-    {
-        "company": "Tata Consultancy Services",
-        "title": "Test Automation Lead",
-        "start_date": "Jan 2023",
-        "end_date": "Sept 2023",
-        "summary": "Consulted for Kaiser Permanente, developing UI/E2E automation scripts, increasing the number of automated test cases from 12% to 43%. Executed nationwide regression tests to optimize efficiency and streamline manual testing.",
-        "tools": ["JavaScript", "NodeJS", "WebdriverIO"]
-    },
-    {
-        "company": "Tata Consultancy Services",
-        "title": "Software Engineer",
-        "start_date": "June 2021",
-        "end_date": "Jan 2023",
-        "summary": "Enhanced the UI of the Kaiser Permanente Member Services Chatbot, guiding KP members to the proper resources. Implemented features such as file attachment, live chat with an agent, and error handling to elevate user experience.",
-        "tools": ["HTML", "CSS", "JavaScript", "React", "NodeJS", "Jenkins"]
-    },
-    {
-        "company": "Infinite Options LLC",
-        "title": "Software Development Intern",
-        "start_date": "May 2020",
-        "end_date": "Aug 2020",
-        "summary": "Developed a cross platform mobile app for food delivery service, Prep to Your Door. Implemented social login through Facebook and Google and checkout process with Stripe.",
-        "tools": ["C#", "Xamarin Forms"]
-    },
-    {
-        "company": "Advantest America Inc.",
-        "title" :"Technical Specialist",
-        "start_date": "June 2019",
-        "end_date": "Sept 2019",
-        "summary": "Rotated across various positions within the R&D team, gaining skills in scripting and quality assurance. Developed automation scripts to format diagnostic logs for easier readability.",
-        "tools": ["C#", "Visual Basic .NET", "MySQL", "Silk Test Workbench"]
-    }
-
+  {
+    "company": "DataAnnotation",
+    "title": "Software Engineer",
+    "start_date": "Apr 2024",
+    "end_date": "Present",
+    "summary": "Train AI models in Java, JavasScript, and Python to output high-quality answers. Ensure that generated code meets expectations in fulfilling user requirements",
+    "tools": ["Python", "JavaScript", "Java"]
+  },
+  {
+    "company": "Tata Consultancy Services",
+    "title": "Test Automation Lead",
+    "start_date": "Jan 2023",
+    "end_date": "Sept 2023",
+    "summary": "Consulted for Kaiser Permanente, developing UI/E2E automation scripts, increasing the number of automated test cases from 12% to 43%. Executed nationwide regression tests to optimize efficiency and streamline manual testing.",
+    "tools": ["JavaScript", "NodeJS", "WebdriverIO"]
+  },
+  {
+    "company": "Tata Consultancy Services",
+    "title": "Software Engineer",
+    "start_date": "June 2021",
+    "end_date": "Jan 2023",
+    "summary": "Enhanced the UI of the Kaiser Permanente Member Services Chatbot, guiding KP members to the proper resources. Implemented features such as file attachment, live chat with an agent, and error handling to elevate user experience.",
+    "tools": ["HTML", "CSS", "JavaScript", "React", "NodeJS", "Jenkins"]
+  },
+  {
+    "company": "Infinite Options LLC",
+    "title": "Software Development Intern",
+    "start_date": "May 2020",
+    "end_date": "Aug 2020",
+    "summary": "Developed a cross platform mobile app for food delivery service, Prep to Your Door. Implemented social login through Facebook and Google and checkout process with Stripe.",
+    "tools": ["C#", "Xamarin Forms"]
+  },
+  {
+    "company": "Advantest America Inc.",
+    "title": "Technical Specialist",
+    "start_date": "June 2019",
+    "end_date": "Sept 2019",
+    "summary": "Rotated across various positions within the R&D team, gaining skills in scripting and quality assurance. Developed automation scripts to format diagnostic logs for easier readability.",
+    "tools": ["C#", "Visual Basic .NET", "MySQL", "Silk Test Workbench"]
+  }
 ]
